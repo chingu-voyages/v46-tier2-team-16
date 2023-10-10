@@ -1,5 +1,5 @@
 import { Example } from './example';
-import { Card } from './components/recepieCard/RecepieCard';
+import Card from './components/recepieCard/RecepieCard';
 import './App.css';
 
 const App = () => {

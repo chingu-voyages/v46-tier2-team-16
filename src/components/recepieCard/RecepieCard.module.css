@@ -1,8 +1,8 @@
 .container {
     display: grid;
     place-items: center;
-    height: 100vh;
-    background-color: '#111111';
+    height: 80vh;
+    background-color: '#a1a1a1';
 }
 
 .name {
