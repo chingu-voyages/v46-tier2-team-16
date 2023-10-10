@@ -1,4 +1,4 @@
-const recepies = [
+export const Data = [
 	{
 		id: 0,
 		name: "Prawn & harissa spaghetti",
@@ -98,9 +98,9 @@ const recepies = [
 		],
 		image: "https://www.allrecipes.com/thmb/_UTvjgAOrFZ54ltSLHhn0vasQnY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/8120851-2a5e454168814051b5558c9cee7e4a60.jpg",
 		rating: 4.6,
-		notes: "Substitute sour cream for the yogurt, if desired.",
-		"Stovetop method: Season chicken with 1 teaspoon salt and 1/2 teaspoon pepper. Preheat a large saute pan on medium-high for 2 to 3 minutes. Add oil, then chicken; cook until browned, 3 to 4 minutes per side. Add shallots, garlic, and paprika; cook until fragrant, 2 to 3 minutes. Add pasta sauce and vinegar, then cover and reduce heat to low; simmer until chicken registers 185 degrees F (85 degrees C) on a thermometer, 15 to 18 minutes. Meanwhile, cook egg noodles. Drain well, then return noodles to the pot. Add butter, parsley, and remaining 1/2 teaspoon each salt and pepper; stir until butter is melted. Remove saute pan from heat and lightly shred chicken; stir in 1/2 cup yogurt. Divide noodles evenly among serving plates; top with even amounts chicken mixture and remaining yogurt. Serve immediately.",
-		"Omit chicken broth if following the stovetop method.",
+		notes: `Substitute sour cream for the yogurt, if desired.
+		Stovetop method: Season chicken with 1 teaspoon salt and 1/2 teaspoon pepper. Preheat a large saute pan on medium-high for 2 to 3 minutes. Add oil, then chicken; cook until browned, 3 to 4 minutes per side. Add shallots, garlic, and paprika; cook until fragrant, 2 to 3 minutes. Add pasta sauce and vinegar, then cover and reduce heat to low; simmer until chicken registers 185 degrees F (85 degrees C) on a thermometer, 15 to 18 minutes. Meanwhile, cook egg noodles. Drain well, then return noodles to the pot. Add butter, parsley, and remaining 1/2 teaspoon each salt and pepper; stir until butter is melted. Remove saute pan from heat and lightly shred chicken; stir in 1/2 cup yogurt. Divide noodles evenly among serving plates; top with even amounts chicken mixture and remaining yogurt. Serve immediately.,
+		Omit chicken broth if following the stovetop method.`,
 	},
 	{
 		id: 3,
