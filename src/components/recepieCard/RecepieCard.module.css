@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.title {
+    color: blue;
+    font-size: large;
+    font-weight: 500;
+}

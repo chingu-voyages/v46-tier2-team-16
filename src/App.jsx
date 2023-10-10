@@ -6,7 +6,6 @@ import { Header } from "./components/Header/index"
 import { Footer } from "./components/Footer/index"
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
-import { Card } from './components/recepie-card/Card';
 
 
 import './App.css';
@@ -91,6 +90,7 @@ const recipesToDisplay = useMemo(() => {
     </>
   )
 }
+
 
 export default App;
 
