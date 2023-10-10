@@ -1,12 +1,11 @@
 import { Example } from './example';
-// import { Card } from './components/recepie-card/Card';
-
+import { Card } from './components/recepieCard/RecepieCard';
 import './App.css';
 
 const App = () => {
     return (
         <>
-            {/* <Card /> */}
+            <Card />
             <Example />
         </>
     );
