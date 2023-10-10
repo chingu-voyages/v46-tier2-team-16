@@ -2,9 +2,10 @@
     display: grid;
     place-items: center;
     height: 100vh;
+    background-color: '#111111';
 }
 
-.title {
+.name {
     color: blue;
     font-size: large;
     font-weight: 500;
