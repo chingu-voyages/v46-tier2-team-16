@@ -6,11 +6,11 @@ import { Header } from "./components/Header/index"
 import { Footer } from "./components/Footer/index"
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
+import { Card } from './components/recepie-card/Card';
 
-import './App.css'
+import './App.css';
 
 const App = () => {
-
   const recipe = useSelector(state => state.recipe)
   const recipeResults = recipe.recipes.results
   console.log("Recipe results: ", recipeResults)
@@ -91,4 +91,5 @@ const recipesToDisplay = useMemo(() => {
   )
 }
 
-export default App
+export default App;
+
