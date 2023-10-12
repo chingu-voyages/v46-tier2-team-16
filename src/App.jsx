@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
 
 import './App.css';
+import { Recipe } from "./features/recipe";
 
 const App = () => {
   const recipe = useSelector(state => state.recipe)
@@ -87,6 +88,7 @@ const recipesToDisplay = useMemo(() => {
         
       </main>
       <Footer />
+
     </>
   )
 }

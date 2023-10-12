@@ -4,7 +4,6 @@ import { fetchRecipes } from './recipeSlice'
 
 import styles from './Recipe.module.css'
 
-// const Recipe = ({recipe, recipesToDisplay}) => {
     const Recipe = (props) => {
         const { recipe, recipesToDisplay } = props
         console.log('recipesToDisplay', recipesToDisplay)
@@ -26,6 +25,7 @@ import styles from './Recipe.module.css'
                     }
                 </ul>
                 ) : <p>No recipe with this name</p>}
+
         </section>
     )
 }
