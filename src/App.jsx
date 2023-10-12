@@ -1,4 +1,5 @@
-import {Example} from "./example";
+// import { Example } from "./example";
+import { Recipe } from "./features/recipe";
 
 import './App.css'
 
@@ -6,7 +7,8 @@ const App = () => {
 
   return (
     <>
-    <Example/>
+      {/* <Example /> */}
+      <Recipe />
     </>
   )
 }
