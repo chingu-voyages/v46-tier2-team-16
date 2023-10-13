@@ -1,6 +1,9 @@
 import axios from 'axios'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { TASTY_RAPID_API_URL, TASTY_RAPID_API_KEY, TASTY_RAPID_API_HOST } from '../../constants/apiData';
+
+const TASTY_RAPID_API_URL = import.meta.env.VITE_TASTY_RAPID_API_URL
+const TASTY_RAPID_API_KEY = import.meta.env.VITE_TASTY_RAPID_API_KEY
+const TASTY_RAPID_API_HOST = import.meta.env.VITE_TASTY_RAPID_API_HOST
 
 const initialState = {
     loading: false,
@@ -22,8 +25,8 @@ const options = {
     }
 }
 
-export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', async () => {
-    return await axios
+export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', () => {
+    return axios
         .request(options)
         .then(response => response.data)
 })
