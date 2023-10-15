@@ -1,0 +1,13 @@
+.container {
+    margin-inline: auto;
+    width: 860px;
+    align-content: center;
+    padding-top: 50px;
+    /* background-color: aquamarine; */
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}

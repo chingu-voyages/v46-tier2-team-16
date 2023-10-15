@@ -1,4 +1,4 @@
-export const Data = [
+const Data = [
 	{
 		id: 0,
 		name: "Prawn & harissa spaghetti",
@@ -346,3 +346,5 @@ export const Data = [
 		notes: "Will keep chilled for up to three days.",
 	},
 ]
+
+export default Data
