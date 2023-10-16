@@ -1,10 +1,9 @@
 import { Link, useParams } from 'react-router-dom';
-import { data } from '../../data/recipes';
 import './RecipeItem.css';
 
 const RecipeItem = () => {
-    const { id } = useParams();
-    const selectedRecipe = data.find((recipe) => recipe.id === parseInt(id, 10));
+    // const { id } = useParams();
+    // const selectedRecipe = data.find((recipe) => recipe.id === parseInt(id, 10));
 
     console.log(selectedRecipe);
 

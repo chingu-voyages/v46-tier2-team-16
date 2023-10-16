@@ -1,5 +1,6 @@
 import { Recipe } from "./features/recipe";
 import { useEffect, useMemo, useState } from "react";
+
 import { Search } from "./search";
 import { recipeList } from './data/Recipes.js'
 import { Header } from "./components/Header/index"
@@ -90,7 +91,4 @@ const recipesToDisplay = useMemo(() => {
   )
 }
 
-
-
 export default App;
-

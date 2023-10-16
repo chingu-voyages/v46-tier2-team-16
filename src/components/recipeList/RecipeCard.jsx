@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
-import { data } from '../../data/recipes';
-import './RecipeList.css';
+// import { Link } from 'react-router-dom';
+import './RecipeCard.module.css';
 import { FaStar } from 'react-icons/fa';
 
-const RecipeList = () => {
+const RecipeCard = ({recipe}) => {
     return (
         <section className="section">
-            {data.map((recipe) => (
                 <div key={recipe.id} className="container">
                     <figure className="figure">
                         <img src={recipe.image} alt={recipe.name} className="image" />
@@ -14,9 +12,9 @@ const RecipeList = () => {
                     <div className="cardContent">
                         <h3 className="name">{recipe.name}</h3>
                         <div className="btn-ctn">
-                            <Link to={`/recipe/${recipe.id}`} className="btn">
+                            {/* <Link to={`/recipe/${recipe.id}`} className="btn">
                                 Get Recipe
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className="rating">
                             <FaStar color="#D4AD2E" /> &nbsp;
@@ -24,9 +22,8 @@ const RecipeList = () => {
                         </div>
                     </div>
                 </div>
-            ))}
         </section>
     );
 };
 
-export default RecipeList;
+export default RecipeCard;
