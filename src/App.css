@@ -1,14 +1,14 @@
-.container {
+/* .container {
     margin-inline: auto;
     width: 1120px;
     align-content: center;
     padding-top: 150px;
-    padding-bottom: 150px;
+    padding-bottom: 150px;*/
     /* background-color: aquamarine; */
-}
+/*}*/
 
-.card {
+/*.card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
-}
+} */
