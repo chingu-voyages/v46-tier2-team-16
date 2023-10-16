@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Recipe } from "./features/recipe";
 import { useEffect, useMemo, useState } from "react";
 import { Search } from "./search";
@@ -7,8 +8,17 @@ import { Footer } from "./components/Footer/index"
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
 
+=======
+// import Card from './components/recipeCard/RecipeCard';
+// import Data from './data/recipes';
+>>>>>>> 647a68f (adding recipe example)
 
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import {Home} from "./pages/home";
+import {RecipeItem} from "./components/example/recipeItem";
 import './App.css';
+<<<<<<< HEAD
 
 const App = () => {
   const recipe = useSelector(state => state.recipe)
@@ -91,6 +101,39 @@ const recipesToDisplay = useMemo(() => {
   )
 }
 
+=======
+
+
+
+const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    //   errorElement: <NotFound />,
+    },
+    {
+        path:"/recipe/:id",
+        element: <RecipeItem/>
+    }
+  ]);
+
+
+
+const App = () => {
+    return (
+        <>
+            {/* <BrowserRouter>
+                <div className="container">
+                    <div className="card">
+                        <Card items={Data} />
+                    </div>
+                </div>
+            </BrowserRouter> */}
+             <RouterProvider router={router} />
+        </>
+    );
+};
+>>>>>>> 647a68f (adding recipe example)
 
 export default App;
 
