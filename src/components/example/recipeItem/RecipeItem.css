@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-details {
+    margin: auto;
+    width: 1200px;
+    align-content: center;
+    margin-bottom: 50px;
+}
+
+.main-ctn {
+    display: flex;
+    margin-top: 50px;
+}
+.main-ctn img {
+    max-height: 400px;
+    max-width: auto;
+    object-fit: cover;
+}
+
+.details-ctn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-left: 25px;
+}
+
+.item-name {
+    font-size: 26px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.item-category {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.item-rating {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.item-rating span {
+    font-weight: 400;
+}
+
+.item-prep {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.item-prep span {
+    font-weight: 400;
+}
+
+.item-cook {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.item-cook span {
+    font-weight: 400;
+}
+
+.item-diff {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.item-diff span {
+    font-weight: 400;
+}
+
+.item-serv {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.item-serv span {
+    font-weight: 400;
+}
+
+.item-ingr {
+    margin-top: 35px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.item-ingr span {
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 10px;
+}
+.item-ingr span li {
+    padding: 3px 0;
+    margin-top: 5px;
+}
+
+.directions-ctn {
+    margin-top: 20px;
+}
+.directions-ctn h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.item-step {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 100px;
+}
+.item-step span {
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.item-note {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+.item-note span {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
