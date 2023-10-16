@@ -91,5 +91,6 @@ const recipesToDisplay = useMemo(() => {
   )
 }
 
+
 export default App;
 

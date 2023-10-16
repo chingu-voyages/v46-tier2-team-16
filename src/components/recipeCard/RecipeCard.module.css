@@ -6,24 +6,25 @@ body {
     display: flex;
     flex-direction: column;
     place-items: center;
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    width: 340px;
+    height: 493px;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .figure {
     width: 100%;
-    height: 250px;
+    height: 340px;
     margin: 0;
 }
 
 .cardContent {
-    padding: 15px 10px;
+    padding: 15px;
 }
 
 .image {
     display: block;
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 20px 0 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -31,30 +32,34 @@ body {
 
 .name {
     color: #444;
-    font-size: 20px;
-    font-weight: 600;
+    font-family: 'Rubik';
+    font-size: 26px;
+    font-weight: 500;
     text-wrap: wrap;
     justify-content: center;
     text-align: center;
-    line-height: 1;
-    min-height: 40px;
+    min-height: 54px;
     margin: 0;
     padding-bottom: 15px;
 }
 
 .rating {
-    font-weight: 600;
+    font-family: 'Rubik';
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .btn {
-    background-color: yellowgreen;
+    background-color: #414066;
+    color: white;
     padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
+    border-radius: 40px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Rubik';
+    text-decoration: none;
     margin-left: 15px;
     border: 0;
 }

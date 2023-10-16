@@ -1,12 +1,12 @@
-// import styles from './recipeDetails.module.css';
+import styles from './recipeDetails.module.css';
 
-const recepieDetails = ({ recipe }) => {
-    console.log('RECIPE', recipe);
+const recepieDetails = ({ data }) => {
+    console.log('RECIPE', data);
     return (
-        <div key={recipe.id}>
+        <div key={data.id} className={styles.container}>
             <div>
                 <h1>Recepie Details</h1>
-                <p>{recipe.title}</p>
+                <p>{data.name}</p>
             </div>
         </div>
     );
