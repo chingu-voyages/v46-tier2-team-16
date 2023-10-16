@@ -1,7 +1,14 @@
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './RecipeCard.module.css';
 import { FaStar } from 'react-icons/fa';
+import recepieDetails from '../recipeDetails/recipeDetails';
 
 const Card = ({ items }) => {
+    const navigate = useNavigate();
+    const handleClick = (data) => {
+        console.log('Clicked');
+        navigate(recepieDetails(data));
+    };
     return items.map((item) => (
         <div key={item.id} className={styles.container}>
             <figure className={styles.figure}>
@@ -10,14 +17,13 @@ const Card = ({ items }) => {
             <div className={styles.cardContent}>
                 <p className={styles.name}>{item.name}</p>
                 <div className={styles.rating}>
-                    <FaStar color="yellowgreen" /> &nbsp;
+                    <FaStar color="#D4AD2E" /> &nbsp;
                     {item.rating}
-                    <a href={`/recipe/${item.id}`} data={item}>
-                        <button className={styles.btn}>Get Recipe</button>
-                    </a>
+                    <Link className={styles.btn} to={recepieDetails} onClick={(item) => handleClick(item)}>
+                        Get Recipe
+                    </Link>
                 </div>
             </div>
-            {/* {selectedRecipe && <RecipeDetails recipe={selectedRecipe} />} */}
         </div>
     ));
 };

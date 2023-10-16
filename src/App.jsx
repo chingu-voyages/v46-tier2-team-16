@@ -1,21 +1,19 @@
-import { Example } from './example';
 import Card from './components/recipeCard/RecipeCard';
-// import Recipe from './components/recipeDetails/recipeDetails';
 
 import './App.css';
 import Data from './data/recipes';
+import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {
-    console.log('Data:', Data);
     return (
         <>
-            <div className="container">
-                <div className="card">
-                    <Card items={Data} />
+            <BrowserRouter>
+                <div className="container">
+                    <div className="card">
+                        <Card items={Data} />
+                    </div>
                 </div>
-                <div>{/* <Recipe path="/recipe/:id" /> */}</div>
-            </div>
-            <Example />
+            </BrowserRouter>
         </>
     );
 };
