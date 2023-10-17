@@ -1,8 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-
 .section {
     margin-inline: auto;
     width: 1120px;
@@ -40,7 +35,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    max-height: 320px;
+    max-height: 309px;
 }
 
 .name {
