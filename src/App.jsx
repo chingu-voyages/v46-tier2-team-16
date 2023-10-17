@@ -1,8 +1,9 @@
+// import { Example } from "./example";
+import { Recipe } from "./features/recipe";
 import { useEffect, useState } from "react";
 import {Example} from "./example";
 import {Search} from "./search";
 import {recipeList} from './data/Recipes.js'
-
 
 import './App.css'
 
@@ -54,18 +55,21 @@ setFilteredRecipes(filteredByCookingTime)
 
   return (
     <>
-    <Example/>
-    <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
+      {/* <Example /> */}
 
-    {/* Section below will need to be replace with the Card element */}
-    <div>
-              {filteredRecipes.map((recipe, i)=> (
-                <div key={i}>
-                <p>{recipe.name}</p>
-                <p>{recipe.description}</p>
-                </div>
-              ))}
-            </div>
+      <Recipe />
+      <Example/>
+      <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
+
+      {/* Section below will need to be replace with the Card element */}
+      <div>
+        {filteredRecipes.map((recipe, i)=> (
+          <div key={i}>
+          <p>{recipe.name}</p>
+          <p>{recipe.description}</p>
+          </div>
+        ))}
+      </div>
     </>
   )
 }
