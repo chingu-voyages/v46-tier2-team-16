@@ -88,7 +88,6 @@ const recipesToDisplay = useMemo(() => {
         
       </main>
       <Footer />
-
     </>
   )
 }
