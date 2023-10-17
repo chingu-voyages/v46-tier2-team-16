@@ -7,7 +7,6 @@ import { Footer } from "./components/Footer/index"
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
 
-
 import './App.css';
 
 const App = () => {

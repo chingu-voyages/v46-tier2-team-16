@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { data } from '../../../data/recipes';
+import { data } from '../../data/recipes';
 import './RecipeItem.css';
 
 const RecipeItem = () => {
