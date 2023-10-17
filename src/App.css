@@ -1,3 +1,32 @@
+:root {
+    --heading-text-font: "Rubik Regular", sans-serif;
+    --body-text-font: "Poppins Regular", sans-serif;
+    --font-weight-600: 600;
+
+    --color-white: #ffffff;
+    --button-color: #414066;
+
+    --light-theme-primary-text-color: #303041;
+    --light-theme-app-name-color: -webkit-linear-gradient(180deg, #F8CD38 100%, #C49E2A 100%);
+    --light-theme-heading-text-color: #585858;
+    --light-theme-button-bg-color: var(--button-color);
+    --light-theme-button-text-color: #F5EEEE;
+    --light-theme-icon-bg-color: #D4AD2E;
+    --light-theme-icon-color: var(--color-white);
+    --light-theme-icon-border: 3px solid var(--color-white);
+    --light-theme-recipe-card-box-shadow: 0px 4px 4px 0px #00000040;
+
+    --dark-theme-primary-text-color: var(--color-white);
+    --dark-theme-app-name-color: -webkit-linear-gradient(180deg, #FFF29C 0%, #FFDD00 100%, #FFF3A7 100%);
+    --dark-theme-heading-text-color: #ECECEC;
+    --dark-theme-button-bg-color: var(--color-white);
+    --dark-theme-button-text-color: var(--button-color);
+    --dark-theme-icon-bg-color: #FFEB69;
+    --dark-theme-icon-color: #393939;
+    --dark-theme-icon-border: 3px solid var(--dark-theme-icon-color);
+    --dark-theme-recipe-card-box-shadow: 0px 4px 4px 0px #00000040;
+}
+
 *,
 *::after,
 *::before {
@@ -5,6 +34,7 @@
 }
 
 body {
+    font-family: var(--body-text-font);
     line-height: 1.6;
     overflow: auto;
     margin: 0;
@@ -47,6 +77,16 @@ body {
     /* .recipe-card-container {
         grid-template-columns: repeat(3, 1fr);
     } */
+}
+
+@font-face {
+    font-family: "Rubik Regular";
+    src: url("./assets/fonts/Rubik/static/Rubik-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins Regular";
+    src: url("./assets/fonts/Poppins_Complete/Fonts/OTF/Poppins-Regular.otf");
 }
 
 /* html,
