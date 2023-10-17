@@ -1,11 +1,11 @@
-import RecipeList from "../../components/example/recipeList/RecipeList";
+import RecipeList from '../../components/recipeList/RecipeList';
 
 const Home = () => {
-  return (
-  <main>
-<RecipeList/>
-  </main>
-  )
-}
+    return (
+        <main>
+            <RecipeList />
+        </main>
+    );
+};
 
-export default Home
+export default Home;

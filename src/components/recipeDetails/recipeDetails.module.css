@@ -1,9 +1,0 @@
-.container {
-    display: flex;
-    place-items: center;
-    height: 90vh;
-    width: 900px;
-    z-index: 10;
-    position: absolute;
-    background-color: gray;
-}
