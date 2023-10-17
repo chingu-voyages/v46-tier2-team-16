@@ -1,5 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit'
-import recipeReducer from '../features/recipe/recipeSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import recipeReducer from '../features/recipe/recipeSlice';
 
 const store = configureStore({
     reducer: {
