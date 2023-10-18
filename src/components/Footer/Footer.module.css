@@ -1,0 +1,25 @@
+a {
+    color: #393838;
+    position: relative;
+}
+
+a[title]:hover::after {
+    background-color: rgb(216, 172, 172);
+    border-radius: 25px;
+    color: #000;
+    content: attr(title);
+    position: absolute;
+    bottom: 20px;
+    right: -100px;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.container {
+    background-color: rgb(188, 198, 205);
+    color: #fff;
+}
+
+.text {
+    color: #393838;
+}
