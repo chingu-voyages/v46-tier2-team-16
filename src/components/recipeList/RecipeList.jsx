@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { data } from '../../data/Recipes';
-import './RecipeList.css';
+import './RecipeList.module.css';
 import { FaStar } from 'react-icons/fa';
 
 const RecipeList = () => {

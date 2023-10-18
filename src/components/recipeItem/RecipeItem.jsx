@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { data } from '../../data/Recipes';
-import './RecipeItem.css';
+import './RecipeItem.module.css';
 
 const RecipeItem = () => {
     const { id } = useParams();
