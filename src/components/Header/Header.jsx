@@ -1,13 +1,17 @@
 import styles from "./Header.module.css";
+import AppLogo from "../../assets/logo/appLogo.svg";
 
 const Header = () => {
     return (
-        <header className={styles.container}>
-            {/* TODO: Add Zest App logo */}
-            <a href=""><img src="" alt="Zest App Logo" /></a>
-            <p className={styles.text}>
+        <header>
+            {/* TODO: Update app logo link (href), to navigate to home/landing page  */}
+            <a href="">
+                <img src={AppLogo} alt="Zest App Logo" />
+            </a>
+            <h1 className={styles.text}>
                 Zest Recipe App
-            </p>
+            </h1>
+            <hr className={styles.line}></hr>
         </header>
     );
 };

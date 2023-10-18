@@ -1,5 +1,5 @@
 // import { Example } from "./example";
-import { Recipe } from "./features/recipe";
+// import { Recipe } from "./features/recipe";
 import { useEffect, useState } from "react";
 // import { Example } from "./example";
 import { Search } from "./search";
