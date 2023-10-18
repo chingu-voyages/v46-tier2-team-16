@@ -1,8 +1,6 @@
 import { Recipe } from "./features/recipe";
 import { useEffect, useMemo, useState } from "react";
-
 import { Search } from "./search";
-import { recipeList } from './data/Recipes.js'
 import { Header } from "./components/Header/index"
 import { Footer } from "./components/Footer/index"
 import { useSelector, useDispatch } from 'react-redux'
@@ -49,7 +47,6 @@ const App = () => {
     console.log('clicked')
     const filteredByCookingTime = recipeResults.filter(recipe => {
       console.log('recipe.cook_time_minutes', recipe.total_time_tier.tier)
-
       if (recipe.total_time_tier.tier === 'under_15_minutes') {
         return recipe
       }
