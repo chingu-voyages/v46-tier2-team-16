@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Recipe } from './features/recipe';
 import { Search } from './search';
 import { recipeList } from './data/Recipes.js';
 import { Header } from './components/Header/index';
 import { Footer } from './components/Footer/index';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-
 import { Home } from './pages/home';
+
 import { RecipeItem } from './components/recipeItem';
 
 import './App.css';
@@ -79,8 +78,8 @@ const App = () => {
                             <p>{recipe.description}</p>
                         </div>
                     ))}
-                    <RouterProvider router={router} />
                 </div> */}
+                <RouterProvider router={router} />
             </main>
             <Footer />
         </>
