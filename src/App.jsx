@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Search } from './search';
-import { recipeList } from './data/Recipes.js';
+import { dataList } from './data/RecipesData.js';
 import { Header } from './components/Header/index';
 import { Footer } from './components/Footer/index';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
@@ -28,7 +28,7 @@ const App = () => {
     //---------------------------------
 
     useEffect(() => {
-        const retriveRecipes = recipeList.results;
+        const retriveRecipes = dataList.results;
         setFilteredRecipes(retriveRecipes);
     }, []);
     //---------------------------------
@@ -39,7 +39,7 @@ const App = () => {
     console.log('filteredRecipes', filteredRecipes);
 
     const handleSearch = async (newSearch) => {
-        const filtered = recipeList.results.filter((recipe) => {
+        const filtered = dataList.results.filter((recipe) => {
             console.log('recipe.name', recipe.name);
             return recipe.name.toLowerCase().includes(newSearch.toLowerCase());
         });
@@ -52,7 +52,7 @@ const App = () => {
 
     const handleQuickCooking = async () => {
         console.log('clicked');
-        const filteredByCookingTime = recipeList.results.filter((recipe) => {
+        const filteredByCookingTime = dataList.results.filter((recipe) => {
             console.log('recipe.cook_time_minutes', recipe.total_time_tier.tier);
 
             if (recipe.total_time_tier.tier === 'under_15_minutes') {

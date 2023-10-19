@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { data } from '../../data/Recipes';
+import { recipes } from '../../data/RecipesData';
 import './RecipeList.module.css';
 import { FaStar } from 'react-icons/fa';
 
 const RecipeList = () => {
     return (
         <section className="section">
-            {data.map((recipe) => (
+            {recipes.map((recipe) => (
                 <div key={recipe.id} className="container">
                     <figure className="figure">
                         <img src={recipe.image} alt={recipe.name} className="image" />

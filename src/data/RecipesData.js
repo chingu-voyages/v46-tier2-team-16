@@ -1,6 +1,4 @@
-// new dummy data directly collected from the api
-
-export const recipeList = {
+const recipes = {
     count: 3219,
     results: [
         {
@@ -19591,3 +19589,5 @@ export const recipeList = {
         },
     ],
 };
+
+export default recipes;
