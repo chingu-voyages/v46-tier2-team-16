@@ -16,6 +16,7 @@ const App = () => {
 
   const dispatch = useDispatch()
 
+
   useEffect(() => {
       dispatch(fetchRecipes())
   }, [])
@@ -31,6 +32,7 @@ const App = () => {
 
     setNewSearch(newSearch)
     const filteredByName = recipeResults.filter(recipe => {
+  
       console.log('recipe.name', recipe.name)
       return recipe.name.toLowerCase().includes(newSearch.toLowerCase())
     })
