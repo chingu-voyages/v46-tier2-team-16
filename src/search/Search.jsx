@@ -3,8 +3,7 @@ import styles from "./Search.module.css";
 
 
 // input search will gather the input dynamically, without need of validation
-// this componenent will need a callback as props to return `filteredRecipes`.
-// (or return `newSearch` if we want to handle the filtering in the parent component)
+// this componenent will need a callback as props to return `filteredRecipes` & `handleQuickCooking`.
 
 const Search = (props) => {
   const { handleSearch, handleQuickCooking } = props;
