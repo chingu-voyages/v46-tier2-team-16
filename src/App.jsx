@@ -1,13 +1,11 @@
 import { Recipe } from "./features/recipe";
 import { useEffect, useMemo, useState } from "react";
-import { Search } from "./search";
+import { Search } from "./components/Search";
 import { Header } from "./components/Header/index"
 import { Footer } from "./components/Footer/index"
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
-
 import './App.css';
-import { Recipe } from "./features/recipe";
 
 const App = () => {
   const recipe = useSelector(state => state.recipe)

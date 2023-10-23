@@ -1,6 +1,4 @@
-import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchRecipes } from './recipeSlice'
+import { RecipeCard } from '../../components/RecipeCard'
 
 import styles from './Recipe.module.css'
 
@@ -17,9 +15,9 @@ import styles from './Recipe.module.css'
                 ) : null}
             {!recipe.loading && recipesToDisplay ? (
                  <ul>
-                    {recipesToDisplay.map((recipe) => (
-                        <li key={recipe.id} className={styles.text}>
-                            {recipe.name}
+                    {recipesToDisplay.map((oneRecipe) => (
+                        <li key={oneRecipe.id} className={styles.text}>
+                            <RecipeCard oneRecipe={oneRecipe} />
                         </li>
                         ))          
                     }

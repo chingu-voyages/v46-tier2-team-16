@@ -1,3 +1,5 @@
+// NOT BEING USED IN THE CODE AS IT IS RIGHT NOW
+
 export const data = [
     {
         id: 1,
