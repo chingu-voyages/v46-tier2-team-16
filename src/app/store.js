@@ -3,8 +3,8 @@ import recipeReducer from '../features/recipe/recipeSlice';
 
 const store = configureStore({
     reducer: {
-        recipe: recipeReducer
-    }
-})
+        recipe: recipeReducer,
+    },
+});
 
-export default store
+export default store;

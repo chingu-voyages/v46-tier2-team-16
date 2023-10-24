@@ -40,3 +40,13 @@ header img {
         width: 100%;
     }
 }
+
+.container {
+    background-color: rgb(188, 198, 205);
+    color: #fff;
+}
+
+.text {
+    color: #393838;
+
+}

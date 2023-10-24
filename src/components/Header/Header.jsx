@@ -12,7 +12,7 @@ const Header = () => {
                 Zest Recipe App
             </h1>
             <hr className={styles.line}></hr>
-        </header>
+</header>
     );
 };
 
