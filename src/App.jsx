@@ -1,21 +1,19 @@
 import { Recipe } from "./features/recipe";
 import { useEffect, useMemo, useState } from "react";
-import { Search } from "./search";
-import { recipeList } from './data/Recipes.js'
+import { Search } from "./components/Search";
 import { Header } from "./components/Header/index"
 import { Footer } from "./components/Footer/index"
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
-
-import './App.css'
+import './App.css';
 
 const App = () => {
-
   const recipe = useSelector(state => state.recipe)
   const recipeResults = recipe.recipes.results
   console.log("Recipe results: ", recipeResults)
 
   const dispatch = useDispatch()
+
 
   useEffect(() => {
       dispatch(fetchRecipes())
@@ -32,6 +30,7 @@ const App = () => {
 
     setNewSearch(newSearch)
     const filteredByName = recipeResults.filter(recipe => {
+  
       console.log('recipe.name', recipe.name)
       return recipe.name.toLowerCase().includes(newSearch.toLowerCase())
     })
@@ -48,7 +47,6 @@ const App = () => {
     console.log('clicked')
     const filteredByCookingTime = recipeResults.filter(recipe => {
       console.log('recipe.cook_time_minutes', recipe.total_time_tier.tier)
-
       if (recipe.total_time_tier.tier === 'under_15_minutes') {
         return recipe
       }
@@ -91,4 +89,4 @@ const recipesToDisplay = useMemo(() => {
   )
 }
 
-export default App
+export default App;
