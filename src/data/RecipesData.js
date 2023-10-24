@@ -1,4 +1,4 @@
-const recipes = {
+const data = {
     count: 3219,
     results: [
         {
@@ -19590,4 +19590,4 @@ const recipes = {
     ],
 };
 
-export default recipes;
+export default data

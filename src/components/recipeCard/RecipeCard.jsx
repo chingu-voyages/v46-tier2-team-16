@@ -1,32 +1,33 @@
 import { Link } from 'react-router-dom';
-import { recipes } from '../../data/RecipesData';
-import './RecipeList.module.css';
+// import { recipes } from '../../data/RecipesData';
+import './RecipeCard.module.css';
 import { FaStar } from 'react-icons/fa';
 
-const RecipeList = () => {
+const RecipeCard = ({ data }) => {
     return (
         <section className="section">
-            {recipes.map((recipe) => (
-                <div key={recipe.id} className="container">
+            {data.map((recipe) => (
+                <div key={recipe.results.id} className="container">
                     <figure className="figure">
-                        <img src={recipe.image} alt={recipe.name} className="image" />
+                        <img src={recipe.results.thumbnail_url} alt={recipe.results.name} className="image" />
                     </figure>
                     <div className="cardContent">
-                        <h3 className="name">{recipe.name}</h3>
+                        <h3 className="name">{recipe.results.name}</h3>
                         <div className="btn-ctn">
-                            <Link to={`/recipe/${recipe.id}`} className="btn">
+                            <Link to={`/recipe/${recipe.results.id}`} className="btn">
                                 Get Recipe
                             </Link>
                         </div>
                         <div className="rating">
                             <FaStar color="#D4AD2E" /> &nbsp;
-                            {recipe.rating}
+                            {recipe.results.rating}
                         </div>
                     </div>
                 </div>
             ))}
+            {/* <h1>CARD</h1> */}
         </section>
     );
 };
 
-export default RecipeList;
+export default RecipeCard;

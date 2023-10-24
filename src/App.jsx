@@ -1,26 +1,26 @@
 import { useEffect, useState } from 'react';
 import { Search } from './search';
-import { dataList } from './data/RecipesData.js';
+import recipes from './data/RecipesData.js';
 import { Header } from './components/Header/index';
 import { Footer } from './components/Footer/index';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Home } from './pages/home';
-
-import { RecipeItem } from './components/recipeItem';
-
+import RecipeCard from './components/recipeCard/RecipeCard';
 import './App.css';
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Home />,
-        //   errorElement: <NotFound />,
-    },
-    {
-        path: '/recipe/:id',
-        element: <RecipeItem />,
-    },
-]);
+// import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+// import { Home } from './pages/home';
+// import { RecipeItem } from './components/recipeDetails';
+
+// const router = createBrowserRouter([
+//     {
+//         path: '/',
+//         element: <Home />,
+//         //   errorElement: <NotFound />,
+//     },
+//     {
+//         path: '/recipe/:id',
+//         element: <RecipeItem />,
+//     },
+// ]);
 
 const App = () => {
     // (Celine) temporary useEffect to handle development and testing with fake data: Recipes.js
@@ -28,7 +28,7 @@ const App = () => {
     //---------------------------------
 
     useEffect(() => {
-        const retriveRecipes = dataList.results;
+        const retriveRecipes = recipes.results;
         setFilteredRecipes(retriveRecipes);
     }, []);
     //---------------------------------
@@ -39,7 +39,7 @@ const App = () => {
     console.log('filteredRecipes', filteredRecipes);
 
     const handleSearch = async (newSearch) => {
-        const filtered = dataList.results.filter((recipe) => {
+        const filtered = recipes.results.filter((recipe) => {
             console.log('recipe.name', recipe.name);
             return recipe.name.toLowerCase().includes(newSearch.toLowerCase());
         });
@@ -52,7 +52,7 @@ const App = () => {
 
     const handleQuickCooking = async () => {
         console.log('clicked');
-        const filteredByCookingTime = dataList.results.filter((recipe) => {
+        const filteredByCookingTime = recipes.results.filter((recipe) => {
             console.log('recipe.cook_time_minutes', recipe.total_time_tier.tier);
 
             if (recipe.total_time_tier.tier === 'under_15_minutes') {
@@ -63,23 +63,17 @@ const App = () => {
     };
     //---------------------------------
 
+    console.log('RECIPES', recipes);
+
     return (
         <>
             <Header />
             <main>
                 {/* <Example /> */}
                 <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
-
                 {/* Section below will need to be replace with the Card element */}
-                {/* <div>
-                    {filteredRecipes.map((recipe, i) => (
-                        <div key={i}>
-                            <p>{recipe.name}</p>
-                            <p>{recipe.description}</p>
-                        </div>
-                    ))}
-                </div> */}
-                <RouterProvider router={router} />
+                <RecipeCard data={recipes} />
+                {/* <RouterProvider router={router} /> */}
             </main>
             <Footer />
         </>
@@ -87,3 +81,14 @@ const App = () => {
 };
 
 export default App;
+
+{
+    /* <div>
+                {filteredRecipes.map((recipe, i) => (
+                    <div key={i}>
+                        <p>{recipe.name}</p>
+                        <p>{recipe.description}</p>
+                    </div>
+                ))}
+            </div> */
+}

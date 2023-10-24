@@ -1,8 +1,8 @@
 import { Link, useParams } from 'react-router-dom';
 import { recipes } from '../../data/RecipesData';
-import './RecipeItem.module.css';
+import './RecipeDetails.module.css';
 
-const RecipeItem = () => {
+const RecipeDetails = () => {
     const { id } = useParams();
     const selectedRecipe = recipes.find((recipe) => recipe.id === parseInt(id, 10));
 
@@ -68,4 +68,4 @@ const RecipeItem = () => {
     );
 };
 
-export default RecipeItem;
+export default RecipeDetails;

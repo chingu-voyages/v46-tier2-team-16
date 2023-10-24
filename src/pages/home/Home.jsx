@@ -1,9 +1,9 @@
-import RecipeList from '../../components/recipeList/RecipeList';
+import RecipeCard from '../../components/recipeCard/RecipeCard';
 
 const Home = () => {
     return (
         <main>
-            <RecipeList />
+            <RecipeCard />
         </main>
     );
 };
