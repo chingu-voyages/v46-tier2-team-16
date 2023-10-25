@@ -16,9 +16,9 @@ const App = () => {
   const dispatch = useDispatch()
 
 
-  // useEffect(() => {
-  //     dispatch(fetchRecipes())
-  // }, [])
+  useEffect(() => {
+      dispatch(fetchRecipes())
+  }, [])
 
   
   // (Celine) Filter recipes depending of input user
