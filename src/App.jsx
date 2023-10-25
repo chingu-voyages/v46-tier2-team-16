@@ -74,8 +74,6 @@ const recipesToDisplay = useMemo(() => {
   }, [recipeResults, filteredByName, filteredByCookingTime])
   //---------------------------------
 
-const param = 8138;
-
   return (
     <>
       <Header />
