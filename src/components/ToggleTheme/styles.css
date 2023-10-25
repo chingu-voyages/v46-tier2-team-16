@@ -1,0 +1,157 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*=========================================LAYOUT==========================================================*/
+body {
+  font-family: Satoshi-Variable, Arial, sans-serif;
+  margin: 0;
+  padding: 2em;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  }
+  
+.flex-item {
+	flex-basis: calc(47% - 10px);
+	margin-bottom: 20px;
+	width: 250px;
+	padding-top: 15px;
+  }
+
+.hidden {
+	display: none;
+}
+
+/* ----- VARIABLES ----- */
+
+:root {
+	--clr-background: #efefef;
+	--clr-text: #333333;
+	--clr-toggle: #e9c46a;
+}
+
+html[data-theme='dark'] {
+	--clr-background: #333333;
+	--clr-text: #efefef;
+	--clr-toggle: #345b6f;
+}
+
+/* ----- TOGGLE BUTTON | LAYOUT ----- */
+
+.theme-switch {
+	--diameter: 2.5rem;
+	--spacing: 0.3rem;
+	inline-size: calc(var(--diameter) * 2 + var(--spacing) * 2); /* width */
+	block-size: calc(var(--diameter) + var(--spacing) * 2); /* height */
+	border: none;
+	cursor: pointer;
+	background: var(--clr-toggle);
+	color: var(--clr-text);
+	position: relative;
+	border-radius: 100vh;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-around;
+	transition:
+		background-color 0.4s ease-in-out,
+		color 0.4s ease-in-out;
+}
+
+.theme-switch[aria-pressed='true'] {
+	--is-active: 1;
+}
+
+.theme-switch::before {
+	--offset: calc(100% - var(--diameter) - var(--spacing) * 2);
+	content: '';
+	position: absolute;
+	inset-inline-start: calc(var(--spacing) + var(--offset) * var(--is-active, 0)); /* left */
+	inset-block-start: var(--spacing); /* top */
+	border-radius: 100vh;
+	inline-size: var(--diameter); /* width */
+	block-size: var(--diameter); /* height */
+	background: #ffffff;
+	transition: inset-inline-start 0.4s ease-in-out; /* left */
+}
+
+/* ----- TOGGLE BUTTON | ACCESSIBILITY ----- */
+
+.no-js .theme-switch {
+	display: none;
+}
+
+.theme-switch:focus {
+	outline: 2px solid currentColor;
+}
+
+.theme-switch:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+@media (prefers-reduced-motion) {
+	.theme-switch {
+		transition-duration: 0.01s;
+	}
+
+	.theme-switch::before {
+		transition-duration: 0.01s;
+	}
+}
+
+/* ----- DEMO ----- */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--clr-text);
+	background: var(--clr-background);
+}
+
