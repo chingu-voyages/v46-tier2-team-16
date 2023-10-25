@@ -1,25 +1,177 @@
-a {
-    color: #393838;
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        'logoSection'
+        'linksSection'
+        'copyrightSection';
+    align-items: start;
+    justify-content: start;
+    padding: 1.5rem;
     position: relative;
 }
 
-a[title]:hover::after {
-    background-color: rgb(216, 172, 172);
-    border-radius: 25px;
-    color: #000;
-    content: attr(title);
+footer section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+a {
+    color: var(--light-theme-primary-text-color);
+    text-decoration: none;
+}
+
+.logo-section {
+    grid-area: logoSection;
+    margin-left: -10px;
+    padding-bottom: 1rem;
+}
+
+.links-section {
+    grid-area: linksSection;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'linksSecondSection'
+        'horizontalDividerSection'
+        'linksFirstSection';
+}
+
+.links-first-section {
+    grid-area: linksFirstSection;
+}
+
+.links-second-section {
+    grid-area: linksSecondSection;
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
+    grid-template-areas:
+        'linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList';
+}
+
+.links-second-section--first-list {
+    grid-area: linksSecondSectionFirstList;
+}
+
+.links-second-section--second-list {
+    grid-area: linksSecondSectionSecondList;
+    padding-left: 2rem;
+}
+
+.divider {
+    border-bottom: var(--light-theme-hr-border-bottom);
     position: absolute;
-    bottom: 20px;
-    right: -100px;
-    padding: 0.5rem;
-    text-align: center;
+    top: 0.5rem;
+    left: 0rem;
+    width: 100%;
 }
 
-.container {
-    background-color: rgb(188, 198, 205);
-    color: #fff;
+.horizontal-divider-section {
+    grid-area: horizontalDividerSection;
 }
 
-.text {
-    color: #393838;
+.horizontal-divider {
+    width: 100%;
+}
+
+.vertical-divider {
+    border-right: var(--light-theme-hr-border-bottom);
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    height: 25%;
+}
+
+.vertical-divider__first--show {
+    grid-area: verticalDividerFirstSection;
+}
+
+.vertical-divider__second--hide,
+.links-second-section--third-list {
+    display: none;
+}
+
+.copyright-section {
+    grid-area: copyrightSection;
+    align-items: center;
+}
+
+.copyright-section a {
+    display: inline-flex;
+}
+
+/* media query for desktop */
+@media only screen and (min-device-width: 768px) and (max-device-width: 6024px) {
+    footer {
+        padding: 3rem 8rem;
+    }
+
+    a {
+        color: #393838;
+    }
+
+    a[title]:hover::after {
+        background-color: rgb(216, 172, 172);
+        border-radius: 25px;
+        color: #000;
+        content: attr(title);
+        position: absolute;
+        top: 1%;
+        left: 12%;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .links-section {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            'linksFirstSection linksSecondSection'
+            'horizontalDividerSection horizontalDividerSection';
+        padding: 1rem 0;
+    }
+
+    .links-second-section {
+        grid-template-columns: 1fr 10px 1fr 10px 1fr;
+        grid-template-areas:
+            'linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList verticalDividerSecondSection linksSecondSectionThirdList';
+    }
+
+    .links-second-section--second-list {
+        padding-left: 0;
+    }
+
+    .links-second-section--third-list {
+        grid-area: linksSecondSectionThirdList;
+        display: flex;
+    }
+
+    .vertical-divider {
+        height: 28%;
+        top: 35%;
+        left: 60%;
+    }
+
+    .vertical-divider__second--hide {
+        grid-area: verticalDividerSecondSection;
+        display: grid;
+    }
+
+    .vertical-divider__second {
+        border-right: var(--light-theme-hr-border-bottom);
+        height: 28%;
+        position: absolute;
+        top: 35%;
+        right: 25%;
+    }
+
+    .copyright-section {
+        align-items: start;
+        position: relative;
+    }
+
+    .copyright-section p {
+        margin: 0;
+    }
 }

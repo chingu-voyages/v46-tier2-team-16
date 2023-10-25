@@ -7,7 +7,7 @@
     --button-color: #414066;
 
     --light-theme-primary-text-color: #303041;
-    --light-theme-app-name-color: -webkit-linear-gradient(180deg, #F8CD38 100%, #C49E2A 100%);
+    --light-theme-app-name-color: -webkit-linear-gradient(180deg, #F8CD38 0%, #C49E2A 100%);
     --light-theme-heading-text-color: #585858;
     --light-theme-button-bg-color: var(--button-color);
     --light-theme-button-text-color: #F5EEEE;
@@ -15,6 +15,7 @@
     --light-theme-icon-color: var(--color-white);
     --light-theme-icon-border: 3px solid var(--color-white);
     --light-theme-recipe-card-box-shadow: 0px 4px 4px 0px #00000040;
+    --light-theme-hr-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
     --dark-theme-primary-text-color: var(--color-white);
     --dark-theme-app-name-color: -webkit-linear-gradient(180deg, #FFF29C 0%, #FFDD00 100%, #FFF3A7 100%);
@@ -25,6 +26,7 @@
     --dark-theme-icon-color: #393939;
     --dark-theme-icon-border: 3px solid var(--dark-theme-icon-color);
     --dark-theme-recipe-card-box-shadow: 0px 4px 4px 0px #00000040;
+    --dark-theme-hr-border-bottom: 1px solid rgba(255, 255, 255, 1);
 }
 /* .container {
     margin-inline: auto;
