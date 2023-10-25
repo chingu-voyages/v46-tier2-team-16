@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
 import './App.css';
 
+
 const App = () => {
   const recipe = useSelector(state => state.recipe)
   const recipeResults = recipe.recipes.results
@@ -15,9 +16,9 @@ const App = () => {
   const dispatch = useDispatch()
 
 
-  useEffect(() => {
-      dispatch(fetchRecipes())
-  }, [])
+  // useEffect(() => {
+  //     dispatch(fetchRecipes())
+  // }, [])
 
   
   // (Celine) Filter recipes depending of input user
@@ -31,7 +32,8 @@ const App = () => {
     setNewSearch(newSearch)
     const filteredByName = recipeResults.filter(recipe => {
   
-      console.log('recipe.name', recipe.name)
+      console.log('recipe.name', recipe.name) 
+
       return recipe.name.toLowerCase().includes(newSearch.toLowerCase())
     })
     setfilteredByName(filteredByName)
@@ -60,8 +62,6 @@ const App = () => {
   //---------------------------------
 const recipesToDisplay = useMemo(() => {
 
-  console.log('filteredByName', filteredByName)
-
     if (newSearch === '' && filteredByName.length === 0 && filteredByCookingTime.length === 0) {
       return recipeResults
     } else if (filteredByName.length != 0) {
@@ -74,13 +74,13 @@ const recipesToDisplay = useMemo(() => {
   }, [recipeResults, filteredByName, filteredByCookingTime])
   //---------------------------------
 
+const param = 8138;
 
   return (
     <>
       <Header />
       <main>
         <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
-
         <Recipe recipe={recipe}  recipesToDisplay={recipesToDisplay} />
         
       </main>
