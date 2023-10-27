@@ -16,9 +16,9 @@ const App = () => {
   const dispatch = useDispatch()
 
 
-  // useEffect(() => {
-  //     dispatch(fetchRecipes())
-  // }, [])
+  useEffect(() => {
+      dispatch(fetchRecipes())
+  }, [])
 
   
   // (Celine) Filter recipes depending of input user
@@ -80,9 +80,8 @@ const recipesToDisplay = useMemo(() => {
     <>
       <Header />
       <main>
-        {/* <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} /> */}
-<ToggleTheme />
-        {/* <Recipe recipe={recipe}  recipesToDisplay={recipesToDisplay} /> */}
+        <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
+        <Recipe recipe={recipe}  recipesToDisplay={recipesToDisplay} />
         
       </main>
       <Footer />
