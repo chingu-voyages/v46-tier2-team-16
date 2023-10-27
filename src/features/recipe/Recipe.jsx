@@ -1,4 +1,5 @@
 import { RecipeCard } from '../../components/RecipeCard'
+import { Loader } from '../../components/Loader'
 
 import styles from './Recipe.module.css'
 
@@ -9,7 +10,7 @@ import styles from './Recipe.module.css'
         <section className={styles.container}>
             <h2 className={styles.text}>List of Recipes</h2>
 
-            {recipe.loading && <p className={styles.text}>Loading...</p>}
+            {recipe.loading && <Loader />}
             {!recipe.loading && recipe.error ? (
                 <p className={styles.text}>Error: {recipe.error}</p>
                 ) : null}

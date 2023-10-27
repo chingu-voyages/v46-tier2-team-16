@@ -5,6 +5,7 @@ import { Header } from "./components/Header/index"
 import { Footer } from "./components/Footer/index"
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchRecipes } from './features/recipe/recipeSlice'
+import { ToggleTheme} from './components/ToggleTheme'
 import './App.css';
 
 
