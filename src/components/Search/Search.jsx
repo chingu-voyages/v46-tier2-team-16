@@ -26,7 +26,7 @@ const Search = (props) => {
             <input
             id="input"
             type="text"
-            placeholder="Search a recipe..."
+            placeholder="Discover recipes"
             value={newSearch}
             onChange={(e) => handleInput(e)}
             />
