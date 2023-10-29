@@ -4,16 +4,8 @@ import styles from './Recipe.module.css';
 
 const Recipe = (props) => {
     const { recipe, recipesToDisplay } = props;
-    console.log('recipesToDisplay', recipesToDisplay);
+    // console.log('recipesToDisplay', recipesToDisplay);
 
-    // <div className={styles.container}>
-    //     {recipesToDisplay.map((oneRecipe) => (
-    //         <div key={oneRecipe.id} className={`${styles.text} card`}>
-    //             <p>XYZ</p>
-    //             <RecipeCard oneRecipe={oneRecipe} />
-    //         </div>
-    //     ))}
-    // </div>;
     return (
         <section className={styles.section}>
             <h2 className={styles.text}>List of Recipes</h2>

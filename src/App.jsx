@@ -23,11 +23,11 @@ const App = () => {
     const [newSearch, setNewSearch] = useState('');
 
     const handleSearch = async (newSearch) => {
-        console.log('recipeResults', recipeResults);
+        // console.log('recipeResults', recipeResults);
 
         setNewSearch(newSearch);
         const filteredByName = recipeResults.filter((recipe) => {
-            console.log('recipe.name', recipe.name);
+            // console.log('recipe.name', recipe.name);
             return recipe.name.toLowerCase().includes(newSearch.toLowerCase());
         });
         setfilteredByName(filteredByName);
@@ -39,9 +39,9 @@ const App = () => {
     const [filteredByCookingTime, setFilteredByCookingTime] = useState([]);
 
     const handleQuickCooking = async () => {
-        console.log('clicked');
+        // console.log('clicked');
         const filteredByCookingTime = recipeResults.filter((recipe) => {
-            console.log('recipe.cook_time_minutes', recipe.total_time_tier.tier);
+            // console.log('recipe.cook_time_minutes', recipe.total_time_tier.tier);
             if (recipe.total_time_tier.tier === 'under_15_minutes') {
                 return recipe;
             }
@@ -53,7 +53,7 @@ const App = () => {
     // Keep listening to changes in state filteredByName & filteredByCookingTime and adjust displayed cards accordingly
     //---------------------------------
     const recipesToDisplay = useMemo(() => {
-        console.log('filteredByName', filteredByName);
+        // console.log('filteredByName', filteredByName);
 
         if (newSearch === '' && filteredByName.length === 0 && filteredByCookingTime.length === 0) {
             return recipeResults;

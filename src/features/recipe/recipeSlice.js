@@ -25,8 +25,8 @@ const options = {
     },
 };
 
-export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', () => {
-    return axios.request(options).then((response) => response.data);
+export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', async () => {
+    return await axios.request(options).then((response) => response.data);
 });
 
 const recipeSlice = createSlice({

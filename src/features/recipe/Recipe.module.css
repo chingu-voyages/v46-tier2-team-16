@@ -1,34 +1,23 @@
 .section {
     margin-inline: auto;
-    width: 1120px;
+    width: 1060px;
     align-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px; */
     background-color: white !important;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-
-    /* display: flex;
-    flex-direction: column;
-    place-items: center;
-    width: 340px;
-    height: 493px;
-    border-radius: 20px;
-    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
-    background-color: white; */
-}
-
-.card {
-    background-color: red;
+    column-gap: 10px;
+    row-gap: 20px;
 }
 
 .text {
+    font-family: 'Rubik';
+    font-size: 26px;
+    font-weight: 600;
     color: #303041;
+    text-align: center;
 }
