@@ -5,18 +5,20 @@ import styles from './RecipeItem.module.css';
 // import { RelatedRecipes } from "./components/RelatedRecipes/index"
 
 const RecipeItem = () => {
-    const { id } = useParams();
-    const selectedRecipe = data.find((recipe) => recipe.id === parseInt(id, 10));
+    // const { id } = useParams();
+    // const selectedRecipe = data.find((recipe) => recipe.id === parseInt(id, 10));
 
-    console.log(selectedRecipe);
+    // console.log(selectedRecipe);
 
-    if (!selectedRecipe) {
-        return <div>Recipe not found.</div>;
-    }
+    // if (!selectedRecipe) {
+    //     return <div>Recipe not found.</div>;
+    // }
 
     return (
         <section className="container-details">
-            <div key={selectedRecipe.id}>
+            <h4>TEST</h4>
+
+            {/* <div key={selectedRecipe.id}>
                 <div className="main-ctn">
                     <img src={selectedRecipe.image} alt={selectedRecipe.name} />
                     <div className="details-ctn">
@@ -62,7 +64,7 @@ const RecipeItem = () => {
                 <p className="item-note">
                     Note: <span>{selectedRecipe.notes}</span>
                 </p>
-            </div>
+            </div> */}
 
             {/* To uncomment when ready the RecipeItem is ready to use it 
             <RelatedRecipes id={id} /> */}
