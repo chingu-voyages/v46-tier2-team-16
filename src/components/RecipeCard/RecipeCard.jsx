@@ -28,10 +28,6 @@ const RecipeCard = (props) => {
                             Get Recipe
                         </button>
                     </div>
-                    {/* <div className={styles.rating}>
-                        <FaStar color="#D4AD2E" />
-                        {oneRecipe.rating}
-                    </div> */}
                 </div>
             </div>
         </section>

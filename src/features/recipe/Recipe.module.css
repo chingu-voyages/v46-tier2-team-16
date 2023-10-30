@@ -16,8 +16,10 @@
 
 .text {
     font-family: 'Rubik';
-    font-size: 26px;
+    font-size: 32px;
     font-weight: 600;
     color: #303041;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
