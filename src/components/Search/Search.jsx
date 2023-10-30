@@ -21,6 +21,7 @@ const Search = (props) => {
     return (
         <div className={styles.container}>
             <input id="input" type="text" placeholder="Search a recipe..." value={newSearch} onChange={(e) => handleInput(e)} />
+            <input id="input" type="text" placeholder="Discover recipes" value={newSearch} onChange={(e) => handleInput(e)} />
             <button onClick={handleQuickCooking}>Quick cooking</button>
         </div>
     );

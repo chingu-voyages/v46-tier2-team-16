@@ -1,0 +1,39 @@
+section {
+    font-family: var(--heading-text-font);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 30px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+img {
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 20px;
+}
+
+p {
+    font-size: 25px;
+    font-weight: 500;
+}

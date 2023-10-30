@@ -5,7 +5,27 @@ import { Header } from './components/Header/index';
 import { Footer } from './components/Footer/index';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRecipes } from './features/recipe/recipeSlice';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { HomeLayout } from './layout';
+import { NotFound } from './pages/NotFound';
+
 import './App.css';
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <HomeLayout />,
+        errorElement: <NotFound />,
+        children: [
+            {
+                index: true,
+                element: <Home />,
+            },
+        ],
+    },
+]);
 
 const App = () => {
     const recipe = useSelector((state) => state.recipe);
@@ -68,7 +88,7 @@ const App = () => {
     //---------------------------------
 
     return (
-        <>
+        <RouterProvider router={router}>
             <Header />
             <main>
                 <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
@@ -76,8 +96,12 @@ const App = () => {
                 <Recipe recipe={recipe} recipesToDisplay={recipesToDisplay} />
             </main>
             <Footer />
-        </>
+        </RouterProvider>
     );
+
+    //   return (
+    //      <Outlet classname='outlet'/>
+    //   );
 };
 
 export default App;

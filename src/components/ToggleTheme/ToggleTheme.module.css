@@ -1,0 +1,157 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/* test toggle (celine) */
+
+.containerToggle {
+	display:flex;
+	justify-content: center;
+	height: 30px;
+    width: 60px;
+	position:relative;
+	border-radius: 100px;
+	background-color: #8f8f61;
+  }
+  
+  .toggleCheckbox{
+	display: none;
+
+	}
+	
+	.toggleLabel {
+	  cursor: pointer;
+	  text-indent: -9999px;
+	  width: 60px;
+	  height: 30px;
+	  background: transparent;
+	  display: block;
+	  border-radius: 100px;
+	  position: relative;
+	  top:0px;
+	  left: 0px;
+	  cursor: pointer;
+	  z-index: 1;
+	}
+	
+	
+	.toggleLabel:after {
+	  content: '';
+	  position: absolute;
+	  top: 3px;
+	  left: 4px;
+	  width: 24px;
+	  height: 24px;
+	  background: #fff;
+	  border-radius: 90px;
+	  transition: 0.3s;
+	  z-index: 1;
+	}
+	
+
+	.toggleCheckbox:checked + .toggleLabel:after {
+	  left: calc(100% - 4px);
+	  transform: translateX(-100%);
+	}
+
+ 
+.divBackground {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: transparent;
+	width:100%;
+	height:100%;
+}  
+
+  
+
+/* Below is the code from Rev. Did not remove in case we use it later */
+
+
+/* ----- TOGGLE BUTTON | LAYOUT ----- */
+
+.theme-switch {
+	--diameter: 2.5rem;
+	--spacing: 0.3rem;
+	inline-size: calc(var(--diameter) * 2 + var(--spacing) * 2); /* width */
+	block-size: calc(var(--diameter) + var(--spacing) * 2); /* height */
+	border: none;
+	cursor: pointer;
+	background: var(--clr-toggle);
+	color: var(--clr-text);
+	position: relative;
+	border-radius: 100vh;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-around;
+	transition:
+		background-color 0.4s ease-in-out,
+		color 0.4s ease-in-out;
+}
+
+.theme-switch[aria-pressed='true'] {
+	--is-active: 1;
+}
+
+.theme-switch::before {
+	--offset: calc(100% - var(--diameter) - var(--spacing) * 2);
+	content: '';
+	position: absolute;
+	inset-inline-start: calc(var(--spacing) + var(--offset) * var(--is-active, 0)); /* left */
+	inset-block-start: var(--spacing); /* top */
+	border-radius: 100vh;
+	inline-size: var(--diameter); /* width */
+	block-size: var(--diameter); /* height */
+	background: #ffffff;
+	transition: inset-inline-start 0.4s ease-in-out; /* left */
+}
+
+/* ----- TOGGLE BUTTON | ACCESSIBILITY ----- */
+
+.no-js .theme-switch {
+	display: none;
+}
+
+.theme-switch:focus {
+	outline: 2px solid currentColor;
+}
+
+.theme-switch:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+@media (prefers-reduced-motion) {
+	.theme-switch {
+		transition-duration: 0.01s;
+	}
+
+	.theme-switch::before {
+		transition-duration: 0.01s;
+	}
+}
+
+
+
+@keyframes moveCircle {
+	0% {
+	  transform: translateX(0);
+	}
+	50% {
+	  transform: translateX(10px); /* Adjust the distance and timing as desired */
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  
+  /* Apply the animation to the circle */
+  .theme-switch.dark-theme .circle {
+	animation: moveCircle 2s infinite; /* Adjust the duration and iteration as desired */
+  }

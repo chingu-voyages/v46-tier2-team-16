@@ -1,6 +1,9 @@
 import { Link, useParams } from 'react-router-dom';
 import styles from './RecipeItem.module.css';
 
+// To uncomment when ready the RecipeItem is ready to use it 
+// import { RelatedRecipes } from "./components/RelatedRecipes/index"
+
 const RecipeItem = () => {
     const { id } = useParams();
     const selectedRecipe = data.find((recipe) => recipe.id === parseInt(id, 10));
@@ -60,6 +63,10 @@ const RecipeItem = () => {
                     Note: <span>{selectedRecipe.notes}</span>
                 </p>
             </div>
+
+            {/* To uncomment when ready the RecipeItem is ready to use it 
+            <RelatedRecipes id={id} /> */}
+
             <Link to="/" className="btn">
                 Go Back
             </Link>

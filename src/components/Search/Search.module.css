@@ -5,5 +5,11 @@
   }
   
  p {
-  color:black
+  color: #393939
+ }
+
+ input {
+  border-radius: 100px;
+  border: solid 1px black;
+  padding: 5px 10px 5px 10px;
  }
