@@ -1,75 +1,77 @@
 import { Link, useParams } from 'react-router-dom';
 import styles from './RecipeItem.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRecipeById } from '../../features/recipe/recipeSliceById';
+import { useEffect } from 'react';
 
-// To uncomment when ready the RecipeItem is ready to use it 
+// To uncomment when ready the RecipeItem is ready to use it
 // import { RelatedRecipes } from "./components/RelatedRecipes/index"
 
 const RecipeItem = () => {
-    // const { id } = useParams();
-    // const selectedRecipe = data.find((recipe) => recipe.id === parseInt(id, 10));
-
-    // console.log(selectedRecipe);
-
-    // if (!selectedRecipe) {
-    //     return <div>Recipe not found.</div>;
-    // }
+    const params = useParams();
+    const recipeId = params.id;
+    const recipe = useSelector((state) => state.recipe);
+    const dispatch = useDispatch();
+    const selectedRecipe = recipe.recipes;
+    const recipeData = selectedRecipe.results;
+    console.log('SELECTED', selectedRecipe);
+    console.log('DATA', recipeData);
+    useEffect(() => {
+        dispatch(fetchRecipeById(recipeId));
+    }, [dispatch, recipeId]);
 
     return (
-        <section className="container-details">
-            <h4>TEST</h4>
+        <section className={styles.containerDetails}>
+            {/* <h4>TEST RECIPE #{recipeId}</h4> */}
 
-            {/* <div key={selectedRecipe.id}>
-                <div className="main-ctn">
-                    <img src={selectedRecipe.image} alt={selectedRecipe.name} />
-                    <div className="details-ctn">
+            <div key={recipeData.id}>
+                <div className={styles.mainCtn}>
+                    <img src={recipeData.thumbnail_url} alt={recipeData.name} />
+                    <div className={styles.detailsCtn}>
                         <div>
-                            <h3 className="item-name">{selectedRecipe.name}</h3>
-                            <h4 className="item-category">Category: {selectedRecipe.category}</h4>
-                            <p className="item-rating">
+                            <h3 className={styles.itemName}>{recipeData.name}</h3>
+                            <h4 className={styles.itemCategory}>Category: {recipeData.total_time_tier.display_tier}</h4>
+                            {/* <p className="item-rating">
                                 Rating: <span>{selectedRecipe.rating}</span>
+                            </p> */}
+                            <p className={styles.itemPrep}>
+                                Preparation Time: <span>{recipeData.prep_time_minutes} minutes</span>
                             </p>
-                            <p className="item-prep">
-                                Preparation Time: <span>{selectedRecipe.prepTime} minutes</span>
+                            <p className={styles.itemCook}>
+                                Cooking Time: <span>{recipeData.cook_time_minutes} minutes</span>
                             </p>
-                            <p className="item-cook">
-                                Cooking Time: <span>{selectedRecipe.cookTime} minutes</span>
-                            </p>
-                            <p className="item-diff">
+                            {/* <p className="item-diff">
                                 Difficulty: <span>{selectedRecipe.difficulty}</span>
-                            </p>
-                            <p className="item-serv">
-                                Servings: <span>{selectedRecipe.serving}</span>
+                            </p> */}
+                            <p className={styles.itemServ}>
+                                Servings: <span>{recipeData.num_servings}</span>
                             </p>
                         </div>
                         <div>
-                            <p className="item-ingr">
+                            <p className={styles.itemIngr}>
                                 Ingredients:
-                                <span>
-                                    {selectedRecipe.ingredients.map((item, idx) => (
-                                        <li key={idx}>{item}</li>
-                                    ))}
-                                </span>
+                                {/* <span>{selectedRecipe?.sections?.map((item, idx) => console.log(item))}</span> */}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="directions-ctn">
+                <div className={styles.directionsCtn}>
                     <h4>Directions:</h4>
-                    {selectedRecipe.directions.map((step, idx) => (
+                    {/* {selectedRecipe.directions.map((step, idx) => (
                         <ol key={idx} className="item-step">
                             Step {idx + 1}.&nbsp;<span>{step}</span>
                         </ol>
-                    ))}
+                    ))} */}
                 </div>
-                <p className="item-note">
-                    Note: <span>{selectedRecipe.notes}</span>
+                <p className={styles.itemNote}>
+                    Note: <span>{recipeData.notes}</span>
                 </p>
-            </div> */}
+            </div>
 
             {/* To uncomment when ready the RecipeItem is ready to use it 
             <RelatedRecipes id={id} /> */}
 
-            <Link to="/" className="btn">
+            <Link to="/" className={styles.btn}>
                 Go Back
             </Link>
         </section>

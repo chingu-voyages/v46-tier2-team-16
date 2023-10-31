@@ -5,7 +5,6 @@ import styles from './Recipe.module.css';
 
 const Recipe = (props) => {
     const { recipe, recipesToDisplay } = props;
-    // console.log('recipesToDisplay', recipesToDisplay);
 
     return (
         <section className={styles.section}>

@@ -1,48 +1,51 @@
-.container-details {
+.containerDetails {
     margin: auto;
+    padding-inline: 50px;
     width: 1200px;
     align-content: center;
     margin-bottom: 50px;
 }
 
-.main-ctn {
+.mainCtn {
     display: flex;
     margin-top: 50px;
 }
-.main-ctn img {
+.mainCtn img {
+    width: 320px;
+    height: auto;
     max-height: 400px;
     max-width: auto;
     object-fit: cover;
 }
 
-.details-ctn {
+.detailsCtn {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
     margin-left: 25px;
 }
 
-.item-name {
+.itemName {
     font-size: 26px;
     margin-top: 25px;
     margin-bottom: 5px;
 }
 
-.item-category {
+.itemCategory {
     font-size: 22px;
     margin-bottom: 15px;
 }
 
-.item-rating {
+.itemRating {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 25px;
 }
-.item-rating span {
+.itemRating span {
     font-weight: 400;
 }
 
-.item-prep {
+.itemPrep {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -51,58 +54,58 @@
     font-weight: 400;
 }
 
-.item-cook {
+.itemCook {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.item-cook span {
+.itemCook span {
     font-weight: 400;
 }
 
-.item-diff {
+.itemDiff {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.item-diff span {
+.itemDiff span {
     font-weight: 400;
 }
 
-.item-serv {
+.itemServ {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
 }
-.item-serv span {
+.itemServ span {
     font-weight: 400;
 }
 
-.item-ingr {
+.itemIngr {
     margin-top: 35px;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
 }
-.item-ingr span {
+.itemIngr span {
     font-size: 18px;
     font-weight: 400;
     padding-top: 10px;
 }
-.item-ingr span li {
+.itemIngr span li {
     padding: 3px 0;
     margin-top: 5px;
 }
 
-.directions-ctn {
+.directionsCtn {
     margin-top: 20px;
 }
-.directions-ctn h4 {
+.directionsCtn h4 {
     font-size: 22px;
     margin-bottom: 10px;
 }
 
-.item-step {
+.itemStep {
     font-size: 18px;
     font-weight: 600;
     display: flex;
@@ -110,19 +113,32 @@
     margin-left: 30px;
     margin-right: 100px;
 }
-.item-step span {
+.itemStep span {
     font-weight: 400;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.item-note {
+.itemNote {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 50px;
     margin-left: 30px;
 }
-.item-note span {
+.itemNote span {
     font-weight: 400;
     margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #414066;
+    color: white;
+    width: 200px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Rubik';
+    text-decoration: none;
+    border: 0;
 }
