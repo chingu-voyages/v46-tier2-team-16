@@ -12,45 +12,41 @@ const RecipeItem = () => {
     const recipeId = params.id;
     const recipe = useSelector((state) => state.recipe);
     const dispatch = useDispatch();
-    const selectedRecipe = recipe.recipes;
-    const recipeData = selectedRecipe.results;
-    console.log('SELECTED', selectedRecipe);
-    console.log('DATA', recipeData);
     useEffect(() => {
         dispatch(fetchRecipeById(recipeId));
     }, [dispatch, recipeId]);
+    const selectedRecipe = recipe.recipes;
 
+    console.log('SELECTED', selectedRecipe);
     return (
         <section className={styles.containerDetails}>
-            {/* <h4>TEST RECIPE #{recipeId}</h4> */}
+            <h4>TEST RECIPE #{recipeId}</h4>
 
-            <div key={recipeData.id}>
+            <div key={selectedRecipe.id}>
                 <div className={styles.mainCtn}>
-                    <img src={recipeData.thumbnail_url} alt={recipeData.name} />
+                    <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} />
                     <div className={styles.detailsCtn}>
                         <div>
-                            <h3 className={styles.itemName}>{recipeData.name}</h3>
-                            <h4 className={styles.itemCategory}>Category: {recipeData.total_time_tier.display_tier}</h4>
-                            {/* <p className="item-rating">
-                                Rating: <span>{selectedRecipe.rating}</span>
-                            </p> */}
+                            <h3 className={styles.itemName}>{selectedRecipe.name}</h3>
+                            {/* <h4 className={styles.itemCategory}>Category: {selectedRecipe.total_time_tier.display_tier}</h4> */}
                             <p className={styles.itemPrep}>
-                                Preparation Time: <span>{recipeData.prep_time_minutes} minutes</span>
+                                Preparation Time: <span>{selectedRecipe.prep_time_minutes} minutes</span>
                             </p>
                             <p className={styles.itemCook}>
-                                Cooking Time: <span>{recipeData.cook_time_minutes} minutes</span>
+                                Cooking Time: <span>{selectedRecipe.cook_time_minutes} minutes</span>
                             </p>
-                            {/* <p className="item-diff">
-                                Difficulty: <span>{selectedRecipe.difficulty}</span>
-                            </p> */}
                             <p className={styles.itemServ}>
-                                Servings: <span>{recipeData.num_servings}</span>
+                                Servings: <span>{selectedRecipe.num_servings}</span>
                             </p>
                         </div>
                         <div>
                             <p className={styles.itemIngr}>
                                 Ingredients:
-                                {/* <span>{selectedRecipe?.sections?.map((item, idx) => console.log(item))}</span> */}
+                                <span>
+                                    {/* {selectedRecipe?.sections.map((item, idx) => {
+                                        item.components.map((component) => <li key={idx}>{component.raw_text}</li>);
+                                    })} */}
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -63,9 +59,9 @@ const RecipeItem = () => {
                         </ol>
                     ))} */}
                 </div>
-                <p className={styles.itemNote}>
-                    Note: <span>{recipeData.notes}</span>
-                </p>
+                {/* <p className={styles.itemNote}>
+                    Note: <span>{selectedRecipe.notes}</span>
+                </p> */}
             </div>
 
             {/* To uncomment when ready the RecipeItem is ready to use it 
