@@ -27,16 +27,15 @@ const options = {
 
 
 export const fetchRecipeById = createAsyncThunk('recipe/fetchRecipes', async (id) => {
-  if (id > 0) {
-    console.log('ID', id);
-    return await axios.request(options).then((response) => {
-      if (response && response.data && response.data.results && response.data.results.length > 0) {
-        const product = response && response.data && response.data.results && response.data.results.find((item) => item.id === +id)
-        return product
-      }
-      return {}
-    });
-  }
+  console.log('ID', id);
+  // return await axios.request(options).then((response) => {
+  //   if (response && response.data && response.data.results && response.data.results.length > 0) {
+  //     const product = response && response.data && response.data.results && response.data.results.find((item) => item.id === +id)
+  //     return product
+  //   }
+  //   return {}
+  return await axios.request(options).then((response) => response.data);
+
 });
 
 

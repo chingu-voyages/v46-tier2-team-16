@@ -21,14 +21,14 @@
 .detailsCtn {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    gap: 50px;
     margin-left: 25px;
 }
 
 .itemName {
     font-size: 26px;
     margin-top: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .itemCategory {
@@ -75,14 +75,14 @@
 .itemServ {
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 .itemServ span {
     font-weight: 400;
 }
 
 .itemIngr {
-    margin-top: 35px;
+    margin-top: 30px;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
