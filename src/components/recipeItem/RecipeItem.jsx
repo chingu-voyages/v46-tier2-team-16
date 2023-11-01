@@ -5,22 +5,9 @@ import { BiSolidLike, BiSolidDislike } from 'react-icons/bi';
 const RecipeItem = ({selectedRecipe}) => {
     console.log('selectedRecipe', selectedRecipe)
 
-    // for (const section of product.sections) {
-    //     for (const component of section.components) {
-    //         const measurement = component.measurements[0];
-    //         const quantity = measurement.quantity === "0" ? "-" : measurement.quantity;
-    //         const unit = quantity > 1 ? measurement.unit.display_plural : measurement.unit.display_singular;
-    //         const ingredientItem = document.createElement("li");
-    //         const ingredientText = ${quantity} ${unit} ${components.ingredient.name};
-    //         ingredientItem.innerText = ingredientText;
-    //         ingredientItem.style.listStyle = "disc"; // Add a small black dot
-    //         recipeIngredientsUl.appendChild(ingredientItem);
-    //     }
-    // }
+    const sections  = selectedRecipe.sections[0].components
 
-    // console.log('SECTION', section);
-
-    return (
+    return !!selectedRecipe ? (
         <section className={styles.containerDetails}>
             <div key={selectedRecipe.id}>
                 <div className={styles.mainCtn}>
@@ -28,7 +15,7 @@ const RecipeItem = ({selectedRecipe}) => {
                     <div className={styles.detailsCtn}>
                         <div>
                             <h3 className={styles.itemName}>{selectedRecipe.name}</h3>
-                            <h4 className={styles.itemCategory}>Category: {selectedRecipe.total_time_tier.display_tier}</h4>
+                            <h4 className={styles.itemCategory}>Category: {selectedRecipe.total_time_tier?.display_tier}</h4>
                             <p className={styles.itemPrep}>
                                 Preparation Time: <span>{selectedRecipe.prep_time_minutes} minutes</span>
                             </p>
@@ -49,9 +36,9 @@ const RecipeItem = ({selectedRecipe}) => {
                             <p className={styles.itemIngr}>
                                 Ingredients:
                                 <span>
-                                    {selectedRecipe?.sections.map((item) => {
-                                        item?.components.map((component) => <li key={component.id}>{component.raw_text}</li>);
-                                    })}
+                                    {sections.map((item) => (
+                                    <li key={item.id}>{item.raw_text}</li>))
+                                    }
                                 </span>
                             </p>
                         </div>
@@ -97,6 +84,6 @@ const RecipeItem = ({selectedRecipe}) => {
                 Go Back
             </Link>
         </section>
-)}
+) : <></>}
 
 export default RecipeItem;

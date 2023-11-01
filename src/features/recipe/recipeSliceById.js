@@ -1,5 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchRecipeById } from './APIcalls';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchOne } from './APIcalls';
+
 // recipeById:null so we know in the component when/if the data is fetched
 
 const initialState = {
@@ -7,6 +8,8 @@ const initialState = {
     recipeById: null,
     error: '',
 };
+
+export const fetchRecipeById = createAsyncThunk('recipe/fetchRecipeById', fetchOne);
 
 const recipeSliceById = createSlice({
     name: 'recipeById',
@@ -16,6 +19,7 @@ const recipeSliceById = createSlice({
             state.loading = true;
         });
         builder.addCase(fetchRecipeById.fulfilled, (state, action) => {
+            console.log({ state, action });
             state.loading = false;
             state.recipeById = action.payload;
             state.error = '';

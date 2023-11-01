@@ -4,7 +4,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRelatedRecipe } from '../../features/recipe/APIcalls';
+import { fetchRelatedRecipe } from '../../features/recipe/relatedRecipesSlice';
 
 import styles from "./RelatedRecipes.module.css";
 

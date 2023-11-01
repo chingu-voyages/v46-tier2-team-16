@@ -1,11 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchRecipes } from './APIcalls';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchAll } from './APIcalls';
 
 const initialState = {
     loading: false,
     recipes: [],
     error: '',
 };
+
+export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', fetchAll);
 
 const recipeSlice = createSlice({
     name: 'recipe',

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const TASTY_RAPID_API_URL = import.meta.env.VITE_TASTY_RAPID_API_URL;
 const TASTY_RAPID_API_KEY = import.meta.env.VITE_TASTY_RAPID_API_KEY;
@@ -20,22 +19,25 @@ const options = {
     },
 };
 
-const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', async () => {
-    return await axios.request(options).then((response) => response.data);
-});
+const fetchAll = async () => {
+    try {
+        const response = await axios.request(options);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+};
 
-const fetchRecipeById = createAsyncThunk('recipe/fetchRecipes', async (id) => {
-    console.log('id fetchRecipeById', id);
-
+const fetchOne = async (id) => {
     try {
         const response = await axios.request(options);
         return response.data.results.find((recipe) => recipe.id === id);
     } catch (error) {
-        console.log('not working', error);
+        console.log(error);
     }
-});
+};
 
-const fetchRelatedRecipe = createAsyncThunk('fetchRelatedRecipe', async (id) => {
+const fetchRelated = async (id) => {
     console.log('id apicall', id);
     const optionsSimilarities = {
         method: 'GET',
@@ -53,6 +55,6 @@ const fetchRelatedRecipe = createAsyncThunk('fetchRelatedRecipe', async (id) => 
     } catch (error) {
         console.error(error);
     }
-});
+};
 
-export { fetchRecipes, fetchRecipeById, fetchRelatedRecipe };
+export { fetchAll, fetchOne, fetchRelated };

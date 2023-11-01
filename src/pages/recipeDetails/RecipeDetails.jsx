@@ -3,7 +3,7 @@ import RelatedRecipes from "../../components/RelatedRecipes/RelatedRecipes"
 import { Loader } from "../../components/Loader";
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRecipeById } from '../../features/recipe/APIcalls';
+import { fetchRecipeById } from '../../features/recipe/recipeSliceById';
 import { useEffect } from 'react';
 
 const RecipeDetails = () => {
