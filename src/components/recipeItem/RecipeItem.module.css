@@ -21,14 +21,14 @@
 .detailsCtn {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    gap: 50px;
     margin-left: 25px;
 }
 
 .itemName {
     font-size: 26px;
     margin-top: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .itemCategory {
@@ -73,16 +73,30 @@
 }
 
 .itemServ {
+    /* display: flex; */
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    align-items: center;
 }
 .itemServ span {
     font-weight: 400;
 }
 
+.itemLike {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.itemLike span {
+    font-weight: 400;
+    margin-left: 5px;
+}
+
 .itemIngr {
-    margin-top: 35px;
+    margin-top: 30px;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -141,4 +155,35 @@
     font-family: 'Rubik';
     text-decoration: none;
     border: 0;
+}
+
+.video {
+    margin: auto;
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-inline: 10px;
+    margin-block: 50px;
+}
+
+.nutritionContainer {
+    /* margin-left: 25px; */
+    text-align: center;
+}
+
+.nutritionH3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.nutrition {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.nutrition span {
+    font-weight: 600;
 }
