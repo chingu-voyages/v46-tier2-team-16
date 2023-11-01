@@ -3,18 +3,18 @@ import { useState } from 'react';
 import styles from './RecipeCard.module.css';
 
 const RecipeCard = (props) => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const { oneRecipe } = props;
-    const [selected, setSelected] = useState([]);
+    // const [selected, setSelected] = useState([]);
 
-    const clickHandler = (id) => {
-        console.log('recipe ID: ', id);
-        setSelected((prevState) => {
-            if (prevState.includes(id)) return prevState.filter((item) => item.id !== id.id);
-            return [...prevState, id];
-        });
-        navigate(`/recipe/${id}`);
-    };
+    // const clickHandler = (id) => {
+    //     console.log('recipe ID: ', id);
+    //     setSelected((prevState) => {
+    //         if (prevState.includes(id)) return prevState.filter((item) => item.id !== id.id);
+    //         return [...prevState, id];
+    //     });
+    //     navigate(`/recipe/${id}`);
+    // };
 
     return (
         <section className={styles.section}>
@@ -25,9 +25,6 @@ const RecipeCard = (props) => {
                 <div className={styles.cardContent}>
                     <h3 className={styles.name}>{oneRecipe.name}</h3>
                     <div className={styles.btnCtn}>
-                        {/* <button className={styles.btn} data={oneRecipe} onClick={() => clickHandler(oneRecipe.id)}>
-                            Get Recipe
-                        </button> */}
                         <Link to={`/recipe/${oneRecipe.id}`} className={styles.btn}>
                             Get Recipe
                         </Link>

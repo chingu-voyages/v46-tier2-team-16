@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchRelatedRecipe } from '../../features/recipe/relatedRecipesSlice';
 
 import styles from './RelatedRecipes.module.css';
+import { Link } from 'react-router-dom';
 
 const RelatedRecipes = ({ recipeId }) => {
     console.log('id related recipes compo', recipeId);
@@ -27,10 +28,12 @@ const RelatedRecipes = ({ recipeId }) => {
             <h3 className={styles.title}>Related Recipes</h3>
             <ul className={styles.list}>
                 {[...listToDisplay].map((oneRecipe) => (
-                    <li key={oneRecipe.id} className={styles.recipe}>
-                        <img className={styles.image} src={oneRecipe.thumbnail_url} alt={oneRecipe.slug} width={250} height={216} />
-                        <p className={styles.recipeName}>{oneRecipe.name}</p>
-                    </li>
+                    <Link key={oneRecipe.id} to={`/recipe/${oneRecipe.id}`}>
+                        <li className={styles.recipe}>
+                            <img className={styles.image} src={oneRecipe.thumbnail_url} alt={oneRecipe.slug} width={250} height={216} />
+                            <p className={styles.recipeName}>{oneRecipe.name}</p>
+                        </li>
+                    </Link>
                 ))}
             </ul>
         </section>

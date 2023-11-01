@@ -28,6 +28,7 @@
 
 .recipe {
     width: 200px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
