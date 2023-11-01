@@ -10,7 +10,7 @@ const RecipeItem = ({ selectedRecipe }) => {
     return !!selectedRecipe ? (
         <section className={styles.containerDetails}>
             <div key={selectedRecipe.id}>
-                <div className={styles.mainCtn}>
+                <div className={styles.mainCtn} id="top">
                     <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} />
                     <div className={styles.detailsCtn}>
                         <div>
