@@ -1,26 +1,13 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './RecipeItem.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchRecipeById } from '../../features/recipe/recipeSliceById';
-import { useEffect } from 'react';
 
-// To uncomment when ready the RecipeItem is ready to use it
-// import { RelatedRecipes } from "./components/RelatedRecipes/index"
 
-const RecipeItem = () => {
-    const params = useParams();
-    const recipeId = params.id;
-    const recipe = useSelector((state) => state.recipe);
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchRecipeById(recipeId));
-    }, [dispatch, recipeId]);
-    const selectedRecipe = recipe.recipes;
+const RecipeItem = ({selectedRecipe}) => {
+    console.log('selectedRecipe', selectedRecipe)
 
-    console.log('SELECTED', selectedRecipe);
-    return (
+return (
         <section className={styles.containerDetails}>
-            <h4>TEST RECIPE #{recipeId}</h4>
+            <h4>TEST RECIPE #{selectedRecipe.id}</h4>
 
             <div key={selectedRecipe.id}>
                 <div className={styles.mainCtn}>
@@ -64,14 +51,10 @@ const RecipeItem = () => {
                 </p> */}
             </div>
 
-            {/* To uncomment when ready the RecipeItem is ready to use it 
-            <RelatedRecipes id={id} /> */}
-
             <Link to="/" className={styles.btn}>
                 Go Back
             </Link>
         </section>
-    );
-};
+)}
 
 export default RecipeItem;

@@ -2,7 +2,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { HomeLayout } from './layout';
 import { NotFound } from './pages/NotFound';
-import { RecipeItem } from './components/recipeItem';
+import { RecipeDetails } from './pages/recipeDetails';
 
 import './App.css';
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/recipe/:id',
-                element: <RecipeItem />,
+                element: <RecipeDetails />,
             },
         ],
     },

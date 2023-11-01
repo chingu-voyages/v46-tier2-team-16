@@ -1,33 +1,11 @@
-import axios from 'axios';
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
-const TASTY_RAPID_API_URL = import.meta.env.VITE_TASTY_RAPID_API_URL;
-const TASTY_RAPID_API_KEY = import.meta.env.VITE_TASTY_RAPID_API_KEY;
-const TASTY_RAPID_API_HOST = import.meta.env.VITE_TASTY_RAPID_API_HOST;
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchRecipes } from './APIcalls';
 
 const initialState = {
     loading: false,
     recipes: [],
     error: '',
 };
-
-const options = {
-    method: 'GET',
-    url: TASTY_RAPID_API_URL,
-    params: {
-        from: '0',
-        size: '20',
-        tags: 'under_30_minutes',
-    },
-    headers: {
-        'X-RapidAPI-Key': TASTY_RAPID_API_KEY,
-        'X-RapidAPI-Host': TASTY_RAPID_API_HOST,
-    },
-};
-
-export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', async () => {
-    return await axios.request(options).then((response) => response.data);
-});
 
 const recipeSlice = createSlice({
     name: 'recipe',

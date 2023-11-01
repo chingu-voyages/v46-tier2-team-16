@@ -2,45 +2,28 @@
 //as props in order to fetch the info from the api
 
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRelatedRecipe } from '../../features/recipe/APIcalls';
+
 import styles from "./RelatedRecipes.module.css";
 
 
-const RelatedRecipes = ({id}) => {
+const RelatedRecipes = ({recipeId}) => {
+console.log('id related recipes compo', recipeId)
+    const dispatch = useDispatch();
 
-const [listToDisplay, setlistToDisplay] = useState([])
-
-    const TASTY_RAPID_API_URL_SIMILARITIES = import.meta.env.VITE_TASTY_RAPID_API_URL_SIMILARITIES;
-    const TASTY_RAPID_API_KEY = import.meta.env.VITE_TASTY_RAPID_API_KEY;
-    const TASTY_RAPID_API_HOST = import.meta.env.VITE_TASTY_RAPID_API_HOST;
-
-    const options = {
-        method: 'GET',
-        url: TASTY_RAPID_API_URL_SIMILARITIES,
-        params: {recipe_id: id},
-        headers: {
-          'X-RapidAPI-Key': TASTY_RAPID_API_KEY,
-          'X-RapidAPI-Host': TASTY_RAPID_API_HOST
-        }
-      };
-        
-     const getRelatedRecipes = async () => {
-         try {
-          const response = await axios.request(options);
-          const list = response.data.results
-          setlistToDisplay(list)
-          console.log(response.data);
-          return  
-
-      } catch (error) {
-          console.error(error);
-     }}
-  
 
     useEffect(() => {
-        getRelatedRecipes()
-     }, [])
+        dispatch(fetchRelatedRecipe(recipeId));
+    }, [dispatch, recipeId])
 
+    const relatedRecipes = useSelector((state) => state.relatedRecipes);
+    const listToDisplay = relatedRecipes.relatedRecipes;
+
+    if(!listToDisplay) {
+        return <></>
+    }
 
     return (
         <section>
