@@ -63,11 +63,11 @@ const RecipeItem = () => {
                             <p className={styles.itemServ}>
                                 Servings: <span>{product.num_servings}</span>
                             </p>
-                            <p className={styles.itemServ}>
-                                <BiSolidLike color="green" /> :<span>{product.user_ratings.count_positive}</span>
+                            <p className={styles.itemLike}>
+                                <BiSolidLike color="green" /> <span>{product.user_ratings.count_positive}</span>
                             </p>
-                            <p className={styles.itemServ}>
-                                <BiSolidDislike color="red" /> : <span>{product.user_ratings.count_negative}</span>
+                            <p className={styles.itemLike}>
+                                <BiSolidDislike color="red" /> <span>{product.user_ratings.count_negative}</span>
                             </p>
                         </div>
                         <div>
@@ -89,6 +89,32 @@ const RecipeItem = () => {
                             Step {step.position}.&nbsp;<span>{step.display_text}</span>
                         </ol>
                     ))}
+                </div>
+            </div>
+            <div className={styles.facts}>
+                <video controls width="450" className={styles.video}>
+                    <source src={product.video_url} type="application/x-mpegURL" />
+                </video>
+                <div className={styles.nutritionContainer}>
+                    <h3 className={styles.nutritionH3}>Nutrition Facts:</h3>
+                    <p className={styles.nutrition}>
+                        Calories: <span>{product.nutrition.calories}</span>
+                    </p>
+                    <p className={styles.nutrition}>
+                        Carbohydrates: <span>{product.nutrition.carbohydrates}</span>
+                    </p>
+                    <p className={styles.nutrition}>
+                        Fat: <span>{product.nutrition.fat}</span>
+                    </p>
+                    <p className={styles.nutrition}>
+                        Fiber: <span>{product.nutrition.fiber}</span>
+                    </p>
+                    <p className={styles.nutrition}>
+                        Protein: <span>{product.nutrition.protein}</span>
+                    </p>
+                    <p className={styles.nutrition}>
+                        Sugar: <span>{product.nutrition.sugar}</span>
+                    </p>
                 </div>
             </div>
 
