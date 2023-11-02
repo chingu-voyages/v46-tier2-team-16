@@ -1,90 +1,114 @@
 .containerDetails {
-    margin: auto;
-    padding-inline: 50px;
-    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     align-content: center;
-    margin-bottom: 50px;
     color: black;
 }
 
-.mainCtn {
-    display: flex;
-    margin-top: 50px;
-}
-.mainCtn img {
-    width: 320px;
-    height: auto;
-    max-height: 400px;
-    max-width: auto;
-    object-fit: cover;
+.insideContainerDetails{
+display: flex;
+flex-direction: column;
+align-self: center;
+width: 100%;
+@media screen and (min-width: 1000px) {
+    width: 80%;
 }
 
-.detailsCtn {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin-left: 25px;
+}
+
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+}
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* --------------------------------- */
+/* title + category + info prep time */
+
+.mainCtn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.containerTitle {
+    display: flex;
+    flex-direction: column;
 }
 
 .itemName {
     font-size: 26px;
     margin-top: 25px;
-    margin-bottom: 15px;
     padding-left: 0;
 }
 
 .itemCategory {
-    font-size: 18px;
-    font-weight: normal;
-    margin-bottom: 15px;
 }
-.itemCategory span {
-    font-size: 20px;
-    font-weight: 600;
+
+
+.containerInfo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
 }
+
+.insideInfo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+
+/* .mainCtn img {
+
+} */
+
+/* .detailsCtn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-left: 25px;
+} */
+
+
+
 
 .itemPrep {
-    font-size: 18px;
-    font-weight: normal;
-    margin-bottom: 15px;
 }
-.itemPrep span {
-    font-size: 20px;
-    font-weight: 600;
-}
+
 
 .itemCook {
-    font-size: 18px;
-    font-weight: n;
-    margin-bottom: 15px;
-}
-.itemCook span {
-    font-size: 20px;
-    font-weight: 600;
 }
 
-.itemDiff {
+
+.itemServ {
+
+}
+
+/* --------------------------------- */
+
+
+
+/* .itemDiff {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 .itemDiff span {
     font-weight: 400;
-}
+} */
 
-.itemServ {
-    font-size: 18px;
-    font-weight: normal;
-    margin-bottom: 15px;
-    align-items: center;
-}
-.itemServ span {
-    font-size: 20px;
-    font-weight: 600;
-    align-items: center;
-}
-
-.itemLike {
+/* .itemLike {
     display: flex;
     font-size: 18px;
     font-weight: 600;
@@ -94,47 +118,69 @@
 .itemLike span {
     font-weight: 600;
     margin-left: 5px;
-}
+} */
 
-.itemIngr {
-    position: absolute;
-    margin-top: 30px;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-.itemIngr span {
-    font-size: 18px;
-    font-weight: 400;
-    padding-top: 10px;
-}
-.itemIngr span li {
-    padding: 3px 0;
-    margin-top: 5px;
-}
 
-.directionsCtn {
+/* --------------------------------- */
+/* ingredients + directions + image */
+
+.secondContainer {
+    display: flex;
+    flex-direction: row;
     margin-top: 20px;
 }
-.directionsCtn h4 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
 
-.itemStep {
-    font-size: 18px;
-    font-weight: 600;
+.containerIngr {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    margin-right: 100px;
+    width: calc(100% / 3);
 }
-.itemStep span {
-    font-weight: 400;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-right: 350px;
+
+.containerIngr li {
+    list-style-type: none;
 }
+
+
+.itemIngr li {
+    padding: 3px 0;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.containerDirec {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3);}
+
+
+
+.itemStep {
+    display: flex;
+    flex-direction: column;
+}
+.containerDirec li {
+    display: flex;
+    flex-direction: row;
+}
+
+.stepText {
+    padding-left: 5px;
+}
+
+.containerImage {
+    width: calc(100% / 3);
+    padding: 10px 40px 10px 40px;
+}
+ img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: solid 1px black;
+
+ }
+
+/* --------------------------------- */
+
 
 .itemNote {
     font-size: 18px;

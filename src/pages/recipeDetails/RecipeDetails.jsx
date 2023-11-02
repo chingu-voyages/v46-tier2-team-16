@@ -26,10 +26,10 @@ console.log('selectedRecipe recipedetails', selectedRecipe)
     <>
     {recipeById.loading && <Loader />}
     {!recipeById.loading && selectedRecipe ? (
-        <span>  
+        <>  
             <RecipeItem selectedRecipe={selectedRecipe} />
             <RelatedRecipes recipeId={recipeId} />
-        </span>  
+        </>  
     ): null }
     </>
     )

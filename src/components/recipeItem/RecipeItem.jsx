@@ -9,54 +9,68 @@ const RecipeItem = ({ selectedRecipe }) => {
 
     return !!selectedRecipe ? (
         <section className={styles.containerDetails}>
-            <div key={selectedRecipe.id}>
+            <div key={selectedRecipe.id} className={styles.insideContainerDetails}>
+
                 <div className={styles.mainCtn} id="top">
-                    <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} />
-                    <div className={styles.detailsCtn}>
-                        <div>
+{/* title + category */}
+                        <div className={styles.containerTitle}>
                             <h3 className={styles.itemName}>{selectedRecipe.name}</h3>
-                            <h4 className={styles.itemCategory}>
-                                Category: <span>{selectedRecipe.total_time_tier?.display_tier}</span>
-                            </h4>
-                            <p className={styles.itemPrep}>
-                                Preparation Time: <span>{selectedRecipe.prep_time_minutes} minutes</span>
-                            </p>
-                            <p className={styles.itemCook}>
-                                Cooking Time: <span>{selectedRecipe.cook_time_minutes} minutes</span>
-                            </p>
-                            <p className={styles.itemServ}>
-                                Servings: &nbsp;
-                                <span>
-                                    {selectedRecipe.num_servings} <BiBowlHot />
-                                </span>
-                            </p>
-                            <p className={styles.itemLike}>
+                            <p className={styles.itemCategory}> 
+                                Category: {selectedRecipe.total_time_tier?.display_tier}
+                            </p> 
+                        </div>
+{/* info prep time                            */}
+                        <div className={styles.containerInfo}>
+                            <span className={styles.insideInfo}>
+                                <h6 className={styles.itemPrep}>Prep Time:</h6>
+                                <p>{selectedRecipe.prep_time_minutes} minutes</p>
+                            </span>
+                            <span className={styles.insideInfo}>
+                                <h6 className={styles.itemCook}>Cook Time: </h6>
+                                <p>{selectedRecipe.cook_time_minutes} minutes</p>
+                            </span>
+                           <span className={styles.insideInfo}>
+                                <h6 className={styles.itemServ}> <BiBowlHot /> Serves:</h6>
+                                <p> {selectedRecipe.num_servings} servings</p>
+                           </span>
+                           
+                        
+                            {/* <p className={styles.itemLike}>
                                 <BiSolidLike color="green" /> <span>{selectedRecipe.user_ratings.count_positive}</span>
                             </p>
                             <p className={styles.itemLike}>
                                 <BiSolidDislike color="red" /> <span>{selectedRecipe.user_ratings.count_negative}</span>
-                            </p>
+                            </p> */}
                         </div>
-                        <div>
-                            <p className={styles.itemIngr}>
-                                Ingredients:
-                                <span>
-                                    {sections.map((item) => (
-                                        <li key={item.id}>{item.raw_text}</li>
-                                    ))}
-                                </span>
-                            </p>
-                        </div>
+                </div>
+
+{/* ingredients */}
+                <div className={styles.secondContainer}>
+                    <div className={styles.containerIngr}>
+                        <h4 className={styles.itemIngr}>Ingredients:</h4>
+                            <ul>
+                                {sections.map((item) => (
+                                    <li key={item.id}>{item.raw_text}</li>
+                                ))}
+                            </ul>
+                    </div>
+{/* direcions */}
+                    <div className={styles.containerDirec}>
+                        <h4>Directions:</h4>
+                        <ul>{selectedRecipe.instructions.map((step, idx) => (
+                            <li key={idx} className={styles.itemStep}>
+                                <p>{step.position}. </p><p className={styles.stepText}>{step.display_text}</p>
+                            </li>
+                        ))}
+                        </ul>
+                    </div>
+{/* image */}
+                    <div className={styles.containerImage}>
+                        <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} />
                     </div>
                 </div>
-                <div className={styles.directionsCtn}>
-                    <h4>Directions:</h4>
-                    {selectedRecipe.instructions.map((step, idx) => (
-                        <ol key={idx} className={styles.itemStep}>
-                            Step {step.position}.&nbsp;<span>{step.display_text}</span>
-                        </ol>
-                    ))}
-                </div>
+
+
             </div>
             <div className={styles.facts}>
                 <video controls width="450" className={styles.video}>
