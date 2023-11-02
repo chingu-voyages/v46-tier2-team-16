@@ -4,8 +4,6 @@ import { HomeLayout } from './layout';
 import { NotFound } from './pages/NotFound';
 import { RecipeDetails } from './pages/recipeDetails';
 
-import './App.css';
-
 const router = createBrowserRouter([
     {
         path: '/',
