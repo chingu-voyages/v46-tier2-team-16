@@ -19,7 +19,7 @@ footer section {
 }
 
 a {
-    color: var(--light-theme-primary-text-color);
+    /* color: var(--light-theme-primary-text-color); */
     text-decoration: none;
 }
 
@@ -47,8 +47,7 @@ a {
     grid-area: linksSecondSection;
     display: grid;
     grid-template-columns: 1fr 10px 1fr;
-    grid-template-areas:
-        'linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList';
+    grid-template-areas: 'linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList';
 }
 
 .links-second-section--first-list {
@@ -134,8 +133,7 @@ a {
 
     .links-second-section {
         grid-template-columns: 1fr 10px 1fr 10px 1fr;
-        grid-template-areas:
-            'linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList verticalDividerSecondSection linksSecondSectionThirdList';
+        grid-template-areas: 'linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList verticalDividerSecondSection linksSecondSectionThirdList';
     }
 
     .links-second-section--second-list {

@@ -1,15 +1,15 @@
 .container {
     display: flex;
     flex-direction: column;
-    place-items: center; 
-  }
-  
- p {
-  color: #393939
- }
+    place-items: center;
+}
 
- input {
-  border-radius: 100px;
-  border: solid 1px black;
-  padding: 5px 10px 5px 10px;
- }
+/* p {
+  color: #393939
+ } */
+
+input {
+    border-radius: 100px;
+    border: solid 1px black;
+    padding: 5px 10px 5px 10px;
+}

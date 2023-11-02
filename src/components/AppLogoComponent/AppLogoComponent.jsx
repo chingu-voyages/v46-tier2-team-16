@@ -1,6 +1,6 @@
-import styles from "./AppLogoComponent.module.css";
-import AppLogo from "../../assets/logo/appLogo.svg";
-import { AnchorLink } from "../UI/AnchorLink";
+import styles from './AppLogoComponent.module.css';
+import AppLogo from '../../assets/logo/appLogo.svg';
+import { AnchorLink } from '../UI/AnchorLink';
 
 const AppLogoComponent = () => {
     return (

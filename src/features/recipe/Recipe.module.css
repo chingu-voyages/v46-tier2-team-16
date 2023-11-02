@@ -4,7 +4,7 @@
     align-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: white !important;
+    background-color: transparent;
 }
 
 .container {
@@ -18,7 +18,7 @@
     font-family: 'Rubik';
     font-size: 32px;
     font-weight: 600;
-    color: #303041;
+    /* color: #303041; */
     text-align: center;
     margin-top: 20px;
     margin-bottom: 40px;
