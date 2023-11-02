@@ -1,7 +1,25 @@
+.section {
+    margin-inline: auto;
+    width: 1060px;
+    align-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white !important;
+}
+
 .container {
-    background-color: green;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 20px;
 }
 
 .text {
-    color: coral;
+    font-family: 'Rubik';
+    font-size: 32px;
+    font-weight: 600;
+    color: #303041;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }

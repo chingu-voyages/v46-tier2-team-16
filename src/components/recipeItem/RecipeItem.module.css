@@ -1,108 +1,127 @@
-.container-details {
+.containerDetails {
     margin: auto;
+    padding-inline: 50px;
     width: 1200px;
     align-content: center;
     margin-bottom: 50px;
+    color: black;
 }
 
-.main-ctn {
+.mainCtn {
     display: flex;
     margin-top: 50px;
 }
-.main-ctn img {
+.mainCtn img {
+    width: 320px;
+    height: auto;
     max-height: 400px;
     max-width: auto;
     object-fit: cover;
 }
 
-.details-ctn {
+.detailsCtn {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    gap: 50px;
     margin-left: 25px;
 }
 
-.item-name {
+.itemName {
     font-size: 26px;
     margin-top: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    padding-left: 0;
 }
 
-.item-category {
-    font-size: 22px;
+.itemCategory {
+    font-size: 18px;
+    font-weight: normal;
     margin-bottom: 15px;
 }
-
-.item-rating {
-    font-size: 16px;
+.itemCategory span {
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 25px;
-}
-.item-rating span {
-    font-weight: 400;
 }
 
-.item-prep {
+.itemPrep {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.itemPrep span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.itemCook {
+    font-size: 18px;
+    font-weight: n;
+    margin-bottom: 15px;
+}
+.itemCook span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.itemDiff {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.item-prep span {
+.itemDiff span {
     font-weight: 400;
 }
 
-.item-cook {
+.itemServ {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.itemServ span {
+    font-size: 20px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.itemLike {
+    display: flex;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
+    align-items: center;
 }
-.item-cook span {
-    font-weight: 400;
-}
-
-.item-diff {
-    font-size: 18px;
+.itemLike span {
     font-weight: 600;
-    margin-bottom: 15px;
-}
-.item-diff span {
-    font-weight: 400;
+    margin-left: 5px;
 }
 
-.item-serv {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-.item-serv span {
-    font-weight: 400;
-}
-
-.item-ingr {
-    margin-top: 35px;
+.itemIngr {
+    position: absolute;
+    margin-top: 30px;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
 }
-.item-ingr span {
+.itemIngr span {
     font-size: 18px;
     font-weight: 400;
     padding-top: 10px;
 }
-.item-ingr span li {
+.itemIngr span li {
     padding: 3px 0;
     margin-top: 5px;
 }
 
-.directions-ctn {
+.directionsCtn {
     margin-top: 20px;
 }
-.directions-ctn h4 {
+.directionsCtn h4 {
     font-size: 22px;
     margin-bottom: 10px;
 }
 
-.item-step {
+.itemStep {
     font-size: 18px;
     font-weight: 600;
     display: flex;
@@ -110,19 +129,87 @@
     margin-left: 30px;
     margin-right: 100px;
 }
-.item-step span {
+.itemStep span {
     font-weight: 400;
     margin-top: 10px;
     margin-bottom: 20px;
+    margin-right: 350px;
 }
 
-.item-note {
+.itemNote {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 50px;
     margin-left: 30px;
 }
-.item-note span {
+.itemNote span {
     font-weight: 400;
     margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #414066;
+    color: white;
+    width: 200px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Rubik';
+    text-decoration: none;
+    border: 0;
+}
+
+.video {
+    margin: auto;
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-inline: 10px;
+    margin-block: 50px;
+}
+
+.nutritionContainer {
+    text-align: center;
+    border: 2px solid black;
+    margin-inline: 150px;
+}
+
+.table {
+    width: 100%;
+    margin: 20px auto;
+    margin-bottom: 0;
+    padding: 0 10px;
+    table-layout: auto;
+}
+.table td,
+th {
+    border: 1px solid;
+}
+.table th {
+    padding-block: 5px;
+    padding-inline: 0;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+}
+.tableLeft {
+    text-align: left;
+    padding-left: 5px;
+    padding-block: 3px;
+    font-size: 14px;
+}
+.tableRight {
+    text-align: right;
+    padding-right: 5px;
+    padding-block: 3px;
+    font-size: 14px;
+}
+.tableNote {
+    font-size: 12px;
+    text-align: left;
+    margin-left: 15px;
+    margin-bottom: 15px;
 }
