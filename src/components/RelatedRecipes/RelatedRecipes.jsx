@@ -1,44 +1,43 @@
-// this component will be in the details component and should received the param of the Url 
+// this component will be in the details component and should received the param of the Url
 //as props in order to fetch the info from the api
 
-import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRelatedRecipe } from '../../features/recipe/relatedRecipesSlice';
 
-import styles from "./RelatedRecipes.module.css";
+import styles from './RelatedRecipes.module.css';
+import { Link } from 'react-router-dom';
 
-
-const RelatedRecipes = ({recipeId}) => {
-console.log('id related recipes compo', recipeId)
+const RelatedRecipes = ({ recipeId }) => {
+    console.log('id related recipes compo', recipeId);
     const dispatch = useDispatch();
-
 
     useEffect(() => {
         dispatch(fetchRelatedRecipe(recipeId));
-    }, [dispatch, recipeId])
+    }, [dispatch, recipeId]);
 
     const relatedRecipes = useSelector((state) => state.relatedRecipes);
     const listToDisplay = relatedRecipes.relatedRecipes;
 
-    if(!listToDisplay) {
-        return <></>
+    if (!listToDisplay) {
+        return <></>;
     }
 
     return (
-        <section>
-                    <h3>Related Recipes</h3>
-                    <ul>
-                        {[...listToDisplay].map((oneRecipe) => (
-                            <li key={oneRecipe.id}>
-                                    <img src={oneRecipe.thumbnail_url} alt={oneRecipe.slug} width={250} height={216}/>
-                                    <p>{oneRecipe.name}</p>
-                            </li>
-                        ))}
-                    </ul>
-    </section>
-    
-    )
-}
+        <section className={styles.container}>
+            <h3 className={styles.title}>Related Recipes</h3>
+            <ul className={styles.list}>
+                {[...listToDisplay].map((oneRecipe) => (
+                    <Link key={oneRecipe.id} to={`/recipe/${oneRecipe.id}`}>
+                        <li className={styles.recipe}>
+                            <img className={styles.image} src={oneRecipe.thumbnail_url} alt={oneRecipe.slug} width={250} height={216} />
+                            <p className={styles.recipeName}>{oneRecipe.name}</p>
+                        </li>
+                    </Link>
+                ))}
+            </ul>
+        </section>
+    );
+};
 
 export default RelatedRecipes;
