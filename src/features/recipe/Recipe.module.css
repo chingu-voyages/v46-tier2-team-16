@@ -1,25 +1,22 @@
 .section {
-    margin-inline: auto;
-    width: 1060px;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    align-self: center;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: white !important;
+
+    @media screen and (min-device-width:1000px) {
+        width:80%
+    }
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px;
-    row-gap: 20px;
-}
-
-.text {
-    font-family: 'Rubik';
-    font-size: 32px;
-    font-weight: 600;
-    color: #303041;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the width (200px) as per your fixed card width */
+    gap: 30px; /* Adjust the gap between cards */
+    max-width: 100%; /* Optional: Limit the maximum width of the grid */
+    padding: 20px;
 }

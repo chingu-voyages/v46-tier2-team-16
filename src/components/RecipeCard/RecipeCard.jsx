@@ -17,7 +17,6 @@ const RecipeCard = (props) => {
     };
 
     return (
-        <section className={styles.section}>
             <div key={oneRecipe.id} className={styles.container}>
                 <figure className={styles.figure}>
                     <img src={oneRecipe.thumbnail_url} alt={oneRecipe.name} className={styles.image} />
@@ -34,7 +33,6 @@ const RecipeCard = (props) => {
                     </div>
                 </div>
             </div>
-        </section>
     );
 };
 

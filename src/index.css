@@ -46,11 +46,6 @@
     padding-bottom: 150px;
 }
 
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-}
 
 body {
     font-family: var(--body-text-font);
@@ -61,43 +56,17 @@ body {
     padding: 0;
 }
 
-#root {
-    height: 100dvh;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        'header'
-        'main'
-        'footer';
-    width: 100%;
-}
-
-#root>header {
-    grid-area: header;
-}
-
-#root>main {
-    grid-area: main;
-}
-
-#root>footer {
-    grid-area: footer;
-}
-
-/* media query for desktop */
+media query for desktop
 @media only screen and (min-device-width: 768px) and (max-device-width: 6024px) {
     #app>main {
         margin: auto;
-        max-width: 1440px;
     }
 
     /* TODO: Update recipe card container class to show 3 recipe card per row */
     /* .recipe-card-container {
         grid-template-columns: repeat(3, 1fr);
     } */
-}
+/* } */
 
 @font-face {
     font-family: "Rubik Regular";
@@ -108,25 +77,3 @@ body {
     font-family: "Poppins Regular";
     src: url("./assets/fonts/Poppins_Complete/Fonts/OTF/Poppins-Regular.otf");
 }
-
-
-/* html,
-body {
-    min-height: 100vh
-}
-
-#root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-p {
-    color: black
-} */
-
-/*.card {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 50px;
-} */
