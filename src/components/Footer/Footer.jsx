@@ -1,6 +1,6 @@
-import styles from "./Footer.module.css";
-import { AppLogoComponent } from "../AppLogoComponent/index";
-import { AnchorLink } from "../UI/AnchorLink";
+import styles from './Footer.module.css';
+import { AppLogoComponent } from '../AppLogoComponent/index';
+import { AnchorLink } from '../UI/AnchorLink';
 
 const Footer = () => {
     return (
@@ -49,8 +49,16 @@ const Footer = () => {
 
             <section className={styles['copyright-section']}>
                 <p className={styles.text}>
-                    Developed by {" "}
-                    <a target="_blank" rel="noreferrer" href="https://github.com/chingu-voyages/v46-tier2-team-16/tree/main" title="External github repo link will open on a new tab">v46-tier2-team-16</a>
+                    Developed by{' '}
+                    <a
+                        className={styles.textA}
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://github.com/chingu-voyages/v46-tier2-team-16/tree/main"
+                        title="External github repo link will open on a new tab"
+                    >
+                        v46-tier2-team-16
+                    </a>
                 </p>
                 <span className={styles.text}>&copy; 2023</span>
             </section>

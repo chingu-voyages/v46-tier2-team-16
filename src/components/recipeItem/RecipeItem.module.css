@@ -4,7 +4,7 @@
     width: 1200px;
     align-content: center;
     margin-bottom: 50px;
-    color: black;
+    /* color: black; */
 }
 
 .mainCtn {
@@ -173,7 +173,7 @@
 
 .nutritionContainer {
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid;
     margin-inline: 150px;
 }
 
