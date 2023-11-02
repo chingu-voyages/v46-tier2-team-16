@@ -4,7 +4,6 @@ import { BiSolidLike, BiSolidDislike, BiBowlHot } from 'react-icons/bi';
 
 const RecipeItem = ({ selectedRecipe }) => {
     console.log('selectedRecipe', selectedRecipe);
-
     const sections = selectedRecipe.sections[0].components;
 
     return !!selectedRecipe ? (

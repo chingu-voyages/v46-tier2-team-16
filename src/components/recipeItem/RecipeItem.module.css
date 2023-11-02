@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     align-content: center;
-    color: black;
+    margin-bottom: 50px;
 }
 
 .insideContainerDetails{
@@ -219,7 +219,7 @@ h6 {
 
 .nutritionContainer {
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid;
     margin-inline: 150px;
 }
 

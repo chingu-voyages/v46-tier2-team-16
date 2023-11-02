@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export const AnchorLink = ({ text, children, ...attrs }) => {
     return (
@@ -11,5 +11,5 @@ export const AnchorLink = ({ text, children, ...attrs }) => {
 
 AnchorLink.propTypes = {
     text: PropTypes.string,
-    children: PropTypes.element
+    children: PropTypes.element,
 };
