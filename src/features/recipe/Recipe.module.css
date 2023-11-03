@@ -6,7 +6,7 @@
     align-self: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: var( --color-white);
+    background-color: white !important;
 
     @media screen and (min-device-width:1000px) {
         width:80%
@@ -20,7 +20,3 @@
     max-width: 100%; /* Optional: Limit the maximum width of the grid */
     padding: 20px;
 }
-
-.dark-section {
-    background-color: #000000;
-    }

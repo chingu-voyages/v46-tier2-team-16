@@ -1,3 +1,7 @@
+.dark-theme {
+    background-color: var(--light-theme-primary-text-color);
+    color: var(--color-white);
+}
 
 .toggle-container {
     margin: 0 auto;
@@ -46,8 +50,3 @@
 .toggle-icon {
     color: var(--light-theme-button-text-colo);
 } */
-
-.dark-theme {
-    color: var( --dark-theme-primary-text-color);
-    background-color: #000000;
-    }

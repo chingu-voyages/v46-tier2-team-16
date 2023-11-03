@@ -39,7 +39,7 @@
 }
 
 .name {
-    color:  var(--light-theme-heading-text-color);
+    color: #303041;
     font-family: 'Rubik';
     font-size: 24px;
     font-weight: 500;
@@ -67,8 +67,8 @@
 }
 
 .btn {
-    background-color:  var(--light-theme-heading-text-color);
-    color: var(--light-theme-button-text-color);
+    background-color: #414066;
+    color: white;
     padding: 8px 16px;
     border-radius: 40px;
     font-size: 18px;
@@ -76,17 +76,4 @@
     font-family: 'Rubik';
     text-decoration: none;
     border: 0;
-}
-
-.dark-btn {
-   background-color: var( --dark-theme-button-bg-color);
-color: var( --dark-theme-button-text-color);
-}
-
-.dark-container {
-    background-color: var(--dark-theme-button-text-color);
-}
-
-.dark-name {
-    color: var( --color-white);
 }

@@ -35,11 +35,3 @@
     text-decoration: none; 
   }
   
-  .dark-content {
-    color: var(--color-white);
-  }
-
-  .dark-button {
-    background-color: var( --dark-theme-button-bg-color);
-    color: var( --dark-theme-button-text-color);
-  }

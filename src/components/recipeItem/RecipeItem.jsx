@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './RecipeItem.module.css';
-import {useGlobalContext} from "../../contexts/DarkModeContext";
 import { BiSolidLike, BiSolidDislike, BiBowlHot } from 'react-icons/bi';
 
 const RecipeItem = ({ selectedRecipe }) => {
     console.log('selectedRecipe', selectedRecipe);
     const sections = selectedRecipe.sections[0].components;
-
-    const { isDarkTheme } = useGlobalContext()
 
     return !!selectedRecipe ? (
         <section className={styles.containerDetails}>
@@ -16,31 +13,31 @@ const RecipeItem = ({ selectedRecipe }) => {
                     <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} />
                     <div className={styles.detailsCtn}>
                         <div>
-                        <h3 className={`${styles.itemName} ${isDarkTheme ? styles['dark-itemName'] : ''}`}>{selectedRecipe.name}</h3>
+                            <h3 className={styles.itemName}>{selectedRecipe.name}</h3>
                             <h4 className={styles.itemCategory}>
                                 Category: <span>{selectedRecipe.total_time_tier?.display_tier}</span>
                             </h4>
-                            <p className={`${styles.itemPrep} ${isDarkTheme ? styles['dark-itemPrep'] : ''}`}>
+                            <p className={styles.itemPrep}>
                                 Preparation Time: <span>{selectedRecipe.prep_time_minutes} minutes</span>
                             </p>
-                            <p className={`${styles.itemCook} ${isDarkTheme ? styles['dark-itemCook'] : ''}`}>
+                            <p className={styles.itemCook}>
                                 Cooking Time: <span>{selectedRecipe.cook_time_minutes} minutes</span>
                             </p>
-                            <p className={`${styles.itemServ} ${isDarkTheme ? styles['dark-itemServ'] : ''}`}>
+                            <p className={styles.itemServ}>
                                 Servings: &nbsp;
                                 <span>
                                     {selectedRecipe.num_servings} <BiBowlHot />
                                 </span>
                             </p>
-                            <p className={`${styles.itemLike} ${isDarkTheme ? styles['dark-itemLike'] : ''}`}>
+                            <p className={styles.itemLike}>
                                 <BiSolidLike color="green" /> <span>{selectedRecipe.user_ratings.count_positive}</span>
                             </p>
-                            <p className={`${styles.itemLike} ${isDarkTheme ? styles['dark-itemLike'] : ''}`}>
+                            <p className={styles.itemLike}>
                                 <BiSolidDislike color="red" /> <span>{selectedRecipe.user_ratings.count_negative}</span>
                             </p>
                         </div>
                         <div>
-                            <p className={`${styles.itemIngr} ${isDarkTheme ? styles['dark-itemIngr'] : ''}`}>
+                            <p className={styles.itemIngr}>
                                 Ingredients:
                                 <span>
                                     {sections.map((item) => (
