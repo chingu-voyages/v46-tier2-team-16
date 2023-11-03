@@ -213,3 +213,8 @@ th {
     margin-left: 15px;
     margin-bottom: 15px;
 }
+
+
+.dark-itemName, .dark-itemCook, .dark-itemPrep, .dark-itemServ, .dark-itemLike, .dark-itemIngr {
+    color: var(  --color-white);
+}

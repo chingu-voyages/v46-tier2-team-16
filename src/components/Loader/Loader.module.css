@@ -41,3 +41,8 @@ h1 {
 	content: "|";
 	animation: blink-caret .75s step-end infinite;
   }
+
+  .dark-theme {
+    color: var( --dark-theme-primary-text-color);
+    background-color: #000000;
+    }
