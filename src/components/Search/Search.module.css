@@ -47,3 +47,8 @@
   margin-left: 3px;
 
  }
+
+
+ .dark-text {
+  color: var(--dark-theme-primary-text-color);
+ }

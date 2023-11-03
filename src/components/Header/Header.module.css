@@ -19,3 +19,9 @@ header {
         padding-left: 5rem;
     }
 }
+
+
+.dark-theme {
+    color: var( --dark-theme-primary-text-color);
+    background-color: #000000;
+    }
