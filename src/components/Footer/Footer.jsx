@@ -1,8 +1,14 @@
 import styles from "./Footer.module.css";
 import { AppLogoComponent } from "../AppLogoComponent/index";
 import { AnchorLink } from "../UI/AnchorLink";
+import { useGetTagsListQuery } from "../../features/recipe/recipeSlice";
 
 const Footer = () => {
+    const { data: getTagsListData, error, isError, isLoading } = useGetTagsListQuery();
+    if (isLoading) return <p>App is loading...</p>
+    // console.log("getTagsListData: ", getTagsListData);
+    console.log("getTagsListData results: ", getTagsListData.results);
+
     return (
         <footer>
             <section className={styles['logo-section']}>

@@ -2,7 +2,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { Home } from './pages/Home';
-import {HomeLayout} from "./layout";
+import { HomeLayout } from "./layout";
 import { NotFound } from './pages/NotFound';
 
 import './App.css';
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <RouterProvider router={router}>
-     <Outlet classname='outlet'/>
+      <Outlet classname='outlet' />
     </RouterProvider>
   );
 };
