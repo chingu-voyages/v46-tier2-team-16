@@ -5,14 +5,18 @@ import styles from './NotFound.module.css';
 import { useGlobalContext } from '../../contexts/DarkModeContext';
 
 const NotFound = () => {
-    const { isDarkTheme } = useGlobalContext();
+    // const { isDarkTheme } = useGlobalContext();
     return (
         <section className={styles.section}>
             <AppLogoComponent className={styles.logo} />
-            <p className={`${styles.content} ${isDarkTheme ? styles['dark-content'] : ''}`}>This is not the page you are looking for!</p>
-            <Link to="/" className={`${styles.button} ${isDarkTheme ? styles['dark-button'] : ''}`}>
+            <p>This is not the page you are looking for!</p>
+            <Link to="/" >
                 Go back Home
             </Link>
+            {/* <p className={`${styles.content} ${isDarkTheme ? styles['dark-content'] : ''}`}>This is not the page you are looking for!</p>
+            <Link to="/" className={`${styles.button} ${isDarkTheme ? styles['dark-button'] : ''}`}>
+                Go back Home
+            </Link> */}
         </section>
     );
 };
