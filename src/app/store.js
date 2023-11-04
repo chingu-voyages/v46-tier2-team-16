@@ -18,8 +18,8 @@ setupListeners(store.dispatch);
 //     reducer: {
 //         recipe: recipeReducer,
 //         recipeById: recipeSliceByIdReducer,
-relatedRecipes: relatedRecipesReducer,
-    },
+// relatedRecipes: relatedRecipesReducer,
+//     },
 // });
 
 export default store;

@@ -1,6 +1,8 @@
 import styles from "./Footer.module.css";
 import { AppLogoComponent } from "../AppLogoComponent/index";
 import { AnchorLink } from "../UI/AnchorLink";
+import { useGetTagsListQuery } from "../../features/recipe/recipeSlice";
+import { useGlobalContext } from '../../contexts/DarkModeContext';
 
 const Footer = () => {
     const { isDarkTheme } = useGlobalContext();

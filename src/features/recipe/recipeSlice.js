@@ -1,6 +1,7 @@
 // import axios from 'axios';
 // import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { fetchAll } from './APIcalls';
 
 const TASTY_RAPID_API_BASE_URL = import.meta.env.VITE_TASTY_RAPID_API_BASE_URL;
 const TASTY_RAPID_API_KEY = import.meta.env.VITE_TASTY_RAPID_API_KEY;
@@ -39,6 +40,8 @@ export const { useGetAllRecipesQuery, useGetListSimilaritiesQuery, useGetTagsLis
 // using parameters
 // export const { useGetAllRecipesQuery, useGetListSimilaritiesQuery, useGetTagsListQuery, useGetExampleUsingParametersQuery } = recipeSlice;
 
+// -----------------------------
+
 // const initialState = {
 //     loading: false,
 //     recipes: [],
@@ -62,6 +65,8 @@ export const { useGetAllRecipesQuery, useGetListSimilaritiesQuery, useGetTagsLis
 // export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', () => {
 //     return axios.request(options).then((response) => response.data);
 // });
+
+// export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', fetchAll);
 
 // const recipeSlice = createSlice({
 //     name: 'recipe',
