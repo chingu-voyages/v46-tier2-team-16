@@ -19,6 +19,13 @@ h1 {
 	white-space: nowrap;
 	animation: typing 1s steps(20, end), blink-caret .75s step-end infinite;
   }
+
+.loader {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
   
   @keyframes typing {
 	from { width: 0; }
@@ -34,3 +41,8 @@ h1 {
 	content: "|";
 	animation: blink-caret .75s step-end infinite;
   }
+
+  .dark-theme {
+    color: var( --dark-theme-primary-text-color);
+    background-color: #000000;
+    }

@@ -9,11 +9,8 @@ import { recipeSlice } from './features/recipe/recipeSlice'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    <ApiProvider api={recipeSlice}>
-      {/* <ApiProvider api={recipesApi}> */}
+    <Provider store={store}>
       <App dark-theme='dark' />
-    </ApiProvider>
-    {/* </Provider> */}
+    </Provider>
   </React.StrictMode>
 )
