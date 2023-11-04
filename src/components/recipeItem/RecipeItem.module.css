@@ -13,6 +13,7 @@ align-self: center;
 width: 100%;
 @media screen and (min-width: 1000px) {
     width: 80%;
+    align-items: center;
 }
 
 }
@@ -39,11 +40,19 @@ h6 {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    width: 100%;
+    @media screen and (max-width:800px) {
+width:80%;        
+align-self: center;
+        } 
 }
 
 .containerTitle {
     display: flex;
     flex-direction: column;
+    @media screen and (max-width:800px) {
+        align-items: center;
+                } 
 }
 
 .itemName {
@@ -60,6 +69,9 @@ h6 {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    @media screen and (max-width:800px) {
+        align-self: center;
+                } 
 }
 
 .insideInfo {
@@ -69,56 +81,8 @@ h6 {
 }
 
 
-/* .mainCtn img {
-
-} */
-
-/* .detailsCtn {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin-left: 25px;
-} */
-
-
-
-
-.itemPrep {
-}
-
-
-.itemCook {
-}
-
-
-.itemServ {
-
-}
-
 /* --------------------------------- */
 
-
-
-/* .itemDiff {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-.itemDiff span {
-    font-weight: 400;
-} */
-
-/* .itemLike {
-    display: flex;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    align-items: center;
-}
-.itemLike span {
-    font-weight: 600;
-    margin-left: 5px;
-} */
 
 
 /* --------------------------------- */
@@ -128,39 +92,109 @@ h6 {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+
+@media screen and (max-width:800px) {
+flex-direction: column;
+align-items: center;
+} 
 }
+
+.secondContainer .containerIngr { 
+    order: 1;
+@media screen and (max-width:800px) {
+order: 2;
+} }
+
+.secondContainer .containerDirec { order: 2;
+@media screen and (max-width:800px) {
+order: 3;
+} }
+
+.secondContainer .containerImage { order: 3;
+@media screen and (max-width:800px) {
+order: 1;
+} }
 
 .containerIngr {
     display: flex;
     flex-direction: column;
     width: calc(100% / 3);
+
+    @media screen and (max-width:800px) {
+    align-items: center;
+    margin-top:20px;
+    width: 80%;
+    }
 }
 
 .containerIngr li {
     list-style-type: none;
+    @media screen and (max-width:800px) {   
+        width: 100%;
+    }
 }
 
+.itemIngr {
+    @media screen and (max-width:800px) {
+        display: flex;
+        justify-content: center;
+        
+        }
+}
 
+.ingredientList {
+    @media screen and (max-width:800px) {   
+        width: 100%;
+    }
+}
 .itemIngr li {
     padding: 3px 0;
-    margin: 0px;
     list-style-type: none;
 }
 
 .containerDirec {
     display: flex;
     flex-direction: column;
-    width: calc(100% / 3);}
+    width: calc(100% / 3);
+    @media screen and (max-width:800px) {
+        align-items: center;
+        margin-top:20px;
+        width: 80%;
+    }
+}
 
+.insideContainerDirec {
+    @media screen and (max-width:800px) {   
+        width: 100%;
+    }
+}
 
+.instructionsList {
+    @media screen and (max-width:800px) {   
+        width: 100%;
+    }
+}
+.itemDirec {
+    @media screen and (max-width:800px) {
+        display: flex;
+        justify-content: center;
+        
+        }
+}
 
 .itemStep {
     display: flex;
     flex-direction: column;
+    @media screen and (max-width:800px) {
+        width: 100%;
+    }
 }
 .containerDirec li {
     display: flex;
     flex-direction: row;
+    @media screen and (max-width:800px) {
+        width:100%        
+    }
 }
 
 .stepText {
@@ -170,6 +204,14 @@ h6 {
 .containerImage {
     width: calc(100% / 3);
     padding: 10px 40px 10px 40px;
+    display: flex;
+
+    @media screen and (max-width:800px) {
+        order: 1;
+        width: 80%;
+        justify-content: center;
+        max-width: 400px;
+        }
 }
  img {
     width: 100%;
@@ -204,23 +246,40 @@ h6 {
     font-family: 'Rubik';
     text-decoration: none;
     border: 0;
+    align-self: center;  
+margin-top: 30px;
+  } 
+
+.facts {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;   
+    width: 80%; 
+    align-items: center;
+    justify-items: space-around;
+
+    @media screen and (max-width:800px) {
+        flex-direction: column;
+        width:100%;
+    } 
 }
 
 .video {
-    margin: auto;
-}
-
-.facts {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-inline: 10px;
-    margin-block: 50px;
-}
+    align-self: center;  
+    max-width: 300px;  
+    @media screen and (max-width:800px) {
+        margin-top: 20px;
+        max-width: 250px;  
+    } }
 
 .nutritionContainer {
     text-align: center;
     border: 2px solid;
-    margin-inline: 150px;
+    @media screen and (max-width:800px) {
+        margin-top: 20px;
+        width: 80%;
+        align-self: center;
+    }
 }
 
 .table {

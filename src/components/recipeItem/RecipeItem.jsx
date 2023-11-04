@@ -47,7 +47,7 @@ const RecipeItem = ({ selectedRecipe }) => {
                 <div className={styles.secondContainer}>
                     <div className={styles.containerIngr}>
                         <h4 className={styles.itemIngr}>Ingredients:</h4>
-                            <ul>
+                            <ul className={styles.ingredientList}>
                                 {sections.map((item) => (
                                     <li key={item.id}>{item.raw_text}</li>
                                 ))}
@@ -55,8 +55,8 @@ const RecipeItem = ({ selectedRecipe }) => {
                     </div>
 {/* direcions */}
                     <div className={styles.containerDirec}>
-                        <h4>Directions:</h4>
-                        <ul>{selectedRecipe.instructions.map((step, idx) => (
+                        <h4 className={styles.itemDirec}>Directions:</h4>
+                        <ul className={styles.instructionsList }>{selectedRecipe.instructions.map((step, idx) => (
                             <li key={idx} className={styles.itemStep}>
                                 <p>{step.position}. </p><p className={styles.stepText}>{step.display_text}</p>
                             </li>
@@ -70,10 +70,9 @@ const RecipeItem = ({ selectedRecipe }) => {
                 </div>
 
 
-            </div>
             <div className={styles.facts}>
                 <video controls width="450" className={styles.video}>
-                    <source src={selectedRecipe.original_video_url} type="application/x-mpegURL" />
+                    <source src={selectedRecipe.original_video_url} type="video/mp4" />
                 </video>
                 <div className={styles.nutritionContainer}>
                     <table className={styles.table}>
@@ -113,6 +112,8 @@ const RecipeItem = ({ selectedRecipe }) => {
                     <p className={styles.tableNote}>*per 100g of serving</p>
                 </div>
             </div>
+            </div>
+
 
             <Link to="/" className={styles.btn}>
                 Go Back
