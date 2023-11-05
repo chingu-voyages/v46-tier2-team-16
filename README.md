@@ -13,6 +13,8 @@ in your `readme` feel free to replace the text we've provided here.
 
 > Own it & Make it your Own!
 
+## Live link: https://chingu-voyage-v46-tier-2-team-16.netlify.app/
+
 ## Team Documents
 
 You may find these helpful as you work together to organize your project.
