@@ -1,5 +1,5 @@
 // import axios from 'axios';
-// import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { fetchAll } from './APIcalls';
 
@@ -66,7 +66,7 @@ export const { useGetAllRecipesQuery, useGetListSimilaritiesQuery, useGetTagsLis
 //     return axios.request(options).then((response) => response.data);
 // });
 
-// export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', fetchAll);
+export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', fetchAll);
 
 // const recipeSlice = createSlice({
 //     name: 'recipe',

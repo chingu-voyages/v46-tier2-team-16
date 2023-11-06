@@ -65,6 +65,7 @@ const Home = () => {
             {/* <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
       <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> */}
             <Recipe recipe={recipe} />
+            <p>Main content</p>
         </>
     );
 };

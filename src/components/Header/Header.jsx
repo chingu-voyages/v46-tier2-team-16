@@ -4,11 +4,10 @@ import { ToggleTheme } from '../ToggleTheme';
 import { useGlobalContext } from '../../contexts/DarkModeContext';
 
 const Header = () => {
-    // const { isDarkTheme } = useGlobalContext();
+    const { isDarkTheme } = useGlobalContext();
 
     return (
-        <header>
-            {/* <header className={`${styles.header} ${isDarkTheme ? styles['dark-theme'] : ''}`}> */}
+        <header className={`${styles.header} ${isDarkTheme ? styles['dark-theme'] : ''}`}>
             <AppLogoComponent />
             <section>
                 <ToggleTheme />

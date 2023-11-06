@@ -8,6 +8,8 @@ import relatedRecipesReducer from '../features/recipe/relatedRecipesSlice';
 const store = configureStore({
     reducer: {
         [recipeSlice.reducerPath]: recipeSlice.reducer,
+        recipeById: recipeSliceByIdReducer,
+        relatedRecipes: relatedRecipesReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(recipeSlice.middleware),
 });
