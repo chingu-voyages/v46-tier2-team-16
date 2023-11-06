@@ -12,7 +12,7 @@ const NotFound = () => {
             <p className={`${styles.content} ${isDarkTheme ? styles['dark-content'] : ''}`}>This is not the page you are looking for!</p>
             <Link to="/" className={`${styles.button} ${isDarkTheme ? styles['dark-button'] : ''}`}>
                 Go back Home
-            </Link>
+            </Link> 
         </section>
     );
 };
