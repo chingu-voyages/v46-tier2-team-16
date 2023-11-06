@@ -1,5 +1,5 @@
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Home } from './pages/Home';
+import { Home } from "./pages/home";
 import { HomeLayout } from './layout';
 import { NotFound } from './pages/NotFound';
 import { RecipeDetails } from './pages/recipeDetails';
