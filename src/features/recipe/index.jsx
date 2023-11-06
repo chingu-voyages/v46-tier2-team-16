@@ -1,1 +1,1 @@
-export { default as Recipe } from "./recipe";
+export { default as Recipe } from "./Recipe";
