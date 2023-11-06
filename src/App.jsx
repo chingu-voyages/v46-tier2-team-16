@@ -2,7 +2,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { HomeLayout } from './layout';
 import { NotFound } from './pages/NotFound';
 import { RecipeDetails } from './pages/recipeDetails';
-import {Home} from "./pages/Home"
+import { Home } from "./pages/Home"
 
 const router = createBrowserRouter([
     {
