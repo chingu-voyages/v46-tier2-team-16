@@ -5,11 +5,13 @@ import styles from "./HomeLayout.module.css";
 
 const HomeLayout = () => {
   return (
-    <main>
+    <>
       <Header />
+      <main>
       <Outlet className={styles.outlet} />
+      </main>
       <Footer />
-    </main>
+      </>
   );
 };
 export default HomeLayout;
