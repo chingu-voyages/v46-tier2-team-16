@@ -9,13 +9,13 @@ import { AppProvider } from './contexts/DarkModeContext.jsx'
 import { recipeSlice } from './features/recipe/recipeSlice'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AppProvider>
+ 
       <ApiProvider api={recipeSlice}>
         <Provider store={store}>
+        <AppProvider>
           <App />
+          </AppProvider>
         </Provider>
       </ApiProvider>
-    </AppProvider>
-  </React.StrictMode>
+
 );
