@@ -45,6 +45,7 @@ h6 {
 width:80%;        
 align-self: center;
         } 
+
 }
 
 .containerTitle {
@@ -317,4 +318,9 @@ th {
     text-align: left;
     margin-left: 15px;
     margin-bottom: 15px;
+}
+
+
+.dark-itemName, .dark-itemCategory, .dark-containerInfo, .dark-itemCook, .dark-itemPrep, .dark-itemServ, .dark-itemLike, .dark-itemIngr {
+    color: var(  --color-white);
 }

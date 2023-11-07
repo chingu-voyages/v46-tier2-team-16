@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import styles from './RecipeItem.module.css';
+import { useGlobalContext } from "../../contexts/DarkModeContext";
 import { BiSolidLike, BiSolidDislike, BiBowlHot } from 'react-icons/bi';
 
 const RecipeItem = ({ selectedRecipe }) => {
-    console.log('selectedRecipe', selectedRecipe);
+    // console.log('selectedRecipe', selectedRecipe);
     const sections = selectedRecipe.sections[0].components;
+
+    const { isDarkTheme } = useGlobalContext()
 
     return !!selectedRecipe ? (
         <section className={styles.containerDetails}>
@@ -13,13 +16,15 @@ const RecipeItem = ({ selectedRecipe }) => {
                 <div className={styles.mainCtn} id="top">
 {/* title + category */}
                         <div className={styles.containerTitle}>
-                            <h3 className={styles.itemName}>{selectedRecipe.name}</h3>
-                            <p className={styles.itemCategory}> 
+                            <h3 className={`${styles.itemName} ${isDarkTheme ? styles['dark-itemName'] : ''}`}>{selectedRecipe.name}</h3>
+                            <p
+                             className={`${styles.itemCategory} ${isDarkTheme ? styles['dark-itemCategory'] : ''}`}
+                            > 
                                 Category: {selectedRecipe.total_time_tier?.display_tier}
                             </p> 
                         </div>
 {/* info prep time                            */}
-                        <div className={styles.containerInfo}>
+                        <div className={`${styles.containerInfo} ${isDarkTheme ? styles['dark-containerInfo'] : ''}`}>
                             <span className={styles.insideInfo}>
                                 <h6 className={styles.itemPrep}>Prep Time:</h6>
                                 <p>{selectedRecipe.prep_time_minutes} minutes</p>
@@ -34,12 +39,16 @@ const RecipeItem = ({ selectedRecipe }) => {
                            </span>
                            
                         
-                            {/* <p className={styles.itemLike}>
-                                <BiSolidLike color="green" /> <span>{selectedRecipe.user_ratings.count_positive}</span>
+                        </div>
+                        <div>
+                            <p className={`${styles.itemIngr} ${isDarkTheme ? styles['dark-itemIngr'] : ''}`}>
+                                Ingredients:
+                                <span>
+                                    {sections.map((item) => (
+                                        <li key={item.id}>{item.raw_text}</li>
+                                    ))}
+                                </span>
                             </p>
-                            <p className={styles.itemLike}>
-                                <BiSolidDislike color="red" /> <span>{selectedRecipe.user_ratings.count_negative}</span>
-                            </p> */}
                         </div>
                 </div>
 

@@ -1,8 +1,9 @@
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Home } from './pages/Home';
 import { HomeLayout } from './layout';
-import { NotFound } from './pages/NotFound';
+
 import { RecipeDetails } from './pages/recipeDetails';
+import { NotFound } from './pages/notFound';
+import { Home } from './pages/home';
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
 const App = () => {
     return (
         <RouterProvider router={router}>
-            <Outlet classname="outlet" />
+            <Outlet classname='outlet' />
         </RouterProvider>
     );
 };

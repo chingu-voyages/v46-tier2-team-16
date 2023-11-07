@@ -1,7 +1,8 @@
 import './Moon.css';
+import MoonIconImage from "../../../assets/images/MoonIcon.png";
 
 const Moon = () => {
-    return <img src="src/assets/images/MoonIcon.png" alt="moon" className="moon" />;
+    return <img src={MoonIconImage} alt="moon" className="moon" />;
 };
 
 export default Moon;

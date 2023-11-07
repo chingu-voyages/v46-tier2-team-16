@@ -43,12 +43,12 @@ const Home = () => {
         } else if (filteredByCookingTime.length !== 0) {
             return filteredByCookingTime;
         }
-    }, [recipeResults, filteredByName, filteredByCookingTime]);
+    }, [newSearch, recipeResults, filteredByName, filteredByCookingTime]);
 
     return (
         <>
             <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
-            <Recipe recipe={recipe} recipesToDisplay={recipesToDisplay} />
+            {recipeResults ? <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> : <></>}
         </>
     );
 };
