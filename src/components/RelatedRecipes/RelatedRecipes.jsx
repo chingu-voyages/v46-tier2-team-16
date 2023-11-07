@@ -17,7 +17,7 @@ const RelatedRecipes = ({ recipeId }) => {
     // if (isLoading) return <Loader />
     // console.log("getListSimilaritiesData: ", getListSimilaritiesData);
 
-    console.log('id related recipes compo', recipeId);
+    // console.log('id related recipes compo', recipeId);
     const dispatch = useDispatch();
 
     useEffect(() => {

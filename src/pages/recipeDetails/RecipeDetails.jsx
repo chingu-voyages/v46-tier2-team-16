@@ -12,7 +12,7 @@ const RecipeDetails = () => {
 
     const dispatch = useDispatch();
 
-    console.log('recipeId', recipeId)
+    // console.log('recipeId', recipeId)
 
     useEffect(() => {
         dispatch(fetchRecipeById(recipeId));
@@ -21,7 +21,7 @@ const RecipeDetails = () => {
     const recipeById = useSelector((state) => state.recipeById);
     const selectedRecipe = recipeById.recipeById;
 
-    console.log('selectedRecipe recipedetails', selectedRecipe)
+    // console.log('selectedRecipe recipedetails', selectedRecipe)
     return (
         <>
             {recipeById.loading && <Loader />}
