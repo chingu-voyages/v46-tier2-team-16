@@ -8,9 +8,9 @@ const Footer = () => {
     const { isDarkTheme } = useGlobalContext();
 
     const { data: getTagsListData, error, isError, isLoading } = useGetTagsListQuery();
-    if (isLoading) return <p>App is loading...</p>
-    console.log("getTagsListData: ", getTagsListData);
-    console.log("getTagsListData results: ", getTagsListData.results);
+    // if (isLoading) return <p>App is loading...</p>
+    // console.log("getTagsListData: ", getTagsListData);
+    // console.log("getTagsListData results: ", getTagsListData.results);
 
     return (
         <footer className={`${styles.footer} ${isDarkTheme ? styles['dark-footer'] : ''}`}>
