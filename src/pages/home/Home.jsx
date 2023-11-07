@@ -48,7 +48,7 @@ const Home = () => {
     return (
         <>
             <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
-            <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} />
+            {recipeResults ? <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> : <></>}
         </>
     );
 };

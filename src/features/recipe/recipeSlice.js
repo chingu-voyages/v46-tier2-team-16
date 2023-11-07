@@ -57,8 +57,7 @@ const options = {
     url: TASTY_RAPID_API_URL,
     params: {
         from: '0',
-        // size: '20',
-        size: '5',
+        size: '20',
         tags: 'under_30_minutes',
     },
     headers: {
