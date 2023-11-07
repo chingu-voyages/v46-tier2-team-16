@@ -1,6 +1,6 @@
-// import { useEffect, useMemo, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { Search } from '../../components/Search';
+import { useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Search } from '../../components/Search';
 import { Loader } from '../../components/Loader';
 import { Recipe } from '../../features/recipe';
 // import { fetchRecipes } from '../../features/recipe/recipeSlice';
@@ -8,6 +8,17 @@ import { useGetAllRecipesQuery } from "../../features/recipe/recipeSlice";
 
 const Home = () => {
     const { data: allRecipesData, error, isError, isLoading } = useGetAllRecipesQuery();
+    // Filter recipes by name
+    const [filteredByName, setFilteredByName] = useState([]);
+    const [newSearch, setNewSearch] = useState('');
+
+    const handleSearch = (newSearch) => {
+        setNewSearch(newSearch);
+        const filteredByName = recipeResults.filter((recipe) =>
+            recipe.name.toLowerCase().includes(newSearch.toLowerCase())
+        );
+        setFilteredByName(filteredByName);
+    };
 
     if (isLoading) return <Loader />
     // console.log("allRecipesData: ", allRecipesData);
@@ -22,18 +33,6 @@ const Home = () => {
     // useEffect(() => {
     //   dispatch(useGetAllRecipesQuery());
     // }, [dispatch]);
-
-    // Filter recipes by name
-    // const [filteredByName, setFilteredByName] = useState([]);
-    // const [newSearch, setNewSearch] = useState('');
-
-    // const handleSearch = (newSearch) => {
-    //   setNewSearch(newSearch);
-    //   const filteredByName = recipeResults.filter((recipe) =>
-    //     recipe.name.toLowerCase().includes(newSearch.toLowerCase())
-    //   );
-    //   setFilteredByName(filteredByName);
-    // };
 
     // Filter recipes by quick cooking time
     // const [filteredByCookingTime, setFilteredByCookingTime] = useState([]);
@@ -65,6 +64,7 @@ const Home = () => {
         <>
             {/* <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
       <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> */}
+            <Search handleSearch={handleSearch} />
             <Recipe recipe={recipeResults} />
         </>
     );
