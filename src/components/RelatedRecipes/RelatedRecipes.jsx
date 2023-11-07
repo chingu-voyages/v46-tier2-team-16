@@ -8,11 +8,14 @@ import { fetchRelatedRecipe } from '../../features/recipe/relatedRecipesSlice';
 import styles from './RelatedRecipes.module.css';
 import { Link } from 'react-router-dom';
 
-import { useGetListSimilaritiesQuery } from "../../features/recipe/recipeSlice";
+// import { useGetListSimilaritiesQuery } from "../../features/recipe/recipeSlice";
+// import { Loader } from '../../components/Loader';
 
 const RelatedRecipes = ({ recipeId }) => {
-    const { data: getListSimilaritiesData, error, isError, isLoading } = useGetListSimilaritiesQuery();
-    console.log("getListSimilaritiesData: ", getListSimilaritiesData);
+    // const { data: getListSimilaritiesData, error, isError, isLoading } = useGetListSimilaritiesQuery();
+
+    // if (isLoading) return <Loader />
+    // console.log("getListSimilaritiesData: ", getListSimilaritiesData);
 
     console.log('id related recipes compo', recipeId);
     const dispatch = useDispatch();

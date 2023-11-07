@@ -21,18 +21,16 @@ const RecipeDetails = () => {
     const recipeById = useSelector((state) => state.recipeById);
     const selectedRecipe = recipeById.recipeById;
 
-    console.log('selectedRecipe recipedetails: ', selectedRecipe);
-
+    console.log('selectedRecipe recipedetails', selectedRecipe)
     return (
         <>
-            <RelatedRecipes recipeId={recipeId} />
-            {/* {recipeById.loading && <Loader />}
+            {recipeById.loading && <Loader />}
             {!recipeById.loading && selectedRecipe ? (
-                <span>
+                <>
                     <RecipeItem selectedRecipe={selectedRecipe} />
                     <RelatedRecipes recipeId={recipeId} />
-                </span>
-            ) : null} */}
+                </>
+            ) : null}
         </>
     )
 }

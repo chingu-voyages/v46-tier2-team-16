@@ -1,13 +1,13 @@
 import styles from "./Footer.module.css";
 import { AppLogoComponent } from "../AppLogoComponent/index";
 import { AnchorLink } from "../UI/AnchorLink";
-import { useGetTagsListQuery } from "../../features/recipe/recipeSlice";
+// import { useGetTagsListQuery } from "../../features/recipe/recipeSlice";
 import { useGlobalContext } from '../../contexts/DarkModeContext';
 
 const Footer = () => {
     const { isDarkTheme } = useGlobalContext();
 
-    const { data: getTagsListData, error, isError, isLoading } = useGetTagsListQuery();
+    // const { data: getTagsListData, error, isError, isLoading } = useGetTagsListQuery();
     // if (isLoading) return <p>App is loading...</p>
     // console.log("getTagsListData: ", getTagsListData);
     // console.log("getTagsListData results: ", getTagsListData.results);
