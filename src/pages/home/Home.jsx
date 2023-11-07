@@ -9,12 +9,11 @@ const Home = () => {
     const { data: allRecipesData, error, isError, isLoading } = useGetAllRecipesQuery();
 
     if (isLoading) return <p>App is loading...</p>
-    console.log("allRecipesData: ", allRecipesData);
     const recipe = allRecipesData;
     // const recipe = useSelector((state) => state.recipe);
     // const recipeResults = recipe.recipes.results;
-    const recipeResults = recipe.results;
-    console.log("RECIPE: ", recipeResults);
+    // const recipeResults = recipe.results;
+   
 
     // const dispatch = useDispatch();
 
