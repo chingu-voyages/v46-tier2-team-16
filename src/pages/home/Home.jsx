@@ -1,6 +1,7 @@
 // import { useEffect, useMemo, useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { Search } from '../../components/Search';
+import { Loader } from '../../components/Loader';
 import { Recipe } from '../../features/recipe';
 // import { fetchRecipes } from '../../features/recipe/recipeSlice';
 import { useGetAllRecipesQuery } from "../../features/recipe/recipeSlice";
@@ -8,13 +9,13 @@ import { useGetAllRecipesQuery } from "../../features/recipe/recipeSlice";
 const Home = () => {
     const { data: allRecipesData, error, isError, isLoading } = useGetAllRecipesQuery();
 
-    if (isLoading) return <p>App is loading...</p>
-    console.log("allRecipesData: ", allRecipesData);
+    if (isLoading) return <Loader />
+    // console.log("allRecipesData: ", allRecipesData);
     const recipe = allRecipesData;
     // const recipe = useSelector((state) => state.recipe);
     // const recipeResults = recipe.recipes.results;
     const recipeResults = recipe.results;
-    console.log("RECIPE: ", recipeResults);
+    // console.log("RECIPE: ", recipeResults);
 
     // const dispatch = useDispatch();
 
@@ -64,8 +65,7 @@ const Home = () => {
         <>
             {/* <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
       <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> */}
-            <Recipe recipe={recipe} />
-            <p>Main content</p>
+            <Recipe recipe={recipeResults} />
         </>
     );
 };
