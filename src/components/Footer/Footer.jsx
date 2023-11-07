@@ -1,16 +1,16 @@
 import styles from "./Footer.module.css";
 import { AppLogoComponent } from "../AppLogoComponent/index";
 import { AnchorLink } from "../UI/AnchorLink";
-import { useGetTagsListQuery } from "../../features/recipe/recipeSlice";
+// import { useGetTagsListQuery } from "../../features/recipe/recipeSlice";
 import { useGlobalContext } from '../../contexts/DarkModeContext';
 
 const Footer = () => {
     const { isDarkTheme } = useGlobalContext();
 
-    const { data: getTagsListData, error, isError, isLoading } = useGetTagsListQuery();
-    if (isLoading) return <p>App is loading...</p>
-    console.log("getTagsListData: ", getTagsListData);
-    console.log("getTagsListData results: ", getTagsListData.results);
+    // const { data: getTagsListData, error, isError, isLoading } = useGetTagsListQuery();
+    // if (isLoading) return <p>App is loading...</p>
+    // console.log("getTagsListData: ", getTagsListData);
+    // console.log("getTagsListData results: ", getTagsListData.results);
 
     return (
         <footer className={`${styles.footer} ${isDarkTheme ? styles['dark-footer'] : ''}`}>
@@ -18,7 +18,7 @@ const Footer = () => {
                 <AppLogoComponent />
             </section>
 
-            <section className={`${styles['links-section']} ${isDarkTheme ? styles['dark-links-section'] : ''}`}>
+            {/* <section className={`${styles['links-section']} ${isDarkTheme ? styles['dark-links-section'] : ''}`}>
                 <section className={styles['links-first-section']}>
                     <AnchorLink text="Back to the top" className={isDarkTheme ? styles['dark-link'] : ''} />
                     <AnchorLink text="My collection" className={isDarkTheme ? styles['dark-link'] : ''} />
@@ -54,7 +54,7 @@ const Footer = () => {
                         <AnchorLink text="Desserts" className={isDarkTheme ? styles['dark-link'] : ''} />
                     </section>
                 </section>
-            </section>
+            </section> */}
 
             <section className={styles['copyright-section']}>
                 <p className={isDarkTheme ? styles['dark-link'] : ''}>
