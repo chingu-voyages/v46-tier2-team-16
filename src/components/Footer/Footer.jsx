@@ -18,7 +18,7 @@ const Footer = () => {
                 <AppLogoComponent />
             </section>
 
-            <section className={`${styles['links-section']} ${isDarkTheme ? styles['dark-links-section'] : ''}`}>
+            {/* <section className={`${styles['links-section']} ${isDarkTheme ? styles['dark-links-section'] : ''}`}>
                 <section className={styles['links-first-section']}>
                     <AnchorLink text="Back to the top" className={isDarkTheme ? styles['dark-link'] : ''} />
                     <AnchorLink text="My collection" className={isDarkTheme ? styles['dark-link'] : ''} />
@@ -54,7 +54,7 @@ const Footer = () => {
                         <AnchorLink text="Desserts" className={isDarkTheme ? styles['dark-link'] : ''} />
                     </section>
                 </section>
-            </section>
+            </section> */}
 
             <section className={styles['copyright-section']}>
                 <p className={isDarkTheme ? styles['dark-link'] : ''}>
