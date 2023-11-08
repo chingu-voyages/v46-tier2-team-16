@@ -1,7 +1,7 @@
 import styles from "./ToggleTheme.module.css";
 import { useGlobalContext } from '../../contexts/DarkModeContext';
-import { Sun } from '../../assets/icons/sun';
-import { Moon } from '../../assets/icons/moon';
+import { Sun } from '../icons/sun';
+import { Moon } from '../icons/moon';
 
 const ToggleTheme = () => {
     const { isDarkTheme, toggleDarkTheme } = useGlobalContext();

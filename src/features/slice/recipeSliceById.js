@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchOne } from './APIcalls';
+import { fetchOne } from '../apiCalls/APIcalls';
 
 // recipeById:null so we know in the component when/if the data is fetched
 
