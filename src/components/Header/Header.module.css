@@ -6,11 +6,11 @@ header {
 }
 
 .divider {
-    border-bottom: var(--light-theme-hr-border-bottom);
+    border-bottom: #383838;
     position: absolute;
     top: 3.5rem;
     left: 0rem;
-    width: 100%;
+    /* width: 100%; */
 }
 
 /* media query for desktop */
@@ -20,8 +20,7 @@ header {
     }
 }
 
-
 .dark-theme {
-    color: var( --dark-theme-primary-text-color);
-    background-color: #000000;
-    }
+    color: var(--dark-theme-primary-text-color);
+    background-color: #383838;
+}

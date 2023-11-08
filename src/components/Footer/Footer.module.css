@@ -3,9 +3,9 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
-        "logoSection"
-        "linksSection"
-        "copyrightSection";
+        'logoSection'
+        'linksSection'
+        'copyrightSection';
     align-items: start;
     justify-content: start;
     padding: 1.5rem;
@@ -37,9 +37,9 @@ a {
     grid-template-columns: 1fr;
     /* color:var(--light-theme-primary-text-color); */
     grid-template-areas:
-        "linksSecondSection"
-        "horizontalDividerSection"
-        "linksFirstSection";
+        'linksSecondSection'
+        'horizontalDividerSection'
+        'linksFirstSection';
 }
 
 .links-first-section {
@@ -50,7 +50,7 @@ a {
     grid-area: linksSecondSection;
     display: grid;
     grid-template-columns: 1fr 10px 1fr;
-    grid-template-areas: "linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList";
+    grid-template-areas: 'linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList';
 }
 
 .links-second-section--first-list {
@@ -67,7 +67,7 @@ a {
     position: absolute;
     top: 0.5rem;
     left: 0rem;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .horizontal-divider-section {
@@ -131,15 +131,15 @@ a {
     .links-section {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
-            "linksFirstSection linksSecondSection"
-            "horizontalDividerSection horizontalDividerSection";
+            'linksFirstSection linksSecondSection'
+            'horizontalDividerSection horizontalDividerSection';
         padding: 1rem 0;
         /* color: var(--light-theme-primary-text-color); */
     }
 
     .links-second-section {
         grid-template-columns: 1fr 10px 1fr 10px 1fr;
-        grid-template-areas: "linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList verticalDividerSecondSection linksSecondSectionThirdList";
+        grid-template-areas: 'linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList verticalDividerSecondSection linksSecondSectionThirdList';
         /* color: var(--light-theme-primary-text-color); */
     }
 
@@ -187,12 +187,10 @@ a {
 
 .dark-footer {
     color: var(--dark-theme-primary-text-color);
-    background-color: #000000;
+    background-color: #383838;
 }
 
-
-
-.dark-link, .dark-text {
-    color:var(--dark-theme-primary-text-color);
+.dark-link,
+.dark-text {
+    color: var(--dark-theme-primary-text-color);
 }
-

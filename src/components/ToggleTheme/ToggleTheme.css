@@ -1,4 +1,3 @@
-
 .toggle-container {
     margin: 0 auto;
     display: -webkit-box;
@@ -48,6 +47,6 @@
 } */
 
 .dark-theme {
-    color: var( --dark-theme-primary-text-color);
-    background-color: #000000;
-    }
+    color: var(--dark-theme-primary-text-color);
+    background-color: #383838;
+}
