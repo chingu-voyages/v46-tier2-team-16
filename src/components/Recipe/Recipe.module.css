@@ -15,13 +15,18 @@
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the width (200px) as per your fixed card width */
-    gap: 30px; /* Adjust the gap between cards */
-    max-width: 100%; /* Optional: Limit the maximum width of the grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 100%;
     padding: 20px;
     justify-items: center;
 }
 
-.dark-section {
-    background-color: #000000;
-    }
+.light-theme {
+    background-color: var(--light-theme-background-color);
+}
+
+.dark-theme {
+    background-color: var(--dark-theme-background-color);
+    color: var( --dark-theme-primary-text-color); 
+}

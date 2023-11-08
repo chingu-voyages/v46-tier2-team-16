@@ -7,17 +7,16 @@
 }
 
 .insideContainerDetails{
-display: flex;
-flex-direction: column;
-align-self: center;
-width: 100%;
-@media screen and (min-width: 800px) {
-    width: 80%;
-    align-items: center;
-}
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
 
+    @media screen and (min-width: 800px) {
+        width: 80%;
+        align-items: center;
+    }
 }
-
 
 h4 {
     font-size: 20px;
@@ -28,6 +27,7 @@ h4 {
 p {
     font-size: 16px;
 }
+
 h6 {
     font-size: 16px;
     font-weight: 600;
@@ -41,19 +41,20 @@ h6 {
     flex-direction: column;
     margin-top: 50px;
     width: 100%;
-    @media screen and (max-width:800px) {
-width:80%;        
-align-self: center;
-        } 
 
+    @media screen and (max-width:800px) {
+        width:80%;        
+        align-self: center;
+    }
 }
 
 .containerTitle {
     display: flex;
     flex-direction: column;
+
     @media screen and (max-width:800px) {
         align-items: center;
-                } 
+    } 
 }
 
 .itemName {
@@ -62,17 +63,14 @@ align-self: center;
     padding-left: 0;
 }
 
-.itemCategory {
-}
-
-
 .containerInfo{
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+
     @media screen and (max-width:800px) {
         align-self: center;
-                } 
+    } 
 }
 
 .insideInfo {
@@ -80,11 +78,6 @@ align-self: center;
     flex-direction: column;
     margin-right: 10px;
 }
-
-
-/* --------------------------------- */
-
-
 
 /* --------------------------------- */
 /* ingredients + directions + image */
@@ -94,27 +87,35 @@ align-self: center;
     flex-direction: row;
     margin-top: 20px;
 
-@media screen and (max-width:800px) {
-flex-direction: column;
-align-items: center;
-} 
+    @media screen and (max-width:800px) {
+        flex-direction: column;
+        align-items: center;
+    } 
 }
 
 .secondContainer .containerIngr { 
     order: 1;
-@media screen and (max-width:800px) {
-order: 2;
-} }
 
-.secondContainer .containerDirec { order: 2;
-@media screen and (max-width:800px) {
-order: 3;
-} }
+    @media screen and (max-width:800px) {
+        order: 2;
+    } 
+}
 
-.secondContainer .containerImage { order: 3;
-@media screen and (max-width:800px) {
-order: 1;
-} }
+.secondContainer .containerDirec { 
+    order: 2;
+
+    @media screen and (max-width:800px) {
+        order: 3;
+    } 
+}
+
+.secondContainer .containerImage { 
+    order: 3;
+
+    @media screen and (max-width:800px) {
+        order: 1;
+    } 
+}
 
 .containerIngr {
     display: flex;
@@ -122,14 +123,15 @@ order: 1;
     width: calc(100% / 3);
 
     @media screen and (max-width:800px) {
-    align-items: center;
-    margin-top:20px;
-    width: 80%;
+        align-items: center;
+        margin-top:20px;
+        width: 80%;
     }
 }
 
 .containerIngr li {
     list-style-type: none;
+
     @media screen and (max-width:800px) {   
         width: 100%;
     }
@@ -139,8 +141,7 @@ order: 1;
     @media screen and (max-width:800px) {
         display: flex;
         justify-content: center;
-        
-        }
+    }
 }
 
 .ingredientList {
@@ -148,6 +149,7 @@ order: 1;
         width: 100%;
     }
 }
+
 .itemIngr li {
     padding: 3px 0;
     list-style-type: none;
@@ -157,6 +159,7 @@ order: 1;
     display: flex;
     flex-direction: column;
     width: calc(100% / 3);
+
     @media screen and (max-width:800px) {
         align-items: center;
         margin-top:20px;
@@ -179,20 +182,22 @@ order: 1;
     @media screen and (max-width:800px) {
         display: flex;
         justify-content: center;
-        
-        }
+    }
 }
 
 .itemStep {
     display: flex;
     flex-direction: column;
+
     @media screen and (max-width:800px) {
         width: 100%;
     }
 }
+
 .containerDirec li {
     display: flex;
     flex-direction: row;
+
     @media screen and (max-width:800px) {
         width:100%        
     }
@@ -209,13 +214,12 @@ order: 1;
     display: flex;
     max-height: 400px;
 
-
     @media screen and (max-width:800px) {
         order: 1;
         width: 80%;
         justify-content: center;
         max-width: 400px;
-        }
+    }
 }
 
 .selectedImage {
@@ -223,10 +227,9 @@ order: 1;
     height: 100%;
     object-fit: cover;
     border: 1px black solid;
- }
+}
 
 /* --------------------------------- */
-
 
 .itemNote {
     font-size: 18px;
@@ -234,6 +237,7 @@ order: 1;
     margin-bottom: 50px;
     margin-left: 30px;
 }
+
 .itemNote span {
     font-weight: 400;
     margin-bottom: 20px;
@@ -251,8 +255,8 @@ order: 1;
     text-decoration: none;
     border: 0;
     align-self: center;  
-margin-top: 30px;
-  } 
+    margin-top: 30px;
+} 
 
 .facts {
     display: flex;
@@ -270,15 +274,18 @@ margin-top: 30px;
 
 .video {
     align-self: center;  
-    max-width: 300px;  
+    max-width: 300px;
+
     @media screen and (max-width:800px) {
         margin-top: 20px;
         max-width: 250px;  
-    } }
+    } 
+}
 
 .nutritionContainer {
     text-align: center;
     border: 1px solid;
+
     @media screen and (max-width:800px) {
         margin-top: 20px;
         width: 80%;
@@ -293,10 +300,11 @@ margin-top: 30px;
     padding: 0 10px;
     table-layout: auto;
 }
-.table td,
-th {
+
+.table td, th {
     border: 1px solid;
 }
+
 .table th {
     padding-block: 5px;
     padding-inline: 0;
@@ -304,18 +312,21 @@ th {
     align-items: center;
     font-size: 16px;
 }
+
 .tableLeft {
     text-align: left;
     padding-left: 5px;
     padding-block: 3px;
     font-size: 14px;
 }
+
 .tableRight {
     text-align: right;
     padding-right: 5px;
     padding-block: 3px;
     font-size: 14px;
 }
+
 .tableNote {
     font-size: 12px;
     text-align: left;
@@ -323,12 +334,16 @@ th {
     margin-bottom: 15px;
 }
 
-
-.dark-containerDetails, .dark-itemCategory, .dark-itemsResult, .dark-itemStep, .dark-stepText, .dark-tableNote {
+.dark-containerDetails, 
+.dark-itemCategory, 
+.dark-itemsResult, 
+.dark-itemStep, 
+.dark-stepText, 
+.dark-tableNote {
     color: var(  --color-white);
 }
 
 .dark-btn {
     background-color: var( --dark-theme-button-bg-color);
     color: var( --dark-theme-button-text-color);
- }
+}

@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchRelated } from './APIcalls';
+import { fetchRelated } from '../apiCalls/APIcalls';
+
 // relatedRecipe:null so we know in the component when/if the data is fetched
 
 const initialState = {
