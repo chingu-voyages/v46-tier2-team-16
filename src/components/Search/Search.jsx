@@ -1,34 +1,48 @@
 import { useState } from 'react';
 import styles from './Search.module.css';
-import Reset from "../../assets/images/iconsReset.png";
+import Reset from '../../assets/images/iconsReset.png';
 import { useGlobalContext } from '../../contexts/DarkModeContext';
 
 const Search = (props) => {
-    const { handleSearch, handleQuickCooking } = props;
+    const { handleSearch } = props;
     const [newSearch, setNewSearch] = useState('');
 
     const { isDarkTheme } = useGlobalContext();
 
-    const handleInput = (e) => {
+    const handleClick = (e) => {
         e.preventDefault();
-
-        const input = e.target.value;
-        setNewSearch(input);
-        handleSearch(input);
+        handleSearch(newSearch);
     };
 
-    const handleClick = () => {
+    const handleKeyUp = (e) => {
+        if (e.key === 'Enter') handleSearch(newSearch);
+    };
+
+    const handleChange = (e) => {
+        setNewSearch(e.target.value);
+    };
+
+    const handleClickReset = () => {
         setNewSearch('');
+        handleSearch('');
     };
 
     return (
         <div className={styles.container}>
-            <h2 className={`${styles.text} ${isDarkTheme ? styles['dark-text'] : ''}`}>
-                Recipes
-            </h2>
+            <h2 className={`${styles.text} ${isDarkTheme ? styles['dark-text'] : ''}`}>Recipes</h2>
             <span className={styles.search}>
-                <input id="input" type="text" placeholder="Discover recipes" value={newSearch} onChange={(e) => handleInput(e)} />
-                <button onClick={handleClick}>
+                <label htmlFor="search">Search</label>
+                <input
+                    id="input"
+                    name="search"
+                    type="text"
+                    placeholder="e.g. avocado, tomatoes"
+                    value={newSearch}
+                    onChange={handleChange}
+                    onKeyUp={handleKeyUp}
+                />
+                <button onClick={handleClick}>Search</button>
+                <button onClick={handleClickReset}>
                     <img className={styles.img} src={Reset} alt="reset search bar" />
                 </button>
             </span>

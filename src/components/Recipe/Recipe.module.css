@@ -22,6 +22,14 @@
     justify-items: center;
 }
 
+.noRecipe {
+    text-align: center;
+}
+
+.dark-noRecipe {
+    color: var( --dark-theme-primary-text-color); 
+
+}
 .light-theme {
     background-color: var(--light-theme-background-color);
 }
