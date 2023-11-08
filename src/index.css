@@ -17,6 +17,7 @@
     --color-white: #ffffff;
     --button-color: #414066;
 
+    --light-theme-background-color: #faf8f8;
     --light-theme-primary-text-color: #303041;
     --light-theme-app-name-color: -webkit-linear-gradient(180deg, #F8CD38 0%, #C49E2A 100%);
     --light-theme-heading-text-color: #585858;
@@ -28,6 +29,7 @@
     --light-theme-recipe-card-box-shadow: 0px 4px 4px 0px #00000040;
     --light-theme-hr-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
+    --dark-theme-background-color: #393939;
     --dark-theme-primary-text-color: var(--color-white);
     --dark-theme-app-name-color: -webkit-linear-gradient(180deg, #FFF29C 0%, #FFDD00 100%, #FFF3A7 100%);
     --dark-theme-heading-text-color: #ECECEC;
@@ -49,6 +51,7 @@
 }
 
 body {
+    background-color: var(--light-theme-background-color);
     font-family: var(--body-text-font);
     line-height: 1.6;
     overflow: auto;
@@ -61,11 +64,6 @@ body {
     #app>main {
         margin: auto;
     }
-
-    /* TODO: Update recipe card container class to show 3 recipe card per row */
-    /* .recipe-card-container {
-        grid-template-columns: repeat(3, 1fr);
-    } */
 }
 
 @font-face {
