@@ -1,0 +1,28 @@
+.btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  align-items: center;
+  height: 42px;
+  width: 42px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  background: rgb(255, 217, 0);
+  transition: transform 03s;
+  border-radius: 30px;
+  display: none;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn.isScrollButtonVisible {
+  display: flex;
+}
+
+.btn:hover {
+  opacity: 1;
+}
