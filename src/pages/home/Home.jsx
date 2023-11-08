@@ -1,8 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Search } from '../../components/Search';
+
 import { Recipe } from '../../components/Recipe';
 import { fetchRecipes } from '../../features/slice/recipeSlice';
+import {Banner} from "../../components/Banner";
+
+
 
 const Home = () => {
     const recipe = useSelector((state) => state.recipe);
@@ -44,6 +48,7 @@ const Home = () => {
 
     return (
         <>
+        <Banner/>
             <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
             {recipeResults ? <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> : <></>}
         </>
