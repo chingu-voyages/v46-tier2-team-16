@@ -44,5 +44,5 @@
 }
 
 .dark-section {
-  background: #000;
+  background: var(--dark-theme-background-color);
 }
