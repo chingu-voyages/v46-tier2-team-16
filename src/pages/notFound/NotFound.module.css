@@ -42,3 +42,7 @@
   background-color: var( --dark-theme-button-bg-color);
   color: var( --dark-theme-button-text-color);
 }
+
+.dark-section {
+  background: #000;
+}
