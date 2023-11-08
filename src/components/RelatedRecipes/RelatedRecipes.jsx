@@ -1,24 +1,15 @@
-// this component will be in the details component and should received the param of the Url
-//as props in order to fetch the info from the api
-
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRelatedRecipe } from '../../features/recipe/relatedRecipesSlice';
+import { useGlobalContext } from "../../contexts/DarkModeContext";
 
 import styles from './RelatedRecipes.module.css';
 import { Link } from 'react-router-dom';
 
-// import { useGetListSimilaritiesQuery } from "../../features/recipe/recipeSlice";
-// import { Loader } from '../../components/Loader';
-
 const RelatedRecipes = ({ recipeId }) => {
-    // const { data: getListSimilaritiesData, error, isError, isLoading } = useGetListSimilaritiesQuery();
 
-    // if (isLoading) return <Loader />
-    // console.log("getListSimilaritiesData: ", getListSimilaritiesData);
-
-    // console.log('id related recipes compo', recipeId);
     const dispatch = useDispatch();
+    const { isDarkTheme } = useGlobalContext()
 
     useEffect(() => {
         dispatch(fetchRelatedRecipe(recipeId));
@@ -37,9 +28,9 @@ const RelatedRecipes = ({ recipeId }) => {
             <ul className={styles.list}>
                 {[...listToDisplay].map((oneRecipe) => (
                     <Link key={oneRecipe.id} to={`/recipe/${oneRecipe.id}`}>
-                        <li className={styles.recipe}>
-                            <img className={styles.image} src={oneRecipe.thumbnail_url} alt={oneRecipe.slug} width={250} height={216} />
-                            <p className={styles.recipeName}>{oneRecipe.name}</p>
+                        <li className={`${styles.recipe} ${isDarkTheme ? styles['dark-recipe'] : ''}`}>
+                            <img className={styles.image} src={oneRecipe.thumbnail_url} alt={oneRecipe.slug} />
+                            <p className={`${styles.recipeName} ${isDarkTheme ? styles['dark-recipeName'] : ''}`}>{oneRecipe.name}</p>
                         </li>
                     </Link>
                 ))}

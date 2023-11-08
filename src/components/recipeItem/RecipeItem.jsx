@@ -4,19 +4,18 @@ import { useGlobalContext } from "../../contexts/DarkModeContext";
 import { BiSolidLike, BiSolidDislike, BiBowlHot } from 'react-icons/bi';
 
 const RecipeItem = ({ selectedRecipe }) => {
-    // console.log('selectedRecipe', selectedRecipe);
     const sections = selectedRecipe.sections[0].components;
 
     const { isDarkTheme } = useGlobalContext()
 
     return !!selectedRecipe ? (
-        <section className={styles.containerDetails}>
+        <section className={`${styles.containerDetails} ${isDarkTheme ? styles['dark-containerDetails'] : ''}`}>
             <div key={selectedRecipe.id} className={styles.insideContainerDetails}>
 
                 <div className={styles.mainCtn} id="top">
 {/* title + category */}
                         <div className={styles.containerTitle}>
-                            <h3 className={`${styles.itemName} ${isDarkTheme ? styles['dark-itemName'] : ''}`}>{selectedRecipe.name}</h3>
+                            <h3 className={styles.itemName}>{selectedRecipe.name}</h3>
                             <p
                              className={`${styles.itemCategory} ${isDarkTheme ? styles['dark-itemCategory'] : ''}`}
                             > 
@@ -24,33 +23,22 @@ const RecipeItem = ({ selectedRecipe }) => {
                             </p> 
                         </div>
 {/* info prep time                            */}
-                        <div className={`${styles.containerInfo} ${isDarkTheme ? styles['dark-containerInfo'] : ''}`}>
+                        <div className={styles.containerInfo}>
                             <span className={styles.insideInfo}>
                                 <h6 className={styles.itemPrep}>Prep Time:</h6>
-                                <p>{selectedRecipe.prep_time_minutes} minutes</p>
+                                <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{selectedRecipe.prep_time_minutes} minutes</p>
                             </span>
                             <span className={styles.insideInfo}>
                                 <h6 className={styles.itemCook}>Cook Time: </h6>
-                                <p>{selectedRecipe.cook_time_minutes} minutes</p>
+                                <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{selectedRecipe.cook_time_minutes} minutes</p>
                             </span>
                            <span className={styles.insideInfo}>
                                 <h6 className={styles.itemServ}> <BiBowlHot /> Serves:</h6>
-                                <p> {selectedRecipe.num_servings} servings</p>
-                           </span>
-                           
-                        
-                        </div>
-                        <div>
-                            <p className={`${styles.itemIngr} ${isDarkTheme ? styles['dark-itemIngr'] : ''}`}>
-                                Ingredients:
-                                <span>
-                                    {sections.map((item) => (
-                                        <li key={item.id}>{item.raw_text}</li>
-                                    ))}
-                                </span>
-                            </p>
+                                <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}> {selectedRecipe.num_servings} servings</p>
+                           </span>                        
                         </div>
                 </div>
+
 
 {/* ingredients */}
                 <div className={styles.secondContainer}>
@@ -65,16 +53,21 @@ const RecipeItem = ({ selectedRecipe }) => {
 {/* direcions */}
                     <div className={styles.containerDirec}>
                         <h4 className={styles.itemDirec}>Directions:</h4>
-                        <ul className={styles.instructionsList }>{selectedRecipe.instructions.map((step, idx) => (
-                            <li key={idx} className={styles.itemStep}>
-                                <p>{step.position}. </p><p className={styles.stepText}>{step.display_text}</p>
+                        <ul className={styles.instructionsList}>
+                            {selectedRecipe.instructions.map((step, idx) => (
+                            <li key={idx}
+                            className={styles.itemStep}
+                            >
+                                <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{step.position}. </p>
+                                <p className={`${styles.stepText} ${isDarkTheme ? styles['dark-stepText'] : ''}`}
+                                  >{step.display_text}</p>
                             </li>
                         ))}
                         </ul>
                     </div>
 {/* image */}
                     <div className={styles.containerImage}>
-                        <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} />
+                        <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} className={styles.selectedImage}/>
                     </div>
                 </div>
 
@@ -118,13 +111,13 @@ const RecipeItem = ({ selectedRecipe }) => {
                             </tr>
                         </tbody>
                     </table>
-                    <p className={styles.tableNote}>*per 100g of serving</p>
+                    <p className={`${styles.tableNote} ${isDarkTheme ? styles['dark-tableNote']: ''}`}>*per 100g of serving</p>
                 </div>
             </div>
             </div>
 
 
-            <Link to="/" className={styles.btn}>
+            <Link to="/" className={`${styles.btn} ${isDarkTheme ? styles['dark-btn'] : ''}`}>
                 Go Back
             </Link>
         </section>

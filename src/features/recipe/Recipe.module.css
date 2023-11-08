@@ -19,6 +19,7 @@
     gap: 30px; /* Adjust the gap between cards */
     max-width: 100%; /* Optional: Limit the maximum width of the grid */
     padding: 20px;
+    justify-items: center;
 }
 
 .dark-section {
