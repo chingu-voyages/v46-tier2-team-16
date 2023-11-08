@@ -1,0 +1,32 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    align-self: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: var( --color-white);
+
+    @media screen and (min-device-width:1000px) {
+        width:80%
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 100%;
+    padding: 20px;
+    justify-items: center;
+}
+
+.light-theme {
+    background-color: var(--light-theme-background-color);
+}
+
+.dark-theme {
+    background-color: var(--dark-theme-background-color);
+    color: var( --dark-theme-primary-text-color); 
+}

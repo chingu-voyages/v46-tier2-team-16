@@ -1,9 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Search } from '../../components/Search';
+
 import { Recipe } from '../../features/recipe';
 import { fetchRecipes } from '../../features/recipe/recipeSlice';
 import {Banner} from "../../components/Banner";
+
+
 
 const Home = () => {
     const recipe = useSelector((state) => state.recipe);
@@ -15,7 +18,6 @@ const Home = () => {
         dispatch(fetchRecipes());
     }, [dispatch]);
 
-    // Filter recipes by name
     const [filteredByName, setFilteredByName] = useState([]);
     const [newSearch, setNewSearch] = useState('');
 
@@ -25,7 +27,6 @@ const Home = () => {
         setFilteredByName(filteredByName);
     };
 
-    // Filter recipes by quick cooking time
     const [filteredByCookingTime, setFilteredByCookingTime] = useState([]);
 
     const handleQuickCooking = () => {
@@ -33,7 +34,6 @@ const Home = () => {
         setFilteredByCookingTime(filteredByCookingTime);
     };
 
-    // Calculate recipes to display based on filters
     const recipesToDisplay = useMemo(() => {
         if (newSearch === '' && filteredByName.length === 0 && filteredByCookingTime.length === 0) {
             return recipeResults;

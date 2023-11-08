@@ -1,15 +1,15 @@
+import styles from "./ToggleTheme.module.css";
 import { useGlobalContext } from '../../contexts/DarkModeContext';
 import { Sun } from '../icons/sun';
 import { Moon } from '../icons/moon';
-import './ToggleTheme.css';
 
 const ToggleTheme = () => {
     const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
 
     return (
-        <section className="toggle-container">
-            <button className="dark-toggle" onClick={toggleDarkTheme}>
-                {isDarkTheme ? <Moon className="toggle-icon" /> : <Sun className="toggle-icon" />}
+        <section className={styles['toggle-container']}>
+            <button className={styles['dark-toggle']} onClick={toggleDarkTheme}>
+                {isDarkTheme ? <Moon className={styles['toggle-icon']} /> : <Sun className={styles['toggle-icon']} />}
             </button>
         </section>
     );
