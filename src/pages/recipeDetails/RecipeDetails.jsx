@@ -12,8 +12,6 @@ const RecipeDetails = () => {
 
     const dispatch = useDispatch();
 
-    // console.log('recipeId', recipeId)
-
     useEffect(() => {
         dispatch(fetchRecipeById(recipeId));
     }, [dispatch, recipeId])
@@ -21,17 +19,16 @@ const RecipeDetails = () => {
     const recipeById = useSelector((state) => state.recipeById);
     const selectedRecipe = recipeById.recipeById;
 
-    // console.log('selectedRecipe recipedetails', selectedRecipe)
     return (
-    <>
-    {recipeById.loading && <Loader />}
-    {!recipeById.loading && selectedRecipe ? (
-        <>  
-            <RecipeItem selectedRecipe={selectedRecipe} />
-            <RelatedRecipes recipeId={recipeId} />
-        </>  
-    ): null }
-    </>
+        <>
+            {recipeById.loading && <Loader />}
+            {!recipeById.loading && selectedRecipe ? (
+                <>
+                    <RecipeItem selectedRecipe={selectedRecipe} />
+                    <RelatedRecipes recipeId={recipeId} />
+                </>
+            ) : null}
+        </>
     )
 }
 

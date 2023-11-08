@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const RelatedRecipes = ({ recipeId }) => {
 
     const dispatch = useDispatch();
-    const { isDarkTheme } = useGlobalContext()
+    const { isDarkTheme } = useGlobalContext();
 
     useEffect(() => {
         dispatch(fetchRelatedRecipe(recipeId));
