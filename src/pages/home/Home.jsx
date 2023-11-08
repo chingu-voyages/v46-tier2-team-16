@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Search } from '../../components/Search';
-import { Recipe } from '../../features/recipe';
+import { Recipe } from '../../components/Recipe';
 import { fetchRecipes } from '../../features/recipe/recipeSlice';
 
 const Home = () => {
