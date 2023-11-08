@@ -23,15 +23,15 @@ const RecipeDetails = () => {
 
     // console.log('selectedRecipe recipedetails', selectedRecipe)
     return (
-        <>
-            {recipeById.loading && <Loader />}
-            {!recipeById.loading && selectedRecipe ? (
-                <>
-                    <RecipeItem selectedRecipe={selectedRecipe} />
-                    <RelatedRecipes recipeId={recipeId} />
-                </>
-            ) : null}
-        </>
+    <>
+    {recipeById.loading && <Loader />}
+    {!recipeById.loading && selectedRecipe ? (
+        <>  
+            <RecipeItem selectedRecipe={selectedRecipe} />
+            <RelatedRecipes recipeId={recipeId} />
+        </>  
+    ): null }
+    </>
     )
 }
 

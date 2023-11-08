@@ -4,65 +4,77 @@ import { useGlobalContext } from "../../contexts/DarkModeContext";
 import { BiSolidLike, BiSolidDislike, BiBowlHot } from 'react-icons/bi';
 
 const RecipeItem = ({ selectedRecipe }) => {
-    // console.log('selectedRecipe', selectedRecipe);
     const sections = selectedRecipe.sections[0].components;
 
     const { isDarkTheme } = useGlobalContext()
 
     return !!selectedRecipe ? (
-        <section className={styles.containerDetails}>
-            <div key={selectedRecipe.id}>
+        <section className={`${styles.containerDetails} ${isDarkTheme ? styles['dark-containerDetails'] : ''}`}>
+            <div key={selectedRecipe.id} className={styles.insideContainerDetails}>
+
                 <div className={styles.mainCtn} id="top">
-                    <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} />
-                    <div className={styles.detailsCtn}>
-                        <div>
-                            <h3 className={`${styles.itemName} ${isDarkTheme ? styles['dark-itemName'] : ''}`}>{selectedRecipe.name}</h3>
-                            <h4 className={styles.itemCategory}>
-                                Category: <span>{selectedRecipe.total_time_tier?.display_tier}</span>
-                            </h4>
-                            <p className={`${styles.itemPrep} ${isDarkTheme ? styles['dark-itemPrep'] : ''}`}>
-                                Preparation Time: <span>{selectedRecipe.prep_time_minutes} minutes</span>
-                            </p>
-                            <p className={`${styles.itemCook} ${isDarkTheme ? styles['dark-itemCook'] : ''}`}>
-                                Cooking Time: <span>{selectedRecipe.cook_time_minutes} minutes</span>
-                            </p>
-                            <p className={`${styles.itemServ} ${isDarkTheme ? styles['dark-itemServ'] : ''}`}>
-                                Servings: &nbsp;
-                                <span>
-                                    {selectedRecipe.num_servings} <BiBowlHot />
-                                </span>
-                            </p>
-                            <p className={`${styles.itemLike} ${isDarkTheme ? styles['dark-itemLike'] : ''}`}>
-                                <BiSolidLike color="green" /> <span>{selectedRecipe.user_ratings.count_positive}</span>
-                            </p>
-                            <p className={`${styles.itemLike} ${isDarkTheme ? styles['dark-itemLike'] : ''}`}>
-                                <BiSolidDislike color="red" /> <span>{selectedRecipe.user_ratings.count_negative}</span>
-                            </p>
+{/* title + category */}
+                        <div className={styles.containerTitle}>
+                            <h3 className={styles.itemName}>{selectedRecipe.name}</h3>
+                            <p
+                             className={`${styles.itemCategory} ${isDarkTheme ? styles['dark-itemCategory'] : ''}`}
+                            > 
+                                Category: {selectedRecipe.total_time_tier?.display_tier}
+                            </p> 
                         </div>
-                        <div>
-                            <p className={`${styles.itemIngr} ${isDarkTheme ? styles['dark-itemIngr'] : ''}`}>
-                                Ingredients:
-                                <span>
-                                    {sections.map((item) => (
-                                        <li key={item.id}>{item.raw_text}</li>
-                                    ))}
-                                </span>
-                            </p>
+{/* info prep time                            */}
+                        <div className={styles.containerInfo}>
+                            <span className={styles.insideInfo}>
+                                <h6 className={styles.itemPrep}>Prep Time:</h6>
+                                <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{selectedRecipe.prep_time_minutes} minutes</p>
+                            </span>
+                            <span className={styles.insideInfo}>
+                                <h6 className={styles.itemCook}>Cook Time: </h6>
+                                <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{selectedRecipe.cook_time_minutes} minutes</p>
+                            </span>
+                           <span className={styles.insideInfo}>
+                                <h6 className={styles.itemServ}> <BiBowlHot /> Serves:</h6>
+                                <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}> {selectedRecipe.num_servings} servings</p>
+                           </span>                        
                         </div>
+                </div>
+
+
+{/* ingredients */}
+                <div className={styles.secondContainer}>
+                    <div className={styles.containerIngr}>
+                        <h4 className={styles.itemIngr}>Ingredients:</h4>
+                            <ul className={styles.ingredientList}>
+                                {sections.map((item) => (
+                                    <li key={item.id}>{item.raw_text}</li>
+                                ))}
+                            </ul>
+                    </div>
+{/* direcions */}
+                    <div className={styles.containerDirec}>
+                        <h4 className={styles.itemDirec}>Directions:</h4>
+                        <ul className={styles.instructionsList}>
+                            {selectedRecipe.instructions.map((step, idx) => (
+                            <li key={idx}
+                            className={styles.itemStep}
+                            >
+                                <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{step.position}. </p>
+                                <p className={`${styles.stepText} ${isDarkTheme ? styles['dark-stepText'] : ''}`}
+                                  >{step.display_text}</p>
+                            </li>
+                        ))}
+                        </ul>
+                    </div>
+{/* image */}
+                    <div className={styles.containerImage}>
+                        <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} className={styles.selectedImage}/>
                     </div>
                 </div>
-                <div className={styles.directionsCtn}>
-                    <h4>Directions:</h4>
-                    {selectedRecipe.instructions.map((step, idx) => (
-                        <ol key={idx} className={styles.itemStep}>
-                            Step {step.position}.&nbsp;<span>{step.display_text}</span>
-                        </ol>
-                    ))}
-                </div>
-            </div>
+
+
             <div className={styles.facts}>
                 <video controls width="450" className={styles.video}>
-                    <source src={selectedRecipe.original_video_url} type="application/x-mpegURL" />
+                    <source src={selectedRecipe.original_video_url} type="video/mp4" />
                 </video>
                 <div className={styles.nutritionContainer}>
                     <table className={styles.table}>
@@ -99,11 +111,13 @@ const RecipeItem = ({ selectedRecipe }) => {
                             </tr>
                         </tbody>
                     </table>
-                    <p className={styles.tableNote}>*per 100g of serving</p>
+                    <p className={`${styles.tableNote} ${isDarkTheme ? styles['dark-tableNote']: ''}`}>*per 100g of serving</p>
                 </div>
             </div>
+            </div>
 
-            <Link to="/" className={styles.btn}>
+
+            <Link to="/" className={`${styles.btn} ${isDarkTheme ? styles['dark-btn'] : ''}`}>
                 Go Back
             </Link>
         </section>
