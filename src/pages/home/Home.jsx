@@ -1,14 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Search } from '../../components/Search';
-
 import { Recipe } from '../../components/Recipe';
 import { Loader } from '../../components/Loader';
 import { fetchRecipes } from '../../features/slice/recipeSlice';
-import {Banner} from "../../components/Banner";
-import {TopBtn} from "../../components/TopBtn";
-
-
+import { Banner } from '../../components/Banner';
+import { TopBtn } from '../../components/TopBtn';
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -62,26 +59,12 @@ const Home = () => {
         }
     }, [recipeResults, newSearch, filteredByIngredient]);
 
-    // const accessIngredients = selectedRecipe.sections[0].components
-    // console.log('accessIngredients', accessIngredients)
-
-    // const recipesToDisplay = useMemo(() => {
-    //     if (newSearch === '' && filteredByName.length === 0) {
-    //         return recipeResults;
-    //     } else if (filteredByName.length !== 0) {
-    //         return filteredByName;
-    //     } else if (newSearch !== '' && filteredByName.length === 0) {
-    //         return [];
-    //     }
-    // }, [newSearch, recipeResults, filteredByName]);
-
     return (
         <>
-
-            <Banner/>
+            <Banner />
             <Search handleSearch={handleSearch} />
             {recipeResults ? <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> : <></>}
-            <TopBtn/>
+            <TopBtn />
         </>
     );
 };
