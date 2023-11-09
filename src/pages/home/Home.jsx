@@ -5,6 +5,7 @@ import { Search } from '../../components/Search';
 import { Recipe } from '../../components/Recipe';
 import { fetchRecipes } from '../../features/slice/recipeSlice';
 import {Banner} from "../../components/Banner";
+import {TopBtn} from "../../components/TopBtn";
 
 
 
@@ -51,6 +52,7 @@ const Home = () => {
         <Banner/>
             <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
             {recipeResults ? <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> : <></>}
+            <TopBtn/>
         </>
     );
 };

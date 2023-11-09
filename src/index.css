@@ -48,7 +48,6 @@
 }
 
 body {
-    background-color: var(--light-theme-background-color);
     font-family: var(--body-text-font);
     line-height: 1.6;
     overflow: auto;
