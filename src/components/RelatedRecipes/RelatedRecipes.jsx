@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRelatedRecipe } from '../../features/slice/relatedRecipesSlice';
-import { useGlobalContext } from "../../contexts/DarkModeContext";
-
+import { useGlobalContext } from '../../contexts/DarkModeContext';
 import styles from './RelatedRecipes.module.css';
 import { Link } from 'react-router-dom';
 
 const RelatedRecipes = ({ recipeId }) => {
-
     const dispatch = useDispatch();
     const { isDarkTheme } = useGlobalContext();
 

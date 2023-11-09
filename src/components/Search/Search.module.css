@@ -68,12 +68,12 @@ input {
 
 .imgReset {
   width:30px;
-  height:28px;
+  height:30px;
   padding:2px;
   background-color:rgba(255, 235, 105, 1);
   border-radius: 100px;
   position: absolute;
-  top: -1px;
+  top: 1px;
   right: -3px;
 }
 
@@ -96,6 +96,7 @@ input {
   margin-left: 3px;
   background-color: transparent;
   position: relative;
+  border: none;
 }
 
 .dark-text {
