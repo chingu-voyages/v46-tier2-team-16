@@ -1,9 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Search } from '../../components/Search';
+
 import { Recipe } from '../../components/Recipe';
 import { Loader } from '../../components/Loader';
 import { fetchRecipes } from '../../features/slice/recipeSlice';
+import {Banner} from "../../components/Banner";
+import {TopBtn} from "../../components/TopBtn";
+
+
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -12,8 +17,6 @@ const Home = () => {
     const recipeResults = recipe.recipes.results;
 
     const [newSearch, setNewSearch] = useState('');
-    // will need to map through each recipe and then map through  components  and compare the search with ingredient.name
-    // we should not search for exact term but part of the term
     const [filteredByIngredient, setFilteredByIngredient] = useState([]);
 
     useEffect(() => {
@@ -74,9 +77,11 @@ const Home = () => {
 
     return (
         <>
+
+            <Banner/>
             <Search handleSearch={handleSearch} />
-            {recipe.loading && <Loader />}
             {recipeResults ? <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> : <></>}
+            <TopBtn/>
         </>
     );
 };
