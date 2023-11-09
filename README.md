@@ -1,30 +1,82 @@
-# voyage-tasks
+# Zest - web app
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+Zest is a web app that lets users find and sort recipes.
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## Table of Contents
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+- [Project Description](#project-description)
+- [Major Functions and Features](#major-functions-and-features)
+- [Dependencies](#dependencies)
+- [Project setup](#project-setup)
+- [Usage](#usage)
+- [Deployment](#deployment)
 
-> Own it & Make it your Own!
+## Project Description
 
-## Live link: https://chingu-voyage-v46-tier-2-team-16.netlify.app/
+Zest is a web app that lets users find and sort recipes. It uses the Tasty API. By default users can see browse an entire page of recipes. Users can search for recipes by their name (such as mac and cheese) and category (such as vegetarian, or pasta). Moreover, the user can filter recipes by categories.
 
-## Team Documents
+## Major Functions and Features
 
-You may find these helpful as you work together to organize your project.
+1. **Browse recipes:** The landing page features a list of recipe cards, which contain information about ingredients, cooking times and step-by-step directions. Each of the recipes contains a picture of the dish and a nutritional chart. The recipes displayed are fetched using the Tasty API.
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
+2. **Find recipes:** By interacting with the search bar, the user can look for recipes entering a dish name or a category description (such as "under 30 minutes"). The results show up on the main page when the user use the search bar.
 
-Meeting Agenda templates (located in the `/docs` directory in this repo):
+2. **Sort recipes:** The user can sort the recipes by cooking time, nutritional value and alphabetically. 
+---
 
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+## Dependencies
+
+To run "Zest" you will need the following dependencies and libraries:
+
+- axios - Version 1.5.0
+- chart.js - Version 4.3.3
+- react - Version 18.2.0
+
+## Project setup
+
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```
+npm run dev
+```
+
+### Compiles and minifies for production
+
+```
+npm run build
+```
+
+## Usage
+
+Follow the steps below to effectively use "Zest" and accomplish tasks in the app:
+
+1. **Installation:**
+
+   Before getting started, ensure you have Node.js and npm (Node Package Manager) installed on your system.
+
+   ```
+   npm install
+   ```
+
+2. **Running the App:**
+
+   To run the app locally in development mode, use the following command:
+
+   ```
+   npm run dev
+   ```
+
+   This will start a development server, and you can access the app by visiting the specified URL in your web browser.
+
+## Deployment
+
+- Preview link
+https://main--chingu-voyage-v46-tier-2-team-16.netlify.app/
+
+- Screenshot of the project
+
+![](./ZestScreenshot.png)

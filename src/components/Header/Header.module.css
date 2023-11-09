@@ -13,15 +13,14 @@ header {
     width: 100%;
 }
 
+.dark-theme {
+    background-color: var(--dark-theme-background-color);
+    color: var( --dark-theme-primary-text-color);
+}
+
 /* media query for desktop */
 @media only screen and (min-device-width: 768px) and (max-device-width: 6024px) {
     header {
         padding-left: 5rem;
     }
 }
-
-
-.dark-theme {
-    color: var( --dark-theme-primary-text-color);
-    background-color: #000000;
-    }

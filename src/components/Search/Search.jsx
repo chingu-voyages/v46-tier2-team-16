@@ -1,42 +1,58 @@
 import { useState } from 'react';
 import styles from './Search.module.css';
-import Reset from "../../assets/images/iconsReset.png";
+import Reset from '../../assets/images/iconsReset.png';
+import Loupe from '../../assets/images/iconsLoupe.png';
 import { useGlobalContext } from '../../contexts/DarkModeContext';
 
-
-// input search will gather the input dynamically, without need of validation
-// this componenent will need a callback as props to return `filteredRecipes` & `handleQuickCooking`.
-
 const Search = (props) => {
-    const { handleSearch, handleQuickCooking } = props;
+    const { handleSearch } = props;
     const [newSearch, setNewSearch] = useState('');
 
     const { isDarkTheme } = useGlobalContext();
 
-    //  console.log('newSearch', newSearch)
-
-    const handleInput = (e) => {
+    const handleClick = (e) => {
         e.preventDefault();
-
-        const input = e.target.value;
-        setNewSearch(input);
-        handleSearch(input);
+        handleSearch(newSearch);
     };
 
-const handleClick = () => {
-    setNewSearch('')
-}
+    const handleKeyUp = (e) => {
+        if (e.key === 'Enter') handleSearch(newSearch);
+    };
+
+    const handleChange = (e) => {
+        setNewSearch(e.target.value);
+    };
+
+    const handleClickReset = () => {
+        setNewSearch('');
+        handleSearch('');
+    };
 
     return (
-        <div className={styles.container}>                     
+        <div className={styles.container}>
             <h2 className={`${styles.text} ${isDarkTheme ? styles['dark-text'] : ''}`}>Recipes</h2>
-    
-            {/* <input id="input" type="text" placeholder="Search a recipe..." value={newSearch} onChange={(e) => handleInput(e)} /> */}
-            <span className={styles.search}>   <input id="input" type="text" placeholder="Discover recipes" value={newSearch} onChange={(e) => handleInput(e)} />
-            <button onClick={handleClick}>  <img className={styles.img} src={Reset} alt="reset search bar" /></button></span>
-         
-
-            {/* <button onClick={handleQuickCooking}>Quick cooking</button> */}
+            <span className={styles.search}>
+                <div className={styles.containerInput}>
+                    <label htmlFor="search" className={styles.visuallyHidden}>
+                        Search
+                    </label>
+                    <input
+                        id="input"
+                        name="search"
+                        type="text"
+                        placeholder="e.g. avocado, tomatoes"
+                        value={newSearch}
+                        onChange={handleChange}
+                        onKeyUp={handleKeyUp}
+                    />
+                    <button className={styles.buttonLoupe} onClick={handleClick}>
+                        <img className={styles.imgLoupe} src={Loupe} alt="confirm search" />
+                    </button>
+                </div>
+                <button className={styles.buttonReset} onClick={handleClickReset}>
+                    <img className={styles.imgReset} src={Reset} alt="reset search bar" />
+                </button>
+            </span>
         </div>
     );
 };

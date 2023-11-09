@@ -1,0 +1,17 @@
+.section {
+    display: block;
+    background-image: url("./../../assets/images/banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    opacity: 0.9;
+}
+
+
+
+@media (min-width:1400px) {
+    .section {
+       width: 100%;
+    }
+}

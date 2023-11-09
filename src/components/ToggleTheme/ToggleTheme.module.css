@@ -1,0 +1,28 @@
+.toggle-container {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+}
+
+.dark-toggle {
+    background: transparent;
+    border-color: transparent;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.toggle-icon {
+    font-size: 14px;
+    color: var(--textColor);
+}
+
+.dark-theme {
+    background-color: var(--dark-theme-background-color);
+    color: var( --dark-theme-primary-text-color);
+}

@@ -10,8 +10,6 @@ footer {
     justify-content: start;
     padding: 1.5rem;
     position: relative;
-    /* background-color: var(--color-white); 
-    color: var(--light-theme-primary-text-color);  */
 }
 
 footer section {
@@ -21,7 +19,6 @@ footer section {
 }
 
 a {
-    /* color: var(--light-theme-primary-text-color); */
     text-decoration: none;
 }
 
@@ -35,7 +32,6 @@ a {
     grid-area: linksSection;
     display: grid;
     grid-template-columns: 1fr;
-    /* color:var(--light-theme-primary-text-color); */
     grid-template-areas:
         "linksSecondSection"
         "horizontalDividerSection"
@@ -102,7 +98,6 @@ a {
 
 .copyright-section a {
     display: inline-flex;
-    /* color: var(--light-theme-primary-text-color); */
 }
 
 /* media query for desktop */
@@ -113,7 +108,6 @@ a {
 
     a {
         color: #393838;
-        /* color: var(--light-theme-primary-text-color); */
     }
 
     a[title]:hover::after {
@@ -134,13 +128,11 @@ a {
             "linksFirstSection linksSecondSection"
             "horizontalDividerSection horizontalDividerSection";
         padding: 1rem 0;
-        /* color: var(--light-theme-primary-text-color); */
     }
 
     .links-second-section {
         grid-template-columns: 1fr 10px 1fr 10px 1fr;
         grid-template-areas: "linksSecondSectionFirstList verticalDividerFirstSection linksSecondSectionSecondList verticalDividerSecondSection linksSecondSectionThirdList";
-        /* color: var(--light-theme-primary-text-color); */
     }
 
     .links-second-section--second-list {
@@ -151,7 +143,6 @@ a {
     .links-second-section--third-list {
         grid-area: linksSecondSectionThirdList;
         display: flex;
-        /* color: var(--light-theme-primary-text-color); */
     }
 
     .vertical-divider {
@@ -176,23 +167,19 @@ a {
     .copyright-section {
         align-items: start;
         position: relative;
-        /* color: var(--light-theme-primary-text-color); */
     }
 
     .copyright-section p {
         margin: 0;
-        /* color: var(--light-theme-primary-text-color); */
     }
 }
 
-.dark-footer {
-    color: var(--dark-theme-primary-text-color);
-    background-color: #000000;
-}
-
-
-
-.dark-link, .dark-text {
+.dark-link, 
+.dark-text {
     color:var(--dark-theme-primary-text-color);
 }
 
+.dark-theme {
+    background-color: var(--dark-theme-background-color);
+    color: var( --dark-theme-primary-text-color); 
+}

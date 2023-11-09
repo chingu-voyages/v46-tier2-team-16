@@ -18,7 +18,7 @@ h1 {
 	overflow: hidden;
 	white-space: nowrap;
 	animation: typing 1s steps(20, end), blink-caret .75s step-end infinite;
-  }
+}
 
 .loader {
 	width: 100%;
@@ -27,22 +27,22 @@ h1 {
 	align-items: center;
 }
   
-  @keyframes typing {
+@keyframes typing {
 	from { width: 0; }
 	to { width: 100%; }
-  }
-  
-  @keyframes blink-caret {
+}
+
+@keyframes blink-caret {
 	from, to { border-color: transparent; }
 	50% { border-color: black; }
-  }
-  
-  .typing-text::after {
+}
+
+.typing-text::after {
 	content: "|";
 	animation: blink-caret .75s step-end infinite;
-  }
+}
 
-  .dark-theme {
-    color: var( --dark-theme-primary-text-color);
-    background-color: #000000;
-    }
+.dark-theme {
+	background-color: var(--dark-theme-background-color);
+	color: var( --dark-theme-primary-text-color);
+}

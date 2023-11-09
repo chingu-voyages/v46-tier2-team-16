@@ -1,20 +1,13 @@
-/* main {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-
-    @media only screen and (min-device-width: 1000px)  {
-            width: 80%;
-            max-width: 1440px;
-    }
-} */
-
 main {
     display: flex;
     flex-direction: column;
 }
 
-
 .outlet {
     min-height: calc(100vh - 12rem);
+}
+
+.dark-theme {
+    background-color: var(--dark-theme-background-color);
+    color: var( --dark-theme-primary-text-color);
 }
