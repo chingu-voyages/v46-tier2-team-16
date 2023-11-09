@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from './RecipeItem.module.css';
-import { useGlobalContext } from "../../contexts/DarkModeContext";
+import { useGlobalContext } from '../../contexts/DarkModeContext';
 import { BiBowlHot } from 'react-icons/bi';
 
 const RecipeItem = ({ selectedRecipe }) => {
     const sections = selectedRecipe.sections[0].components;
+    console.log('Selected Recipe:', selectedRecipe);
 
     const { isDarkTheme } = useGlobalContext();
 
@@ -14,9 +15,7 @@ const RecipeItem = ({ selectedRecipe }) => {
                 <div className={styles.mainCtn} id="top">
                     <div className={styles.containerTitle}>
                         <h3 className={styles.itemName}>{selectedRecipe.name}</h3>
-                        <p
-                            className={`${styles.itemCategory} ${isDarkTheme ? styles['dark-itemCategory'] : ''}`}
-                        >
+                        <p className={`${styles.itemCategory} ${isDarkTheme ? styles['dark-itemCategory'] : ''}`}>
                             Category: {selectedRecipe.total_time_tier?.display_tier}
                         </p>
                     </div>
@@ -24,15 +23,25 @@ const RecipeItem = ({ selectedRecipe }) => {
                     <div className={styles.containerInfo}>
                         <span className={styles.insideInfo}>
                             <h6 className={styles.itemPrep}>Prep Time:</h6>
-                            <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{selectedRecipe.prep_time_minutes} minutes</p>
+                            <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>
+                                {selectedRecipe.prep_time_minutes} minutes
+                            </p>
                         </span>
                         <span className={styles.insideInfo}>
                             <h6 className={styles.itemCook}>Cook Time: </h6>
-                            <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{selectedRecipe.cook_time_minutes} minutes</p>
+                            <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>
+                                {selectedRecipe.cook_time_minutes} minutes
+                            </p>
                         </span>
                         <span className={styles.insideInfo}>
-                            <h6 className={styles.itemServ}> <BiBowlHot /> Serves:</h6>
-                            <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}> {selectedRecipe.num_servings} servings</p>
+                            <h6 className={styles.itemServ}>
+                                {' '}
+                                <BiBowlHot /> Serves:
+                            </h6>
+                            <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>
+                                {' '}
+                                {selectedRecipe.num_servings} servings
+                            </p>
                         </span>
                     </div>
                 </div>
@@ -51,12 +60,9 @@ const RecipeItem = ({ selectedRecipe }) => {
                         <h4 className={styles.itemDirec}>Directions:</h4>
                         <ul className={styles.instructionsList}>
                             {selectedRecipe.instructions.map((step, idx) => (
-                                <li key={idx}
-                                    className={styles.itemStep}
-                                >
+                                <li key={idx} className={styles.itemStep}>
                                     <p className={`${styles.itemsResult} ${isDarkTheme ? styles['dark-itemsResult'] : ''}`}>{step.position}. </p>
-                                    <p className={`${styles.stepText} ${isDarkTheme ? styles['dark-stepText'] : ''}`}
-                                    >{step.display_text}</p>
+                                    <p className={`${styles.stepText} ${isDarkTheme ? styles['dark-stepText'] : ''}`}>{step.display_text}</p>
                                 </li>
                             ))}
                         </ul>
@@ -66,7 +72,6 @@ const RecipeItem = ({ selectedRecipe }) => {
                         <img src={selectedRecipe.thumbnail_url} alt={selectedRecipe.name} className={styles.selectedImage} />
                     </div>
                 </div>
-
 
                 <div className={styles.facts}>
                     <video controls width="450" className={styles.video}>
@@ -111,7 +116,6 @@ const RecipeItem = ({ selectedRecipe }) => {
                     </div>
                 </div>
             </div>
-
 
             <Link to="/" className={`${styles.btn} ${isDarkTheme ? styles['dark-btn'] : ''}`}>
                 Go Back

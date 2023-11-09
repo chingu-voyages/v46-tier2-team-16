@@ -1,58 +1,70 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Search } from '../../components/Search';
-
 import { Recipe } from '../../components/Recipe';
+import { Loader } from '../../components/Loader';
 import { fetchRecipes } from '../../features/slice/recipeSlice';
-import {Banner} from "../../components/Banner";
-import {TopBtn} from "../../components/TopBtn";
-
-
+import { Banner } from '../../components/Banner';
+import { TopBtn } from '../../components/TopBtn';
 
 const Home = () => {
+    const dispatch = useDispatch();
+
     const recipe = useSelector((state) => state.recipe);
     const recipeResults = recipe.recipes.results;
 
-    const dispatch = useDispatch();
+    const [newSearch, setNewSearch] = useState('');
+    const [filteredByIngredient, setFilteredByIngredient] = useState([]);
 
     useEffect(() => {
         dispatch(fetchRecipes());
     }, [dispatch]);
 
-    const [filteredByName, setFilteredByName] = useState([]);
-    const [newSearch, setNewSearch] = useState('');
-
     const handleSearch = (newSearch) => {
         setNewSearch(newSearch);
-        const filteredByName = recipeResults.filter((recipe) => recipe.name.toLowerCase().includes(newSearch.toLowerCase()));
-        setFilteredByName(filteredByName);
+        searchByIngredient(newSearch);
     };
 
-    const [filteredByCookingTime, setFilteredByCookingTime] = useState([]);
+    const searchByIngredient = (newSearch) => {
+        if (newSearch === '') {
+            setFilteredByIngredient([]);
+        } else {
+            // split search in array
+            const searchIngredients = newSearch.split(/[\s,; ]+/);
 
-    const handleQuickCooking = () => {
-        const filteredByCookingTime = recipeResults.filter((recipe) => recipe.total_time_tier.tier === 'under_15_minutes');
-        setFilteredByCookingTime(filteredByCookingTime);
+            const filteredRecipes = recipeResults.filter((recipe) => {
+                // extract all ingredient names from current recipe
+                const recipeIngredients = recipe.sections[0].components.map((component) => component.ingredient.name);
+
+                // true if ALL search ingredients are found in recipe
+                return searchIngredients.every((searchIngredient) => {
+                    // for each search ingredient, true if at least ONE ingredient is found
+                    return recipeIngredients.some((recipeIngredient) => {
+                        return recipeIngredient.toLowerCase().includes(searchIngredient.toLowerCase());
+                    });
+                });
+            });
+
+            setFilteredByIngredient(filteredRecipes);
+        }
     };
 
     const recipesToDisplay = useMemo(() => {
-        if (newSearch === '' && filteredByName.length === 0 && filteredByCookingTime.length === 0) {
-            return recipeResults;
-        } else if (filteredByName.length !== 0) {
-            return filteredByName;
-        } else if (newSearch !== '' && filteredByName.length === 0) {
+        if (newSearch === '' && filteredByIngredient.length === 0) {
+            return recipeResults || [];
+        } else if (newSearch !== '' && filteredByIngredient.length !== 0) {
+            return filteredByIngredient;
+        } else if (newSearch !== '' && filteredByIngredient.length === 0) {
             return [];
-        } else if (filteredByCookingTime.length !== 0) {
-            return filteredByCookingTime;
         }
-    }, [newSearch, recipeResults, filteredByName, filteredByCookingTime]);
+    }, [recipeResults, newSearch, filteredByIngredient]);
 
     return (
         <>
-        <Banner/>
-            <Search handleSearch={handleSearch} handleQuickCooking={handleQuickCooking} />
+            <Banner />
+            <Search handleSearch={handleSearch} />
             {recipeResults ? <Recipe recipe={recipeResults} recipesToDisplay={recipesToDisplay} /> : <></>}
-            <TopBtn/>
+            <TopBtn />
         </>
     );
 };
