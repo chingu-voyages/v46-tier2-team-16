@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRecipeById } from '../../features/slice/recipeSliceById';
 import { useEffect } from 'react';
+import {TopBtn} from "../../components/TopBtn";
 
 const RecipeDetails = () => {
     const params = useParams();
@@ -28,6 +29,7 @@ const RecipeDetails = () => {
                     <RelatedRecipes recipeId={recipeId} />
                 </>
             ) : null}
+            <TopBtn/>
         </>
     )
 }
