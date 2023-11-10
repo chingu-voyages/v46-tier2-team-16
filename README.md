@@ -13,7 +13,7 @@ Zest is a web app that lets users find and sort recipes.
 
 ## Project Description
 
-Zest is a web app that lets users find and sort recipes. It uses the Tasty API. By default users can see browse an entire page of recipes. Users can search for recipes by their name (such as mac and cheese) and category (such as vegetarian, or pasta). Moreover, the user can filter recipes by categories.
+Zest is a web app that lets users find and sort recipes. It uses the Tasty API and features a modern design which is light, fully responsive and accessible. By default users can see browse an entire page of recipes. Users can search for recipes by their name (such as *mac and cheese*) and ingredient (such as *cheese*). 
 
 ## Major Functions and Features
 
@@ -21,16 +21,22 @@ Zest is a web app that lets users find and sort recipes. It uses the Tasty API. 
 
 2. **Find recipes:** By interacting with the search bar, the user can look for recipes entering a dish name or a category description (such as "under 30 minutes"). The results show up on the main page when the user use the search bar.
 
-2. **Sort recipes:** The user can sort the recipes by cooking time, nutritional value and alphabetically. 
+3. **Responsive design:** The website is made fully responsive on all viewports using flex and media queries, and it features cards in a layout of 5 to 1 columns.
+
+4. **Dark mode:** There is an integrated dark mode for accessibility, which can be switched to using a toggle on the top right corner of the website. The website colors pass the AAA test on the Web Accessibility Guidelines, and they are both legible and easy on the eyes.
+
 ---
 
 ## Dependencies
 
 To run "Zest" you will need the following dependencies and libraries:
 
-- axios - Version 1.5.0
-- chart.js - Version 4.3.3
-- react - Version 18.2.0
+- [React](https://react.dev/learn)
+- [React Router](https://reactrouter.com/en/main)
+- [Redux Store](https://redux.js.org/api/store)
+- [Axios](https://axios-http.com/docs/intro)
+- [Vite](https://vitejs.dev/guide/)
+- [Tasty API](https://rapidapi.com/apidojo/api/tasty)
 
 ## Project setup
 
