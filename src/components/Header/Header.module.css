@@ -18,6 +18,10 @@ header {
     color: var( --dark-theme-primary-text-color);
 }
 
+.light-theme {
+    background-color: var(--light-theme-background-color);
+}
+
 /* media query for desktop */
 @media only screen and (min-device-width: 768px) and (max-device-width: 6024px) {
     header {

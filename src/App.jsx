@@ -1,5 +1,6 @@
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { HomeLayout } from './layout';
+import './index.css';
 
 import { RecipeDetails } from './pages/recipeDetails';
 import { NotFound } from './pages/notFound';
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
 const App = () => {
     return (
         <RouterProvider router={router}>
-            <Outlet classname='outlet' />
+            <Outlet classname="outlet" />
         </RouterProvider>
     );
 };

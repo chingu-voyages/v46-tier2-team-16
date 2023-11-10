@@ -6,7 +6,7 @@ const Footer = () => {
     const { isDarkTheme } = useGlobalContext();
 
     return (
-        <footer className={`${styles.footer} ${isDarkTheme ? styles['dark-theme'] : ''}`}>
+        <footer className={`${styles.footer} ${isDarkTheme ? styles['dark-theme'] : styles['light-theme']}`}>
             <section className={styles['logo-section']}>
                 <AppLogoComponent />
             </section>
@@ -19,7 +19,7 @@ const Footer = () => {
                         target="_blank"
                         rel="noreferrer"
                         href="https://github.com/chingu-voyages/v46-tier2-team-16/tree/main"
-                        title="External github repo link will open on a new tab"
+                        data-title="External github repo link will open on a new tab"
                     >
                         v46-tier2-team-16
                     </a>

@@ -7,7 +7,7 @@ const Header = () => {
     const { isDarkTheme } = useGlobalContext();
 
     return (
-        <header className={`${styles.header} ${isDarkTheme ? styles['dark-theme'] : ''}`}>
+        <header className={`${styles.header} ${isDarkTheme ? styles['dark-theme'] : styles['light-theme']}`}>
             <AppLogoComponent />
             <section>
                 <ToggleTheme />

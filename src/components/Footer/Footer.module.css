@@ -110,11 +110,11 @@ a {
         color: #393838;
     }
 
-    a[title]:hover::after {
+    a[data-title]:hover::after {
         background-color: rgb(216, 172, 172);
         border-radius: 25px;
         color: #000;
-        content: attr(title);
+        content: attr(data-title);
         position: absolute;
         top: 1%;
         left: 12%;
@@ -182,4 +182,8 @@ a {
 .dark-theme {
     background-color: var(--dark-theme-background-color);
     color: var( --dark-theme-primary-text-color); 
+}
+
+.light-theme {
+    background-color: var(--light-theme-background-color);
 }

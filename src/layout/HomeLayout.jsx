@@ -10,11 +10,12 @@ const HomeLayout = () => {
   return (
     <>
       <Header />
-      <main className={`${styles.main} ${isDarkTheme ? styles['dark-theme'] : ''}`}>
+      <main className={`${styles.main} ${isDarkTheme ? styles['dark-theme'] : styles['light-theme']}`}>
         <Outlet className={styles.outlet} />
       </main>
       <Footer />
     </>
   );
 };
+
 export default HomeLayout;

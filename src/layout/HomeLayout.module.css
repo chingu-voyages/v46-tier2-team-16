@@ -11,3 +11,7 @@ main {
     background-color: var(--dark-theme-background-color);
     color: var( --dark-theme-primary-text-color);
 }
+
+.light-theme {
+    background-color: var(--light-theme-background-color);
+}
