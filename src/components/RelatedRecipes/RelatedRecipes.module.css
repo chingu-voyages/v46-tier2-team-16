@@ -13,6 +13,7 @@
 }
 
 .title {
+    font-family:  var(--heading-text-font);
     font-size: 30px;
     font-weight: 600;
     text-align: center;
@@ -58,7 +59,7 @@
 
 .recipeName {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: bold;
     text-align: center;
     text-decoration: none;
     margin-top: 10px;
