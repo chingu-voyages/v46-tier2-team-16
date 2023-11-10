@@ -24,7 +24,8 @@ p {
   display: flex;
   flex-direction: row;
   align-self: center;
-  height:fit-contentl
+  height: 40px;
+  width: 280px;
 }
 
 .containerInput{
@@ -37,12 +38,17 @@ p {
 
 input {
   border-radius: 100px;
-  border: solid 1px black;
+  border: solid 1px #303041;
   padding: 5px 10px 5px 10px;
   box-shadow:  0px 4px 6px rgba(0,0,0,0.1);
   margin-right: 3px;
   width: 100%;
-  height:30px;
+  height:100%;
+}
+
+input:focus {
+  outline: none !important;
+  border-color:#FFD900;
 }
 
 .visuallyHidden {
@@ -57,43 +63,46 @@ input {
 }
 
 .imgLoupe {
-  width:30px;
-  height:28px;
-  padding:2px;
+  width:40px;
+  height:38px;
+  padding:8px;
   border:none;
-  background-color:rgba(255, 235, 105, 1);
+  background-color:#FFD900;
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
 }
 
 .imgReset {
-  width:30px;
-  height:30px;
-  padding:2px;
-  background-color:rgba(255, 235, 105, 1);
+  width:40px;
+  height:40px;
+  padding:8px;
+  background-color : #FFD900;
   border-radius: 100px;
   position: absolute;
   top: 1px;
   right: -3px;
+  box-shadow:  0px 4px 6px rgba(0,0,0,0.1);
+  border: solid 1px #303041;
+
 }
 
 .buttonLoupe {
   border: none;
   border-radius: 100px;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 100%;
   /* margin-left: 3px; */
   position:absolute;
-  right: 4px;
+  right: 9px;
   top:1px;
   background-color: transparent;
 }
 
 .buttonReset {
   border-radius: 100px;
-  width: 30px;
-  height: 30px;
-  margin-left: 3px;
+  width: 35px;
+  height: 100%;
+  margin-left:20px;
   background-color: transparent;
   position: relative;
   border: none;

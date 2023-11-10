@@ -18,7 +18,6 @@ const RecipeDetails = () => {
 
     const recipeById = useSelector((state) => state.recipeById);
     const selectedRecipe = recipeById.recipeById;
-
     return (
         <>
             {recipeById.loading && <Loader />}
