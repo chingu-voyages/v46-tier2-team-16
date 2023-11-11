@@ -85,4 +85,16 @@ https://main--chingu-voyage-v46-tier-2-team-16.netlify.app/
 
 - Screenshot of the project
 
-![](./ZestScreenshot.png)
+
+![Macbook Pro-1699695462269](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/1cf4095a-643e-40cf-8965-b188cdd80efe)
+
+![Macbook Pro-1699695473667](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/069dd2be-46fd-4c43-acb7-437d87a1f886)
+
+
+![Macbook Pro-1699695532958](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/18eaef1e-5237-4ca4-b13c-77286cdba076)
+
+
+![Macbook Pro-1699695532958](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/6f68e5b8-49b2-4943-87f5-2fde0c3eb54a)
+![Macbook Pro-1699695506104](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/8eecd40e-1b3d-42cc-b4be-be3e9e407fc3)
+
+![Macbook Pro-1699698916454](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/fb1c852e-af02-4a90-a27e-792aaf59fd97)
