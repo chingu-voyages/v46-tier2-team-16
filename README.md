@@ -96,5 +96,5 @@ https://main--chingu-voyage-v46-tier-2-team-16.netlify.app/
 ![Macbook Pro-1699695532958](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/6f68e5b8-49b2-4943-87f5-2fde0c3eb54a)
 ![Macbook Pro-1699695506104](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/8eecd40e-1b3d-42cc-b4be-be3e9e407fc3)
 
+![Macbook Pro-1699698916454](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/fb1c852e-af02-4a90-a27e-792aaf59fd97)
 
-![iPad-1699695566817](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/e20184ff-c261-4e5a-9500-b836ef189f89)
