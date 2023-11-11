@@ -10,7 +10,7 @@ const Recipe = (props) => {
     console.log('recipesToDisplay', recipesToDisplay);
 
     return (
-        <section className={`${styles.section} ${isDarkTheme ? styles['dark-theme'] : styles['light-theme']}`}>
+        <section className={`${styles.section} ${isDarkTheme ? styles['dark-theme'] : ''}`}>
             {recipe.loading && <Loader />}
             {!recipe.loading && recipesToDisplay.length === 0 ? (
                 <p className={`${styles.noRecipe} ${isDarkTheme ? styles['dark-noRecipe'] : ''}`}>Sorry, no recipe to satisfy your papilles!</p>
@@ -18,7 +18,7 @@ const Recipe = (props) => {
                 <></>
             )}
             {!recipe.loading && recipesToDisplay ? (
-                <div className={styles.container}>
+                <div className={`${styles.container} ${isDarkTheme ? styles['dark-theme'] : ''}`}>
                     {recipesToDisplay.map((oneRecipe) => (
                         <RecipeCard key={oneRecipe.id} oneRecipe={oneRecipe} />
                     ))}

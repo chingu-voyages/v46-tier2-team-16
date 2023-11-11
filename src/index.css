@@ -11,11 +11,11 @@
     --body-text-font: "Poppins Regular", sans-serif;
     --font-weight-600: 600;
 
-    --color-white: #ffffff;
+    --color-white: #EFEFEF ;
     --button-color: #414066;
 
-    --light-theme-background-color: #faf8f8;
-    --light-theme-primary-text-color: #303041;
+    --light-theme-background-color: #EFEFEF;
+    --light-theme-primary-text-color: #333333;
     --light-theme-app-name-color: -webkit-linear-gradient(180deg, #F8CD38 0%, #C49E2A 100%);
     --light-theme-heading-text-color: #585858;
     --light-theme-button-bg-color: var(--button-color);
@@ -54,6 +54,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    position: relative;
 }
 
 /* media query for desktop */

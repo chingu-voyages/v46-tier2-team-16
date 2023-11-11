@@ -58,6 +58,7 @@ h6 {
 }
 
 .itemName {
+    font-family:  var(--heading-text-font);
     font-size: 26px;
     margin-top: 25px;
     padding-left: 0;
@@ -77,6 +78,11 @@ h6 {
     display: flex;
     flex-direction: column;
     margin-right: 10px;
+}
+
+.itemPrep, .itemCook, .itemServ {
+    font-family:  var(--heading-text-font);
+
 }
 
 /* --------------------------------- */
@@ -138,6 +144,7 @@ h6 {
 }
 
 .itemIngr {
+    font-family:  var(--heading-text-font);
     @media screen and (max-width:800px) {
         display: flex;
         justify-content: center;
@@ -179,6 +186,8 @@ h6 {
     }
 }
 .itemDirec {
+    font-family:  var(--heading-text-font);
+
     @media screen and (max-width:800px) {
         display: flex;
         justify-content: center;
@@ -250,8 +259,8 @@ h6 {
     padding: 10px 20px;
     border-radius: 40px;
     font-size: 17px;
-    font-weight: 500;
-    font-family: 'Rubik';
+    font-weight: var( --font-weight-600);
+    font-family: var(--heading-text-font);
     text-decoration: none;
     border: 0;
     align-self: center;  
