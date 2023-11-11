@@ -83,6 +83,12 @@ Follow the steps below to effectively use "Zest" and accomplish tasks in the app
 - Preview link
 https://main--chingu-voyage-v46-tier-2-team-16.netlify.app/
 
-- Screenshot of the project
+- Screenshot of the project 
+![Macbook Pro-1699695532958](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/b73796d3-eeb0-4533-8fb4-4bd1c747c80f)
+![Macbook Pro-1699695506104](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/8a36b66b-dbb1-43b5-a049-c1e522edaff4)
+![Macbook Pro-1699695473667](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/f910b66e-930e-4c6f-9825-bcb8e105a25f)
+![Macbook Pro-1699695568905](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/682c0d1a-5e63-48d7-9df3-afe3acf26ae9)
+![Macbook Pro-1699695462269](https://github.com/chingu-voyages/v46-tier2-team-16/assets/76844097/063bead3-d3f7-4565-a046-80605513032d)
 
-![](./ZestScreenshot.png)
+
+
